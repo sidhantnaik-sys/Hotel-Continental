@@ -1,0 +1,313 @@
+@import 'mixins';
+@import 'variables';
+
+.luxury-comfort {
+  background-color: var(--primary-color);
+
+  .luxury-comfort-container {
+    padding-top: 70px;
+    padding-bottom: 90px;
+
+    @include respond(sm){
+      padding-top: 10px;
+    padding-bottom: 60px;
+    }
+
+    h2 {
+      color: $darkest-brown;
+      font-size: 40px;
+      font-family: $font-base;
+      font-weight: 400;
+    }
+
+    .card-wrapper {
+      display: flex;
+      gap: 1.5rem;
+
+      .card-item {
+        flex: 1;
+        transition: flex 0.5s ease;
+        min-height: 500px;
+        height: 591px;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        padding: 2rem;
+
+        @include respond(sm) {
+          min-height: 220px;
+        }
+
+        .card-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+        }
+
+        .card-content {
+          background: linear-gradient(
+            360deg,
+            rgba(38, 22, 11, 0.81) 33.58%,
+            rgba(38, 22, 11, 0) 100%
+          );
+          z-index: 2;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          padding: 0 1.5rem;
+          border-radius: none;
+
+          color: $black;
+          transition: 0.3s ease;
+          pointer-events: none;
+          overflow: hidden;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          padding-bottom: 0px !important;
+
+          h5 {
+            z-index: 2;
+            font-family: $font-base;
+            font-size: 22px;
+            color: var(--luxury-comfort-heading);
+
+            opacity: 1;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            visibility: visible;
+          }
+
+          p {
+            font-family: $font-second;
+            opacity: 0;
+            transform: translateY(20px); // bottom → top
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            overflow: hidden;
+            max-height: 200px;
+            visibility: hidden;
+          }
+        }
+
+        &.center .card-content {
+          z-index: 2;
+          color: #000;
+        }
+      }
+
+      // Default (center active)
+      &.hover-center {
+        .center {
+          flex: 2;
+          background-size: cover;
+          background-position: center;
+
+          .card-content {
+            background: var(--luxury-comfort-background);
+
+            h5,
+            p {
+              color: var(--luxury-comfort-onhover-content);
+              opacity: 1;
+              transform: translateY(0);
+              visibility: visible;
+              transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+            }
+          }
+        }
+
+        .left,
+        .right {
+          flex: 0.5;
+
+          .card-content p {
+            opacity: 0;
+            max-height: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+          }
+        }
+      }
+
+      // Hover LEFT
+      &.hover-left {
+        .left {
+          flex: 2;
+
+          .card-content {
+            background: var(--luxury-comfort-background);
+
+            h5,
+            p {
+              color: var(--luxury-comfort-onhover-content);
+              opacity: 1;
+              transform: translateY(0);
+              visibility: visible;
+              transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+            }
+          }
+        }
+
+        .center,
+        .right {
+          flex: 0.5;
+
+          .card-content p {
+            opacity: 0;
+            max-height: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+          }
+        }
+      }
+
+      // Hover RIGHT
+      &.hover-right {
+        .right {
+          flex: 2;
+
+          .card-content {
+            background: var(--luxury-comfort-background);
+
+            h5,
+            p {
+              color: var(--luxury-comfort-onhover-content);
+              opacity: 1;
+              transform: translateY(0);
+              visibility: visible;
+              transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+            }
+          }
+        }
+
+        .center,
+        .left {
+          flex: 0.5;
+
+          .card-content p {
+            opacity: 0;
+            max-height: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ✅ Mobile SM
+@include respond(sm) {
+  .card-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+
+    .card-item {
+      flex: 1 1 100%;
+      min-height: 220px;
+      height: auto; // override fixed 591px
+      padding: 1rem;
+      cursor: pointer;
+
+      .card-content {
+        padding: 1rem;
+        display: none;
+        background-color: var(--luxury-comfort-background);
+
+        h5 {
+          font-size: 16px;
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        p {
+          font-size: 13px;
+          opacity: 0;
+          transform: translateY(20px);
+        }
+      }
+
+      &.active {
+        .card-content {
+          display: block;
+
+          h5,
+          p {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+
+    &.hover-left,
+    &.hover-center,
+    &.hover-right {
+      .card-item {
+        flex: 1 1 100%;
+      }
+    }
+  }
+}
+
+
+@include respond(md) {
+  .card-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+
+    .card-item {
+      flex: 1 1 100%;
+      min-height: 250px;
+      height: auto; 
+      padding: 1.2rem;
+      cursor: pointer;
+
+      .card-content {
+        padding: 1rem;
+        display: none;
+        background-color: var(--luxury-comfort-background);
+
+        h5 {
+          font-size: 18px;
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        p {
+          font-size: 14px;
+          opacity: 0;
+          transform: translateY(20px);
+        }
+      }
+
+      &.active {
+        .card-content {
+          display: block;
+
+          h5,
+          p {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+
+    &.hover-left,
+    &.hover-center,
+    &.hover-right {
+      .card-item {
+        flex: 1 1 100%;
+      }
+    }
+  }
+}

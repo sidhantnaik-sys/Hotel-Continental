@@ -1,0 +1,263 @@
+@import 'mixins';
+@import 'variables';
+
+.offers-section2 {
+  background: var(--packer-background);
+  padding: 4rem 0;
+
+  @include respond(sm) {
+    padding: 0;
+  }
+
+  .offers-section-container {
+    padding-left: 140px;
+
+    @include respond(sm) {
+      padding-top: 10px !important;
+    }
+
+    @include respond(xl) {
+      padding-left: 130px;
+    }
+
+    padding-right: 0; //
+
+    @include respond(sm) {
+      padding: 0 50px;
+      padding-left: 50px !important;
+    }
+
+    @include respond(md) {
+      padding-left: 80px;
+    }
+
+    .section-heading {
+      font-family: $font-base;
+      font-size: 40px;
+      margin-bottom: 1rem;
+      color: var(--dark-color);
+
+      @include respond(sm) {
+        font-size: 24px;
+      }
+
+    }
+
+    .section-description {
+      color: var(--dark-color);
+      font-size: 14px;
+      margin-bottom: 1.5rem;
+
+      @include respond(sm) {
+        font-size: 14px;
+      }
+    }
+
+    .view-all1 {
+      @include button-viewall;
+      border: none;
+      background-color: transparent;
+    }
+
+    .view-all1.expanded {
+      margin-top: 10px !important;
+    }
+
+
+    .offers-nav {
+      display: flex;
+      gap: 1rem;
+
+      button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        border-radius: 50%;
+
+        &:hover {
+          transform: scale(1.1);
+          background-color: var(--arrow-bg-color);
+        }
+
+        svg path {
+
+          // transition: stroke 0.3s ease;
+        }
+
+        &:hover svg path {
+          stroke: var(--arrow-color);
+
+        }
+      }
+    }
+
+
+
+
+    .offer-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+
+
+
+
+      .image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        img {
+          border-radius: 0;
+          width: 100%;
+          height: 100%;
+          min-height: 300px;
+          height: 425px;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.3s ease;
+
+          @include respond(sm) {
+            height: 297px;
+            margin-top: 10px;
+          }
+
+
+
+        }
+
+        &:hover .image-wrapper img {
+          transform: scale(1.05);
+        }
+
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%);
+
+          z-index: 1;
+          pointer-events: none;
+        }
+      }
+
+
+      .offer-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        color: white;
+        padding: 1rem;
+
+
+      }
+
+      .static-content {
+        font-size: 22px !important;
+        font-weight: 400;
+        // margin-bottom: 0.5rem;
+        font-family: $font-base;
+
+      }
+
+      .hover-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        background: var(--packer-overlay);
+        color: white;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform 0.6s ease, opacity 0.6s ease;
+        z-index: 1;
+      }
+
+      h4 {
+        font-family: $font-base;
+        font-size: 22px !important;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 14px;
+        font-family: $font-second;
+      }
+
+      .btn {
+        font-family: $font-second;
+        padding: 0;
+        font-size: 14px;
+        background-color: transparent;
+        color: $white;
+        text-decoration: none;
+        font-weight: 400;
+        border: none;
+        transition: background-color 0.3s ease;
+
+        text-decoration: underline;
+        text-underline-offset: 6px;
+
+        .arrow {
+          transition: transform 0.3s ease;
+          display: none;
+        }
+
+        &:hover .arrow {
+          transform: translateX(4px);
+          display: inline-block;
+        }
+
+        &:hover {
+          color: $white;
+          text-decoration: none;
+
+        }
+      }
+
+
+      &:hover {
+        .static-content {
+          visibility: hidden;
+        }
+
+        .offer-info {
+          background: none;
+        }
+
+        .hover-content {
+          transform: translateY(0%);
+          opacity: 1;
+        }
+      }
+    }
+
+  }
+
+  .offers-swiper {
+    .swiper-wrapper {
+      display: flex;
+    }
+
+    .swiper-slide {
+      width: auto;
+      flex-shrink: 0;
+      // margin-right: 24px !important;
+
+      @include respond(sm) {
+        margin-right: 30px !important;
+      }
+    }
+  }
+
+
+}

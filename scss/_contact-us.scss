@@ -1,0 +1,213 @@
+.contact-details {
+  p {
+    margin: 0 0 0.3rem;
+    line-height: 1.6;
+    font-size: 16px;
+    font-family: $font-second;
+  }
+
+  .contact-title {
+    font-weight: 600;
+    color: #A48243; // adjust to match brand
+    margin-top: 1.5rem;
+
+  }
+
+  .contact-info {
+    // dark text
+  }
+}
+
+.contact-image {
+  flex: 1;
+  display: flex;
+  padding-top: 10px;
+  justify-content: flex-end;
+
+  img {
+    height: auto;
+    max-height: 640px;
+    height: 640px;
+    object-fit: cover;
+    width: 100%;
+
+    @include respond(sm){
+     height: 340px;
+
+    }
+  }
+}
+
+
+.learn-more-section {
+  background: #f9f2e9; // or whatever your light background is
+  padding: 3rem 1rem;
+
+  .section-title {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  .about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .about-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card-overlay {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+
+
+.staff-members-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; // evenly distribute cards
+  gap: 24px; // space between cards
+  width: 100%; // take full container width
+  box-sizing: border-box; // include padding/gap in width calculations
+}
+
+.members {
+  background-color: var(--room-bg);
+}
+
+.key-members {
+
+  padding-top: 100px;
+  padding-bottom: 50px;
+  text-align: center;
+  width: 786px !important;
+  @include respond(sm){
+    width: auto !important;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-family: $font-base;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: $font-second;
+    color: #0B0704CC;
+  }
+}
+
+.staff-card {
+  width: 100%;
+  max-width: 370px;
+  height: 440px;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .staff-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .staff-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #A48243;
+    color: white !important;
+    padding: 1rem;
+    z-index: 2;
+
+    a{
+      color: white;
+    }
+
+    .hover-content {
+
+      font-size: 16px;
+      font-family: $font-second;
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0;
+      transition: opacity 0.6s ease, transform 0.6s ease, max-height 0.9s ease;
+
+      .contact-label {
+        padding: 2px;
+        margin: 2px;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+
+      }
+      .contacts{
+        p{
+        margin: 0;
+      }}
+
+      .phone {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      .email {
+        padding-bottom: 10px;
+        padding: 0px;
+        margin: 0px;
+      }
+    }
+
+    .static-content {
+      .staff-name {
+        font-size: 22px;
+        font-weight: 400;
+        color: #fff;
+        font-family: $font-base;
+        margin: 0;
+      }
+
+      .staff-role {
+        font-size: 16px;
+        color: #FFFFFFCC;
+        font-family: $font-second;
+        
+      }
+    }
+  }
+
+  &:hover {
+    .hover-content {
+      opacity: 1;
+      visibility: visible;
+      max-height: 200px;
+    }
+  }
+}

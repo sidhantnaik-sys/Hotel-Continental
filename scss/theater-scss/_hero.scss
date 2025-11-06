@@ -1,0 +1,84 @@
+@import 'mixins';
+@import 'variables';
+
+.hero-theater {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+
+  color: $white;
+  @include flex-center;
+  text-align: center;
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // background: var(--hero-overlay);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 69.15%, #000000 99.44%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.4) 12.05%, rgba(0, 0, 0, 0) 46.06%),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+      backdrop-filter: blur(1px);
+
+
+    z-index: 1;
+  }
+
+  .overlay-content {
+    position: relative;
+    z-index: 2;
+    @include flex-column;
+    text-align: center;
+    height: 100%;
+    max-width: 680px;
+
+
+    h1 {
+      font-size: 60px;
+      font-family: Gilda Display;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      color: $white;
+
+      // @include flex-center;
+      // width:57%;
+      @include respond(sm) {
+        font-size: 32px;
+        max-width: 400px;
+      }
+    }
+
+    a.btn {
+      display: inline-block;
+      font-family: $font-second;
+      padding: 8.5px 24px;
+      font-size: 14px;
+      height: 40px;
+      align-items: center;
+      background-color: $white;
+      color: #816636;
+      text-decoration: none;
+      border: none;
+      font-weight: 600;
+      border-radius: 2px;
+      transition: background-color 0.3s ease;
+      margin-top: 46px;
+
+      &:hover {
+        background-color: #A48243;
+        color: $white;
+      }
+
+
+    }
+
+
+  }
+
+}

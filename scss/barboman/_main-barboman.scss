@@ -1,0 +1,332 @@
+@import 'footer';
+@import 'header';
+@import 'mixins';
+@import 'hero';
+
+// @font-face {
+//   font-family: "Tox Typewriter";
+//   src: url("assets/font/tox_typewriter/Tox Typewriter.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+.barboman-bg{
+    background-color: black;
+    @include respond(xl){
+        padding: 0 120px;
+    }
+    @include respond(md){
+        padding-bottom: 80px !important;
+        padding: 15px;
+    }
+    padding: 0 65px;
+}
+.aboutus-barboman{
+    // max-width: 766px;
+    padding: 60px;
+    @include respond(sm){
+      padding: 0px;  
+    }
+
+    .container{
+     max-width: 766px;  
+     
+     @include respond(sm){
+         max-width: 566px;
+     }
+
+    }
+
+    h2{
+        color: #B79A67;
+    }
+    p{
+        color: #F0EBE3;
+    }
+    .portrait-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 48px;
+    margin-bottom: 20px;
+
+    a {
+      padding: 6.5px 24px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid #816636;
+      border-radius: 0;
+      transition: 0.3s ease;
+      font-size: 14px;
+      border-radius: 2px;
+
+      &.btn-primary {
+        background-color: #fff;
+        color: #816636;
+
+        &:hover {
+          background-color: #A48243;
+          color: #fff;
+        }
+      }
+
+      &.btn-secondary {
+        background-color: #00000033;
+        color: #FFFFFF;
+        border: 2px solid #A48243;
+
+        &:hover {
+          background-color: #FFFFFF;
+          color: #816636;
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: center;
+
+      a {
+        // width: 100%;
+        // max-width: 250px;
+        text-align: center;
+      }
+    }
+  }
+
+}
+
+.cocktail-section {
+    
+    color: #fff;
+    padding: 100px 0;
+    @include respond(sm){
+      padding: 10px 0;  
+    }
+
+    .cocktail-block {
+        .cocktail-image {
+            text-align: center;
+            padding: 0;
+
+            .cocktail-title {
+                font-family: $font-base;
+                font-size: 44px !important;
+                color: #B79A67;
+                // margin-bottom: 20px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                position: relative;
+                top: 34px;
+            }
+
+            img {
+                max-width: 90%;
+                border-radius: 0;
+                box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        .cocktail-text {
+            padding-top: 45px;
+            padding-left: 12px;
+
+            .subtitle {
+                font-family: $font-base;
+                font-size: 26px;
+                color: #F0EBE3;
+                margin-bottom: 20px;
+            }
+
+            .cocktail-list {
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    max-height: 460px; 
+                    overflow-y: auto;
+                    scrollbar-width: thin; 
+                    scrollbar-color: #C2A679 transparent; 
+                    scroll-behavior: smooth;
+
+                    li {
+                        margin-bottom: 40px;
+                        font-family: $font-second;
+
+                        h4 {
+                            font-family: $font-base;
+                            color: #C2A679;
+                            font-size: 26px;
+                            margin-bottom: 5px;
+                        }
+
+                        p {
+                            color: #F0EBE3;
+                            font-size: 16px;
+                            margin: 0;
+                            max-width: 400px;
+                        }
+                    }
+
+                    // WebKit browsers (Chrome, Edge, Safari)
+                    &::-webkit-scrollbar {
+                        width: 6px;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background: #8166363D;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background: #C2A679;
+                        border-radius: 3px;
+                    }
+
+                    &::-webkit-scrollbar-thumb:hover {
+                        background: #d4b580;
+                    }
+
+                    // 🧨 hide scrollbar buttons (arrows)
+                    &::-webkit-scrollbar-button {
+                        display: none;
+                        height: 0;
+                        width: 0;
+                    }
+                }
+            }
+
+        }
+    }
+
+    // alternate layout
+    //   .flex-row-reverse {
+    //     flex-direction: row-reverse;
+    //   }
+}
+
+.container-portrait-barboman {
+  background-color: black;
+
+
+  .portrait-gallery-barboman  {
+    max-height: 761px;
+    height: 100vh; // ✅ full viewport height
+    // padding: 2rem;
+    @include flex-column; // ✅ vertically center
+    //   background-size: cover;
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   position: relative;
+    z-index: 1;
+    // background-color: ;
+
+
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 69.15%, #000000 99.44%),
+      //   linear-gradient(180deg, #000000 12.05%, rgba(0, 0, 0, 0) 46.06%),
+      //   linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+
+      background-color: black;
+
+
+
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .container-fluid {
+      padding-left: 50px;
+      padding-right: 0;
+
+      @include respond(sm) {
+        padding: 9px !important;
+      }
+    }
+
+    .portrait-title {
+      color: #B79A67;;
+      font-size: 2.5rem;
+      font-family: $font-base;
+      margin-bottom: 47px;
+    }
+
+    .portrait-desc {
+      color: #F0EBE3;
+      font-family: $font-second;
+      font-size: 16px;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      margin-top: 40px;
+
+      @include respond(md) {
+        max-width: 600px;
+      }
+    }
+
+    .portrait-carousel {
+      overflow: hidden;
+      position: relative;
+      height: 420px; // Increased height to fit big images
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 60px;
+
+      .carousel-inner {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .carousel-track {
+        display: flex;
+        width: fit-content;
+        animation: scroll-loop 25s linear infinite;
+        align-items: center;
+      }
+
+      .portrait-card {
+        flex: 0 0 auto;
+        margin-right: 80px;
+        text-align: center;
+
+        .portrait-image-wrapper {
+          img {
+            display: block;
+            object-fit: cover;
+            border-radius: 0;
+            width: 272px;
+            height: 330px;
+          }
+        }
+
+        // Make every odd card bigger
+        &:nth-child(odd) {
+          .portrait-image-wrapper img {
+            width: 328px;
+            height: 382px;
+          }
+        }
+      }
+
+    }
+
+    @keyframes scroll-loop {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

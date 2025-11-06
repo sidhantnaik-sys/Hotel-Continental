@@ -1,0 +1,299 @@
+// =====================================================
+// 📦 SCSS MIXINS LIBRARY — For WordPress Custom Themes
+// =====================================================
+@import 'variables';
+
+// ✅ Responsive Breakpoints
+@mixin respond($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: 767.98px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == md {
+    @media (max-width: 991.98px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == lg {
+    @media (max-width: 1199.98px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == xl {
+    @media (min-width: 1400px) and (max-width: 2000px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == xxl {
+    @media (min-width: 2001px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == custom {
+    @media (max-width: 1188px) {
+      @content;
+    }
+  }
+}
+
+
+
+
+
+// ✅ 2. Flex Center (Single Line)
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ✅ 3. Flex Column Center
+@mixin flex-column($justify: center, $align: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+// ✅ 4. Text Truncate (Single or Multi-line)
+@mixin text-truncate($lines: 1) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+// ✅ 5. Clearfix
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+// ✅ 6. Box Shadow
+@mixin box-shadow($shadow: 0 4px 8px rgba(0, 0, 0, 0.1)) {
+  box-shadow: $shadow;
+}
+
+
+// ✅ 7. Transition
+@mixin transition($properties: all 0.3s ease) {
+  transition: $properties;
+}
+
+
+// ✅ 8. Button Style
+@mixin button-viewall() {
+  display: inline-block;
+  font-weight: 400;
+  font-family: $font-second;
+  font-size: 14px;
+  color: var(--secondary-color);
+  background-color: transparent;
+  margin-bottom: 2rem;
+  padding: 0;
+  // text-decoration: underline;
+
+  &:hover {
+    //  color: darken(var(--secondary-color), 10%);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
+
+
+}
+
+@mixin brown-button() {
+  display: inline-block;
+  height: 40px;
+  // display: flex;
+  align-items: center;
+  font-family: $font-second;
+  padding: 8px 24px;
+  background-color: var(--button-color-stay) !important;
+  color: $white !important;
+  border-radius: 2px;
+  font-weight: 500;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  transition: background-color 0.3s ease !important;
+  text-align: center;
+  align-items: center;
+  margin-top: 24px !important;
+  border: 1px solid #BBA568 !important;
+
+  &:hover {
+    background-color: #A48243 !important;
+  }
+
+  // ✅ Responsive tweaks
+  // @include respond(md) {
+  //   font-size: 13px !important;
+    
+  // }
+
+  // @include respond(sm) {
+  //   font-size: 12px !important;
+   
+  // }
+}
+
+@mixin button-transparent() {
+  display: inline-block;
+  font-family: $font-second;
+  height: 40px;
+  // display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  color: $white;
+  border: 1px solid var(--les-mer-border);
+  background: #00000033;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+
+  &:hover {
+    background: $white;
+    color: #816636;
+  }
+
+  // ✅ Responsive tweaks
+  // @include respond(md) {
+  //   font-size: 13px;
+    
+  // }
+
+  // @include respond(sm) {
+  //   font-size: 12px;
+  // }
+}
+
+
+
+
+@mixin arrow-btn() {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  background: none;
+  border: none;
+  // border: 2px solid var(--secondary-color);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: var(--secondary-color);
+  font-size: 24px;
+  @include flex-center;
+  transform: translateY(-50%);
+  transition: background 0.3s ease;
+  line-height: 1;
+
+  &:hover {
+    background-color: #E4D7C3;
+    color: $white;
+  }
+}
+
+// ✅ 9. Border Radius
+@mixin radius($value: 0.5rem) {
+  border-radius: $value;
+}
+
+
+// ✅ 10. Aspect Ratio Box
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  padding-top: ($height / $width) * 100%;
+
+  >* {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+// ✅ 11. Retina Background Image
+@mixin retina-bg($image, $image2x, $size: cover) {
+  background-image: url($image);
+  background-size: $size;
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    background-image: url($image2x);
+  }
+}
+
+
+// ✅ 12. Center Absolutely
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+// ✅ 13. Overlay Layer
+@mixin overlay($color: rgba(0, 0, 0, 0.5)) {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    z-index: 1;
+  }
+
+  >* {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+
+// ✅ 14. Hide Text (for accessibility)
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/// Convert rem to px for fallback support
+/// Usage: @include rem-px(font-size, 1.25);
+/// Output: font-size: 20px; font-size: 1.25rem;
+@mixin rem-px($property, $rem-value) {
+  #{$property}: ($rem-value * 16) + px;
+  #{$property}: $rem-value + rem;
+}

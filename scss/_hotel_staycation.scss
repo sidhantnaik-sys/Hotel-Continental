@@ -1,0 +1,94 @@
+@import 'mixins';
+@import 'variables';
+.hotel-staycation {
+  display: flex;
+  flex-wrap: wrap;
+  
+
+  .staycation-left,
+  .staycation-right {
+    flex: 1 1 50%;
+  }
+
+  .staycation-left {
+    background-color: var(--staycation-background);
+    color: var(--dark-color1) !important;
+    @include flex-center;
+    padding: 3rem;
+
+    .staycation-content {
+      max-width: 441px;
+      @include flex-column;
+      text-align: center;
+
+      h2 {
+        font-family: $font-base;
+        font-size: 40px !important;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+
+        @include respond(sm){
+          font-size: 22px !important;
+        }
+        @include respond(md){
+          font-size: 24px !important;
+        }
+      }
+
+      p {
+        font-family: $font-second;
+        // font-size: 14px;
+        line-height: 1.6;
+        font-weight: 400;
+        margin-bottom: 1rem;
+
+        &.subtext {
+          color: var(--button-color-stay);
+          font-size: 14px;
+        }
+      }
+
+      .staycation-btn {
+       @include brown-button();
+    }
+  }
+  }
+
+
+  .staycation-right {
+    display: flex;
+    align-items: stretch;
+
+    img {
+      width: 100%;
+      height: 100%;
+      height: 662px;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  @include respond(sm) {
+    flex-direction: column;
+
+    .staycation-left,
+    .staycation-right {
+      flex: 1 1 100%;
+    }
+
+    .staycation-left {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .staycation-content {
+      max-width: 100%;
+    }
+
+    .staycation-right {
+      img {
+        height: 320px;
+      }
+    }
+  }
+}

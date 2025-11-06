@@ -1,0 +1,173 @@
+@import 'mixins';
+@import 'variables';
+
+.utk-offers-section {
+  background-color: var(--utforsk-background) !important;
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  @include respond(sm) {
+    padding-top: 10px !important;
+    padding-bottom: 0px !important;
+  }
+
+  .utk-container {
+
+    // padding: 0px 125px;
+
+
+    @include respond(sm) {
+      padding: 0px 15px;
+    }
+
+    @include respond(md) {
+      padding: 0px 15px;
+    }
+
+    @include respond(custom) {
+      padding: 0px 15px;
+    }
+
+    .section-title {
+      font-family: $font-base;
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--dark-color1);
+
+      @include respond(sm) {
+        font-size: 24px;
+      }
+
+      @include respond(md) {
+        font-size: 26px;
+      }
+    }
+
+    .offer-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+
+
+      img {
+        border-radius: 0;
+        width: 100%;
+        height: 391px;
+        min-height: 300px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+
+        @include respond(sm) {
+          height: 297px;
+        }
+      }
+
+      // &:hover img {
+      //   transform: scale(1.05);
+      // }
+
+
+
+      // Transparent overlay
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%);
+        z-index: 1;
+        pointer-events: none; // allows clicks to go through
+      }
+
+      .offer-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        // background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 1rem;
+        z-index: 2;
+
+
+      }
+
+      .static-content {
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        font-family: $font-base;
+      }
+
+      .hover-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        background: var(--overly-background-color);
+        color: white;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform 0.6s ease, opacity 0.6s ease;
+        z-index: 1;
+
+        h4 {
+          font-family: $font-base;
+          font-size: 22px;
+        }
+
+        p {
+          font-size: 16px;
+          font-family: $font-second;
+        }
+
+        .explore-btn {
+          font-family: $font-second;
+          padding-top: 10px;
+          font-size: 14px;
+          background-color: transparent;
+          color: $white;
+          text-decoration: underline;
+          font-weight: 400;
+          border: none;
+          transition: background-color 0.3s ease;
+          text-underline-offset: 6px;
+
+          .arrow {
+            display: none;
+            transition: transform 0.3s ease;
+          }
+
+          &:hover .arrow {
+            height: 1px;
+            display: inline-block;
+            transform: translateX(4px);
+
+          }
+
+          &:hover {
+            color: $white;
+            text-decoration: none;
+
+          }
+        }
+      }
+
+      &:hover {
+        .static-content {
+          visibility: hidden;
+        }
+
+        .hover-content {
+          transform: translateY(0%);
+          opacity: 1;
+        }
+      }
+    }
+
+  }
+}

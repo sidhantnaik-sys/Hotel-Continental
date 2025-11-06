@@ -1,0 +1,10 @@
+// ✅ Simplified 3-Tab Responsive Mixin
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 767.98px) { @content; } // Phones and small devices
+  } @else if $breakpoint == tablet {
+    @media (min-width: 768px) and (max-width: 1023.98px) { @content; } // Tablets
+  } @else if $breakpoint == desktop {
+    @media (min-width: 1024px) { @content; } // Desktops and large screens
+  }
+}

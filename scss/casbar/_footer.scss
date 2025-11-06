@@ -1,0 +1,170 @@
+@import 'variables';
+
+.site-footer-casbar {
+  background: #03141E;
+  color: #F0EBE3;
+  padding-top: 10px;
+
+  @include respond(xl) {
+    padding: 60px 120px;
+  }
+
+  font-family: $font-casbar;
+  font-size: 16px;
+
+  @include respond(sm) {
+    font-size: 14px;
+  }
+
+
+  .footer-logo {
+    width: 100%;
+    padding-bottom: 10px;
+    height: 50px;
+
+    @include respond(sm) {
+      height: 40px;
+    }
+  }
+
+  .Address {
+    padding-left: 5rem;
+
+    @include respond(sm) {
+      padding-left: calc(var(--bs-gutter-x) * .5);
+    }
+  }
+
+  .footer-title {
+    font-size: 48px;
+    font-weight: 400;
+    font-family: $font-casbar;
+
+  }
+
+  .footer-label {
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    font-family: $font-casbar;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-family: $font-casbar;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .social-icons i {
+    font-size: 1.2rem;
+    color: #fff;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #d4b89f;
+    }
+  }
+
+  .opening-timings {
+    // @include respond(xl){
+    //     width: 402px;
+    // }
+    // margin-top: 124px;
+
+    // h6 {
+    //   font-size: 19px;
+    //   font-weight: 400;
+    //   margin-bottom: 16px;
+    //   color: #FFFFFF;
+    // }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        color: #F0EBE3;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        margin-bottom: 8px;
+        @include respond(sm){
+          font-size: 14px;
+        }
+
+        span:first-child {
+          color: #F0EBE3;
+          font-weight: 400;
+        }
+
+        span:last-child {
+          color: #F0EBE3;
+        }
+      }
+    }
+  }
+
+  .partner-logos-theater {
+    display: flex;
+    justify-content: flex-end;
+
+    @include respond(sm) {
+      justify-content: start;
+      gap: 20px;
+    }
+
+
+
+    img {
+      max-height: 34px;
+      max-width: 112px;
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  .footer-bottom {
+    font-size: 0.875rem;
+
+    a {
+      color: #ccc;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@include respond(md) {
+  .site-footer-theater {
+    .row {
+      // flex-direction: column !important;
+    }
+
+    .col-md-3,
+    .Address {
+      width: 100% !important;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .partner-logos {
+      justify-content: flex-end !important;
+
+
+
+    }
+
+    .footer-bottom {
+
+      align-items: flex-start !important;
+      gap: 0.75rem;
+    }
+  }
+}

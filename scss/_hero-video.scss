@@ -1,0 +1,53 @@
+@import 'mixins';
+@import 'variables';
+
+.hero-banner {
+  position: relative;
+  height: 721px;
+  @include respond(xxl){
+    height: 1000px;
+  }
+  overflow: hidden;
+
+  .hero-bg {
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+
+    z-index: 1;
+  }
+
+  .overlay {
+    z-index: 2;
+    top: 35%;
+    @include respond(xxl){
+    top: 40%;
+  }
+  }
+
+  .center-content {
+    width: 700px;
+  }
+
+  .hero-title {
+    font-size: 56px;
+    font-family: $font-base;
+    font-weight: 400;
+    color: var(--light-color);
+    line-height: 1.3;
+
+    @include respond(sm) {
+      font-size: 24px;
+    }
+    @include respond(md) {
+      font-size: 26px;
+    }
+  }
+
+  .hero-button {
+    @include button-transparent;
+  }
+
+}

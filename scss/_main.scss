@@ -1,0 +1,81 @@
+@import 'mixins';
+@import 'variables';
+@import 'room';
+@import 'hero';
+@import 'luxury_comfort';
+@import 'og_suiter';
+@import 'luxury_highlight';
+@import 'hotel_staycation';
+@import 'hero-video';
+@import 'utforsk';
+@import 'packer';
+@import 'theater-scss/main-theater';
+@import 'room-card';
+@import 'resturn';
+@import 'about';
+@import 'gallery';
+@import 'contact-us';
+@import 'continental/main-continental';
+@import 'annen/main-annen';
+@import 'hc-events/main-events';
+@import 'casbar/main-casbar.scss';
+@import 'barboman/main-barboman';
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.trp-switcher-position-top.trp-floating-switcher {
+ 
+    right: 0;
+ 
+}
+.error-404 {
+  padding: 100px 0;
+  text-align: center;
+
+  .error-title {
+    font-size: 150px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+  }
+
+  .error-subtitle {
+    font-size: 32px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .error-description {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+
+#trp_ald_modal_container {
+    display: none !important;
+}

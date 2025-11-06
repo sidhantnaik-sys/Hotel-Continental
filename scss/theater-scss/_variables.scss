@@ -1,0 +1,129 @@
+// ============================================
+// 🎨 DESIGN SYSTEM VARIABLES FOR YOUR THEME
+// ============================================
+
+
+$pitch: #a58d6f;
+$dark-brown :#3e2b0f;
+
+
+$white: #ffffff;
+$black: #000000;
+$darkest-brown: #0B0704;
+
+
+
+body.summer {
+  --primary-color: #EEE4D6;
+  --secondary-color: #967436;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #3A2A17;
+  --luxury-comfort-heading: #F0EBE3;
+  --luxury-comfort-background: #FAF7F3;
+  --luxury-comfort-onhover-content:#26160B;
+  --og-suite-background:#ffffff;
+  --overly-background-color :#A48243F0;
+  --luxury-right:#E4D7C3;
+  --staycation-background:#ffffff;
+  --button-color-stay:#816636;
+  --Utforsk-background:#ffffff;
+  --packer-background:#F0EBE3;
+  --packer-overlay:#47330FF5;
+  --hero-overlay:  linear-gradient(180deg, rgba(38, 22, 11, 0) 78.06%, rgba(38, 22, 11, 0.5) 94.62%),
+linear-gradient(0deg, rgba(164, 130, 67, 0.08), rgba(164, 130, 67, 0.08));
+  --line-color:#E4D7C3;
+  --en-av-text:#967436;
+  --logo-color-av:#96743699;
+  --footer-background:#47330F;
+  --amenities-bg:#EEE4D6;
+  --room-bg:#F3EBE0;
+  --theater-bg:#000000;
+  --menu-title1:#B79A67;
+  --chmbr-bg:#26160B;
+  --chmbr-title:#C2A679;
+  --para-text:#FFFFFFCC;
+  --infinite-bg :#E4D7C3;
+
+}
+
+
+
+body.winter {
+   --primary-color: #DDCAAF;
+  --secondary-color: #967436;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #3A2A17;
+  --luxury-comfort-heading: #F0EBE3;
+  --luxury-comfort-background: #816636;
+  --luxury-comfort-onhover-content:#ffffff;
+  --og-suite-background:#EEE4D6;
+  --overly-background-color :#A48243;
+  --luxury-right:#3A2A17;
+   --staycation-background:#F3EBE0;
+  --button-color-stay:#816636;
+  --utforsk-background:#F3EBE0;
+  --packer-background:#E4D7C3;
+  --packer-overlay:#47330F;
+  --hero-overlay:linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  --line-color:#DDCAAF;
+  --en-av-text:#D3BE9D;
+  --logo-color-av:#BBA568;
+  --footer-background:#47330F;
+  --amenities-bg:#EEE4D6;
+  --room-bg:#F3EBE0;
+  --theater-bg:#000000;
+  --menu-title1:#B79A67;
+  --chmbr-bg:#26160B;
+  --chmbr-title:#C2A679;
+  --para-text:#FFFFFFCC;
+  --infinite-bg :#E4D7C3;
+}
+
+
+// ✅ 2. Typography
+$font-base: 'Gilda Display';
+$font-second: 'Instrument Sans';
+$font-size-base: 16px;
+
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 2rem;
+
+
+// ✅ 3. Spacing Scale
+$space-xs: 0.25rem;  // 4px
+$space-sm: 0.5rem;   // 8px
+$space-md: 1rem;     // 16px
+$space-lg: 2rem;     // 32px
+$space-xl: 3rem;     // 48px
+
+
+// ✅ 4. Border Radius
+$radius-sm: 0.25rem;
+$radius-md: 0.5rem;
+$radius-lg: 1rem;
+
+
+// ✅ 5. Box Shadows
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+
+
+// ✅ 6. Z-Index Scale
+$z-tooltip: 1000;
+$z-fixed: 1030;
+$z-overlay: 1050;
+$z-modal: 1100;
+
+
+

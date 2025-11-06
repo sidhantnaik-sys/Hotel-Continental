@@ -1,0 +1,247 @@
+.restaurant-detail{
+    background-color: var(--room-bg);
+}
+.restaurant-detail-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-top: 100px;
+
+
+  @include respond(sm) {
+    padding-top: 50px;
+  }
+
+  .restaurant-image-left,
+  .restaurant-image-right {
+    flex: 1;
+    min-width: 300px;
+    @include respond(xl) {
+        min-width: 568px;
+      }
+
+    img {
+      width: 100%;
+      height: 640px;
+      object-fit: cover;
+
+      @include respond(sm) {
+        height: 440px;
+      }
+       @include respond(xl) {
+        min-width: 568px;
+      }
+    }
+  }
+
+  .restaurant-content-right,
+  .restaurant-content-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    @include respond(xl){
+      // padding-left: 88px !important;
+    }
+
+    h1,h2 {
+      font-family: $font-base;
+      font-size: 44px;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: var(--h1-color);
+      
+
+      @include respond(sm) {
+        font-size: 36px;
+      }
+    }
+
+    .restaurant-description {
+      font-family: $font-second;
+      font-size: 16px;
+    }
+
+    .restaurant-amenities {
+      .amenities-grid {
+        @include flex-column;
+        align-items: flex-start !important;
+        // gap: 8px;
+        font-family: $font-second;
+      }
+
+      .amenity-item {
+        display: flex;
+        // align-items: center;
+        gap: 16px;
+
+        @include respond(sm) {
+          align-items: flex-start;
+        }
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+
+        .amenity-text {
+          font-size: 14px;
+        }
+      }
+    }
+    .descpp{
+      font-weight: 500;
+    }
+  }
+
+ 
+  @include respond (sm) {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 30px;
+
+    .restaurant-image-left,
+    .restaurant-image-right {
+      min-width: 100%;
+
+      img {
+        height: auto;
+        max-height: 400px;
+      }
+    }
+
+    .restaurant-content-right,
+    .restaurant-content-left {
+      padding: 0 15px;
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .restaurant-description {
+        font-size: 14px;
+      }
+
+      .restaurant-amenities {
+        .amenities-grid {
+          gap: 0.75rem;
+        }
+        .amenity-item {
+          gap: 0.4rem;
+
+          .amenity-text {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+   @include respond (md) {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 30px;
+
+    .restaurant-image-left,
+    .restaurant-image-right {
+      min-width: 100%;
+
+      img {
+        height: auto;
+        max-height: 400px;
+      }
+    }
+
+    .restaurant-content-right,
+    .restaurant-content-left {
+      padding: 0 15px !important;
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .restaurant-description {
+        font-size: 14px;
+      }
+
+      .restaurant-amenities {
+        .amenities-grid {
+          gap: 0.75rem;
+        }
+        .amenity-item {
+          gap: 0.4rem;
+
+          .amenity-text {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.room-description{
+  a{
+    color: var(--text-highlight);
+    text-underline-offset: 4px;
+
+    &:hover{
+      color:#A48243;
+    }
+  }
+}
+
+.descpp{
+  p{
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  }
+  a{
+    color: var(--text-highlight);
+    text-underline-offset: 4px;
+  }
+  span{
+    color: var(--text-highlight);
+    text-decoration: none;
+  }
+}
+
+.description{
+  a{
+    color: var(--text-highlight);
+    text-underline-offset: 4px;
+
+    &:hover{
+    color: #B79A67;
+  }
+  }
+  
+}
+
+.room-description{
+  span{
+    color: var(--text-highlight);
+    text-decoration: none;
+    
+  }
+}
+
+.privacy{
+  max-width: 954px !important;
+}
+
+
+.restaurant-detail{
+  //  padding: 3rem;
+  @include respond(sm){
+    padding: 0 !important;
+  }
+}
+
+.arrow-btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+

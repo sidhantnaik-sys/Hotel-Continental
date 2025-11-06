@@ -1,0 +1,141 @@
+@import 'variables';
+
+.site-footer-events {
+  // background: var(--hc-events-footer); 
+  background-color: var(--footer-background) !important;
+  color: #fff;
+  font-size: 0.95rem;
+  // min-height: 434px;
+
+  @include respond(xl) {
+    padding: 0 120px;
+  }
+
+  .eventss {
+
+    .Address {
+      padding-left: 5rem;
+
+      @include respond(md) {
+        padding-left: 0;
+      }
+
+      @include respond(sm) {
+        padding-left: 0;
+      }
+    }
+
+    .footer-logo-link {
+      .footer-logo {
+        height: 125px;
+        width: auto;
+
+        @include respond (sm) {
+          height: 75px;
+        }
+      }
+    }
+
+    .footer-title {
+      font-size: 48px;
+      font-weight: 400;
+      font-family: $font-base ;
+
+    }
+
+    .footer-label {
+      font-family: $font-second;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      color: #FFFFFFB2;
+      font-size: 16px;
+    }
+
+    .footer-phone {
+      text-decoration: none;
+      color: inherit; // keeps it same color as surrounding text
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      text-underline-offset: 4px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .social-icons i {
+      font-size: 1.2rem;
+      // color: #fff;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #d4b89f;
+      }
+    }
+
+    .partner-logos-hc {
+      display: flex;
+      justify-content: flex-end;
+
+      @include respond(sm) {
+        justify-content: start;
+      }
+
+
+
+      img {
+        max-height: 34px;
+        max-width: 112px;
+        // filter: brightness(0) invert(1);
+      }
+    }
+
+    .footer-bottom {
+      font-family: $font-second;
+      font-size: 14px;
+
+      a {
+        color: #ccc;
+        text-decoration: none;
+
+        &:hover {
+          color: #fff;
+          text-decoration: underline;
+        }
+      }
+
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+@include respond(md) {
+  .site-footer-events {
+    .row {
+      // flex-direction: column !important;
+    }
+
+    .col-md-3,
+    .Address {
+      width: 100% !important;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .partner-logos {
+      justify-content: flex-end !important;
+
+
+
+    }
+
+    .footer-bottom {
+
+      align-items: flex-start !important;
+      gap: 0.75rem;
+    }
+  }
+}

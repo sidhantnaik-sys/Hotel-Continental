@@ -1,0 +1,341 @@
+@import 'header';
+@import 'menu_annen';
+@import 'footer';
+
+.font {
+    font-size: 36px !important;
+    top: -9.5% !important;
+}
+
+.ourmenu {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--theater-bg);
+    margin-bottom: 70px;
+    @include respond(xl){
+    padding: 150px 120px !important;
+    }
+    @include respond (sm){
+      padding:10px 5px;
+      margin-bottom: 80px;
+    }
+
+    .ourmenu-left,
+    .Chambre-right {
+        flex: 1 1 50%;
+    }
+
+    .ourmenu-left {
+        background-color: var(--theater-bg);
+        color: black;
+        @include flex-center;
+        padding: 3rem;
+        @include respond(sm){
+          padding: 2rem !important;
+        }
+        padding-left: 0;
+
+        .ourmenu-content {
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+
+            h2 {
+                font-family: $font-base;
+                font-size: 40px;
+                font-weight: 400;
+                margin-bottom: 1.5rem;
+                color: var(--chmbr-title);
+            }
+
+            p {
+                font-family: $font-second;
+                // font-size: 14px;
+                line-height: 1.6;
+                font-weight: 400;
+                margin-bottom: 1rem;
+                color: var(--para-text);
+
+                &.subtext {
+                    color: var(--button-color-stay);
+                    font-size: 1rem;
+                }
+            }
+
+            .link-row {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+
+
+                .Chambre-link1,
+                .Chambre-link2 {
+                    display: inline-block;
+                    margin-top: 1rem;
+                    color: $white;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    font-family: $font-second;
+                    text-decoration: none;
+                    font-weight: 400;
+                    padding-bottom: 48px;
+                    transition: text-decoration 0.3s;
+
+                    &:hover {
+                        text-decoration: underline;
+                        text-underline-offset: 8px;
+                    }
+                }
+
+            }
+
+            .Chambre-btn {
+                padding: 10px 25px;
+                border: 1px solid #A48243;
+                background: transparent;
+                color: $white;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 14px;
+                letter-spacing: 1px;
+                font-weight: 500;
+                transition: 0.3s ease;
+
+                &:hover {
+                    background-color: $white;
+                    color: #A48243;
+                }
+            }
+        }
+    }
+
+
+    .Chambre-right {
+        display: flex;
+        align-items: stretch;
+
+        img {
+            width: 100%;
+            height: 100%;
+            height: 502px;
+            object-fit: cover;
+            display: block;
+            @include respond(sm){
+              height: 302px;
+            }
+
+        }
+    }
+
+    @include respond(sm) {
+        flex-direction: column;
+
+        .Chambre-left,
+        .Chambre-right {
+            flex: 1 1 100%;
+        }
+
+        .Chambre-left {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .Chambre-content {
+            max-width: 100%;
+        }
+
+        .Chambre-right {
+            img {
+                height: 350px;
+            }
+        }
+    }
+}
+
+
+.textcolor {
+    h1,h2,h3,h4,h5,h6 {
+        color: #F0EBE3 !important;
+    }
+
+    p {
+        color: #F0EBE3 !important;
+    }
+
+}
+
+.chambre-annen {
+  display: flex;
+  flex-wrap: wrap;
+
+  .chambre-annen-left,
+  .chambre-annen-right {
+    flex: 1 1 50%;
+  }
+
+  // Left Section → Content
+  .chambre-annen-left {
+    background-color: var(--chmbr-bg);
+    color: black;
+    @include flex-center;
+    padding: 3rem;
+
+    .chambre-annen-content {
+      max-width: 441px;
+      @include flex-column;
+      text-align: center;
+
+      span{
+        color:#C2A679 !important;
+      }
+
+      h2 {
+        font-family: $font-base;
+        font-size: 40px;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+        color: var(--chmbr-title);
+      }
+
+      p {
+        font-family: $font-second;
+        line-height: 1.6;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        color: var(--para-text);
+      }
+
+      .link-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        .chambre-annen-link1,
+        .chambre-annen-link2 {
+          display: inline-block;
+          margin-top: 1rem;
+          color: $white;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-family: $font-second;
+          text-decoration: none;
+          font-weight: 400;
+          padding-bottom: 48px;
+          transition: text-decoration 0.3s;
+
+          &:hover {
+            text-decoration: underline;
+            text-underline-offset: 8px;
+          }
+        }
+      }
+
+      .chambre-annen-btn {
+        padding: 10px 25px;
+        border: 1px solid #A48243;
+        background: transparent;
+        color: $white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 500;
+        transition: 0.3s ease;
+
+        &:hover {
+          background-color: $white;
+          color: #A48243;
+        }
+      }
+    }
+  }
+
+  // Right Section → Carousel
+  .chambre-annen-right {
+  display: flex;
+  align-items: stretch;
+  height: 662px;
+  overflow: hidden; // ✨ hides any sub-pixel gap
+  .carousel-item{
+    height: 100%;
+  
+  img {
+    flex: 1; // ensures it stretches exactly
+    width: 100%;
+    height: 101%; // instead of hardcoded 662px
+    object-fit: cover;
+    display: block;
+  }
+}
+}
+
+
+  // ✅ Mobile Layout → Content on Top, Carousel Below
+  @include respond(sm) {
+    flex-direction: column;
+
+    .chambre-annen-left,
+    .chambre-annen-right {
+      flex: 1 1 100%;
+    }
+
+    .chambre-annen-left {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .chambre-annen-content {
+      max-width: 100%;
+    }
+
+    .chambre-annen-right {
+      img {
+        height: 350px;
+      }
+    }
+  }
+}
+
+.bgcolor1{
+  background-color: var(--theater-bg) !important;
+}
+
+.bgcolor{
+  background-color: var(--theater-bg) !important;
+   h1,h2,h3,h4,h5,h6 {
+        color: #C2A679 !important;
+    }
+
+    p {
+        color: #FFFFFFCC !important;
+    }
+    span{
+       color: #C2A679 !important;
+    }
+    a{
+      color: #C2A679 !important;
+    }
+
+}
+
+
+.padding{
+  padding-left: 40px !important;
+  padding-right: 0 !important;
+}
+
+
+.bg-annen{
+  background-color: black;
+}
+
+.hovera{
+  a{
+    color:white;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}

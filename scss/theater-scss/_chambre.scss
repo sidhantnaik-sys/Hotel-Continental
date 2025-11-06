@@ -1,0 +1,140 @@
+span {
+    color: var(--text-highlight);
+    text-decoration: none;
+}
+
+.aunderline{
+    a {
+    color: var(--text-highlight) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+    }
+}
+
+
+.container-portrait-chambre {
+  background-color: var(--room-bg);
+
+
+  .portrait-gallery-chambre {
+    max-height: 761px;
+    height: 100vh; // ✅ full viewport height
+    // padding: 2rem;
+    @include flex-column; // ✅ vertically center
+    //   background-size: cover;
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   position: relative;
+    z-index: 1;
+    background-color: var(--room-bg);
+
+
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 69.15%, #000000 99.44%),
+      //   linear-gradient(180deg, #000000 12.05%, rgba(0, 0, 0, 0) 46.06%),
+      //   linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+
+      background-color: var(--room-bg);
+
+
+
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .container-fluid {
+      padding-left: 50px;
+      padding-right: 0;
+
+      @include respond(sm) {
+        padding: 9px !important;
+      }
+    }
+
+    .portrait-title {
+      color: var(--h1-color);
+      font-size: 2.5rem;
+      font-family: $font-base;
+      margin-bottom: 47px;
+    }
+
+    .portrait-desc {
+      color: var(--p-color);
+      font-family: $font-second;
+      font-size: 16px;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      margin-top: 40px;
+
+      @include respond(md) {
+        max-width: 600px;
+      }
+    }
+
+    .portrait-carousel {
+      overflow: hidden;
+      position: relative;
+      height: 420px; // Increased height to fit big images
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 60px;
+
+      .carousel-inner {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .carousel-track {
+        display: flex;
+        width: fit-content;
+        animation: scroll-loop 25s linear infinite;
+        align-items: center;
+      }
+
+      .portrait-card {
+        flex: 0 0 auto;
+        margin-right: 80px;
+        text-align: center;
+
+        .portrait-image-wrapper {
+          img {
+            display: block;
+            object-fit: cover;
+            border-radius: 0;
+            width: 272px;
+            height: 330px;
+          }
+        }
+
+        // Make every odd card bigger
+        &:nth-child(odd) {
+          .portrait-image-wrapper img {
+            width: 328px;
+            height: 382px;
+          }
+        }
+      }
+
+    }
+
+    @keyframes scroll-loop {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

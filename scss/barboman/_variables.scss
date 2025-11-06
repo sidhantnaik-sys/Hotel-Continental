@@ -1,0 +1,473 @@
+// ============================================
+// 🎨 DESIGN SYSTEM VARIABLES FOR YOUR THEME
+// ============================================
+
+
+
+$pitch: #a58d6f;
+$dark-brown :#3e2b0f;
+
+
+$white: #ffffff;
+$black: #000000;
+$darkest-brown: #0B0704;
+
+
+
+
+/* style.scss or _theme.scss */
+
+
+
+body.summer {
+  --primary-color: #EEE4D6;
+  --secondary-color: #967436;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #3A2A17;
+  --luxury-comfort-heading: #F0EBE3;
+  --luxury-comfort-background: #FAF7F3;
+  --luxury-comfort-onhover-content: #26160B;
+  --og-suite-background: #ffffff;
+  --overly-background-color: #A48243F0;
+  --luxury-right: #E4D7C3;
+  --staycation-background: #ffffff;
+  --button-color-stay: #816636;
+  --Utforsk-background: #ffffff;
+  --packer-background: #F0EBE3;
+  --packer-overlay: #47330FF5;
+  --hero-overlay: linear-gradient(180deg, rgba(38, 22, 11, 0) 78.06%, rgba(38, 22, 11, 0.5) 94.62%),
+    linear-gradient(0deg, rgba(164, 130, 67, 0.08), rgba(164, 130, 67, 0.08));
+  --line-color: #E4D7C3;
+  --en-av-text: #967436;
+  --logo-color-av: #96743699;
+  --footer-background: #47330F;
+  --amenities-bg: #EEE4D6;
+  --room-bg: #F3EBE0;
+  --theater-bg: #000000;
+  --menu-title: #BBA568;
+  --chmbr-bg: #26160B;
+  --chmbr-title: #C2A679;
+  --para-text: #FFFFFFCC;
+  --footer-background-theater: #26160B;
+  --p-color: #0B0704CC;
+  --h1-color: #3A2A17;
+  --text-highlight: #816636;
+  --annen-highlight:#C2A679;
+  --p-annen:#FFFFFFCC;
+  --hc-events-footer:#0B0704;
+  --hc-events-bg-color:#26160B ;
+  --about-us-hc:#D3BE9D;
+  --casbarstory-bg:#2A5A67;
+  --casbar-bg:#19363E;
+
+}
+
+
+
+body.winter {
+  --primary-color: #DDCAAF;
+  --secondary-color: #967436;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #3A2A17;
+  --luxury-comfort-heading: #F0EBE3;
+  --luxury-comfort-background: #816636;
+  --luxury-comfort-onhover-content: #ffffff;
+  --og-suite-background: #EEE4D6;
+  --overly-background-color: #A48243F0;
+  --luxury-right: #3A2A17;
+  --staycation-background: #F3EBE0;
+  --button-color-stay: #816636;
+  --utforsk-background: #F3EBE0;
+  --packer-background: #E4D7C3;
+  --packer-overlay: #47330FF5;
+  --hero-overlay: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  --line-color: #DDCAAF;
+  --en-av-text: #D3BE9D;
+  --logo-color-av: #BBA568;
+  --footer-background: #47330F;
+  --amenities-bg: #EEE4D6;
+  --room-bg: #F3EBE0;
+  --theater-bg: #000000;
+  --menu-title: #BBA568;
+  --chmbr-bg: #26160B;
+  --chmbr-title: #C2A679;
+  --para-text: #FFFFFFCC;
+  --footer-background-theater: #26160B;
+  --p-color: #0B0704CC;
+  --h1-color: #3A2A17;
+  --text-highlight: #816636;
+  --annen-highlight:#C2A679;
+  --p-annen:#FFFFFFCC;
+  --hc-events-footer:#0B0704;
+  --hc-events-bg-color:#211604 ;
+  --about-us-hc:#D3BE9D;
+  --casbarstory-bg:#2A5A67;
+  --casbar-bg:#19363E;
+}
+
+
+
+// Example variables (you should define these in _variables.scss or above)
+$font_base: Gilda Display;
+$font_second: Instrument Sans;
+$font_casbar: Tox Typewriter;
+
+.content {
+  color: #333;
+  line-height: 1.6;
+
+  // Headings
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font_base;
+    font-weight: 400;
+    color: var(--h1-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 44px;
+  }
+
+  h3 {
+    font-size: 36px;
+  }
+
+  h4 {
+    font-size: 26px;
+  }
+
+  h5 {
+    font-size: 22px;
+  }
+
+  h6 {
+    font-size: 19px;
+  }
+
+  // Paragraphs
+  p {
+    font-family: $font_second;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--p-color);
+  }
+
+  // Other elements...
+  a {
+    color: #816636;
+    text-decoration: none;
+
+    &:hover {
+      color: #816636;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+
+  ul,
+  ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: $font_second;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    font-family: $font_second;
+    @include respond(md){
+      font-size: 14px;
+    }
+    @include respond(sm){
+      font-size: 14px;
+    }
+  }
+
+
+
+  blockquote {
+    border-left: 4px solid #ccc;
+    padding-left: 1rem;
+    color: #666;
+    font-style: italic;
+    margin: 1.5rem 0;
+  }
+
+
+
+  @media (max-width: 991px) {
+    h1 {
+      font-size: 48px;
+    }
+
+    h2 {
+      font-size: 36px;
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+
+    h4 {
+      font-size: 22px;
+    }
+
+    h5 {
+      font-size: 20px;
+    }
+
+    h6 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 42px;
+    }
+
+    h2 {
+      font-size: 32px;
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+
+    h4 {
+      font-size: 22px;
+    }
+
+    h5 {
+      font-size: 20px;
+    }
+
+    h6 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 26px;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+
+    h4 {
+      font-size: 20px;
+    }
+
+    h5 {
+      font-size: 18px;
+    }
+
+    h6 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+
+.h1p {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font_base;
+    font-weight: 400;
+    
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 60px !important;
+  }
+
+  h2 {
+    font-size: 44px !important;
+  }
+
+  h3 {
+    font-size: 36px !important;
+  }
+
+  h4 {
+    font-size: 26px !important;
+  }
+
+  h5 {
+    font-size: 22px !important;
+  }
+
+  h6 {
+    font-size: 19px !important;
+  }
+
+  // Paragraphs
+  p {
+    font-family: $font_second;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    
+  }
+  @media (max-width: 991px) {
+    h1 {
+      font-size: 40px !important;
+    }
+
+    h2 {
+      font-size: 36px !important;
+    }
+
+    h3 {
+      font-size: 34px !important;
+    }
+
+    h4 {
+      font-size: 32px !important;
+    }
+
+    h5 {
+      font-size: 30px !important;
+    }
+
+
+    p {
+      font-size: 14px !important;
+    }
+
+    li {
+      font-size: 14px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 24px !important;
+    }
+
+    h2 {
+      font-size: 22px !important;
+    }
+
+    h3 {
+      font-size: 20px !important;
+    }
+
+    h4 {
+      font-size: 18px !important;
+    }
+
+    h5 {
+      font-size: 16px !important;
+    }
+
+
+    p {
+      font-size: 14px !important;
+    }
+
+    li {
+      font-size: 14px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 24px !important;
+    }
+
+    h2 {
+      font-size: 22px !important;
+    }
+
+    h3 {
+      font-size: 20px !important;
+    }
+
+    h4 {
+      font-size: 18px !important;
+    }
+
+    h5 {
+      font-size: 16px !important;
+    }
+
+
+    p {
+      font-size: 14px !important;
+    }
+
+    li {
+      font-size: 14px !important;
+    }
+
+  }
+}
+
+.p1 {
+  p {
+    font-size: 16px !important;
+    @media (max-width: 991px){
+      font-size: 14px !important;
+    } 
+    @media (max-width: 774px){
+      font-size: 14px !important;
+    } 
+   }
+}
+
+.a1{
+  a {
+    color: #816636;
+     text-decoration: underline !important;
+     text-underline-offset: 3px;
+
+    &:hover {
+      color: #816636;
+      text-decoration: underline;
+      
+    }
+  }
+}

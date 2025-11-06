@@ -1,0 +1,947 @@
+@import 'footer';
+@import 'header';
+@import 'mixins';
+@import 'hero';
+
+@font-face {
+  font-family: "Tox Typewriter";
+  src: url("assets/font/tox_typewriter/Tox Typewriter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.menu-section-casbar {
+  //   background-color: var(--theater-bg);
+  padding: 4rem 2rem;
+
+  .section-heading {
+    color: $white;
+    font-size: 48px;
+    margin-bottom: 65px;
+    font-weight: 400;
+    font-family: $font-base;
+
+    @include respond (sm) {
+      font-size: 30px;
+    }
+  }
+
+  .menu-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 26px;
+  }
+
+  .menu-card {
+    width: 270px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+
+    .image-wrapper {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 0;
+        transition: transform 0.9s ease;
+        display: block;
+      }
+
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(51.87% 51.87% at 61.04% 65.83%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.34) 100%)
+          /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+        ;
+
+        // pointer-events: none; 
+      }
+
+      &:hover img {
+        transform: scale(1.1);
+      }
+    }
+
+
+    .overlay-title {
+      position: absolute;
+      top: -11%;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 250px;
+      width: 100%;
+      font-size: clamp(28px, 4vw, 40px);
+      font-family: $font-casbar;
+      font-weight: 400;
+      color: var(--menu-title1);
+      text-shadow: 0 0 3px rgb(25, 25, 25);
+      z-index: 2;
+
+
+      white-space: normal;
+      word-break: break-word;
+      text-align: center;
+
+
+      @include respond(md) {
+        top: -37px;
+      }
+
+      @include respond(sm) {
+        top: -27px;
+      }
+    }
+
+
+
+
+    .view-button {
+      display: inline-block;
+      margin-top: 1rem;
+      color: $white;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-family: $font-second;
+      text-decoration: none;
+      font-weight: 400;
+
+      padding-bottom: 2px;
+      transition: text-decoration 0.3s;
+
+      &:hover {
+
+        text-decoration: underline;
+        text-underline-offset: 8px;
+      }
+    }
+  }
+}
+
+
+.casbar-bg {
+  background-color: var(--casbar-bg);
+}
+
+
+.story-section-casbar {
+  background-color: var(--casbarstory-bg);
+  padding: 0 !important;
+  color: $white;
+
+  .story-inner {
+    display: flex;
+    // max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+    align-items: center;
+    padding: 0 !important;
+
+    @include respond(md) {
+      gap: 0;
+    }
+
+    .story-image {
+      flex: 1;
+      // padding-left: 35px;
+      padding: 0;
+
+      @include respond (sm) {
+        padding: 0;
+      }
+    }
+
+    .story-content {
+      flex: 1;
+      padding: 0;
+
+      @include respond(sm) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+    }
+
+    .story-image {
+      img {
+        width: 100%;
+        height: 664px;
+        display: block;
+        object-fit: cover;
+
+        @include respond (sm) {
+          height: 342px;
+        }
+      }
+
+      .carousel-inner {
+        border: none;
+      }
+
+      .carousel-item {
+        transition: opacity 0.8s ease-in-out;
+      }
+    }
+
+    .story-content {
+      @include respond (sm) {
+        padding-top: 0;
+      }
+
+      h2 {
+        font-size: 48px;
+        font-family: $font-casbar;
+        margin-bottom: 20px;
+        font-weight: 500;
+
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--para-text);
+        margin-bottom: 30px;
+        max-width: 500px;
+        font-family: $font-casbar;
+
+        @include respond(sm) {
+          font-size: 14px !important;
+        }
+      }
+
+      .btn-book {
+        padding: 8.5px 25px;
+        border: 1px solid #A48243;
+        background: #00000033;
+        color: $white;
+        height: 40px;
+        align-items: center;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        transition: 0.3s ease;
+        border-radius: 2px;
+
+        &:hover {
+          background-color: $white;
+          color: #A48243;
+
+        }
+      }
+    }
+  }
+}
+
+@include respond(sm) {
+  .story-inner {
+    flex-direction: column;
+
+    .story-content {
+      text-align: center;
+      padding-top: 30px;
+    }
+  }
+}
+
+.bottled-selections-casbar {
+  background-color: var(--casbar-bg);
+  color: #FFFFFFCC;
+  font-family: $font-casbar !important;
+  padding-bottom: 140px !important;
+
+  @include respond(sm) {
+    padding-bottom: 20px !important;
+  }
+
+  p {
+    font-family: $font-casbar !important;
+  }
+
+  img {
+    height: 576px;
+    max-height: 576px;
+    object-fit: cover;
+    border-radius: 0;
+
+    @include respond(sm) {
+      height: 280px;
+      max-height: 280px;
+      width: 100%;
+    }
+
+    @include respond(md) {
+      height: 380px;
+      max-height: 380px;
+      width: 100%;
+    }
+  }
+
+  .bottle-content {
+    // max-width: 488px;
+
+    @include respond(xl) {
+      padding-right: 40px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 18px;
+      font-family: $font-casbar;
+    }
+    .menu-title{
+      font-size: 18px;
+    }
+
+
+    .nav-tabs {
+      border: none;
+      margin: 32px 0;
+      justify-content: flex-start;
+      // gap: 20px;
+      font-family: $font-casbar;
+      position: relative;
+      // max-width: 401px;
+      overflow-x: auto; // allow horizontal scrolling
+      overflow-y: hidden; // hide vertical scrollbar
+      white-space: nowrap; // prevent wrapping
+      scrollbar-width: none; // Firefox hide scrollbar
+      -ms-overflow-style: none; // IE/Edge hide scrollbar
+
+      &::-webkit-scrollbar {
+        display: none; // Chrome/Safari hide scrollbar
+      }
+
+      .nav-item {
+        flex: 0 0 auto; // keep each tab from shrinking
+      }
+
+
+
+
+
+      .nav-link {
+        background: transparent !important;
+        color: #ccc;
+        border: none;
+        border-radius: 0;
+        // margin-right: 1.5rem;
+        padding: 4.5px 20px;
+        font-family: $font-casbar;
+        font-size: 19px;
+        transition: all 0.3s ease;
+        position: relative;
+
+        @include respond(sm) {
+          font-size: 14px;
+        }
+
+        &.active {
+          background: #2A5A67 !important;
+          color: #FFFFFF;
+          border-bottom: 1.5px solid white;
+
+          // &::after {
+          //   content: "";
+          //   position: absolute;
+          //   bottom: -9px;
+          //   left: -10px;
+          //   width: calc(100% + 24px);
+          //   height: 2px;
+          //   background: #c8a963;
+          // }
+        }
+
+
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+
+    .nav-tabs::after {
+      content: "";
+      display: block;
+      width: calc(100% + 100px);
+      border-bottom: 1px solid #FFFFFF;
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+    }
+
+    /* scroll wrapper */
+    .tabs-scroll-wrapper {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      /* smooth touch scrolling on iOS */
+      margin-bottom: 8px;
+      /* space for underline */
+    }
+
+    /* hide native scrollbar if you want (optional) */
+    // .tabs-scroll-wrapper::-webkit-scrollbar { height: 6px; } /* visible if you want, remove to hide */
+
+    /* make the UL a single non-wrapping flex row */
+    .nav-tabs {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      /* prevent wrapping */
+      justify-content: flex-start !important;
+      /* keep items left so they can scroll */
+      // gap: 9px;
+      padding: 0;
+      margin: 32px auto;
+      position: relative;
+      white-space: nowrap;
+      /* extra safety */
+    }
+
+    /* ensure each item doesn't shrink */
+    .nav-item {
+      flex: 0 0 auto !important;
+    }
+
+    /* prevent the links/buttons from wrapping */
+    .nav-link {
+      display: inline-block;
+      white-space: nowrap !important;
+      // padding: 0.3rem 0.5rem;
+      // margin-right: 1.5rem;
+    }
+
+
+
+    .wine-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 18px;
+      margin: 0;
+
+      li {
+        margin-bottom: 18px;
+
+        .dish-price {
+          width: 200px;
+          font-family: $font-casbar;
+          color: #F0EBE3;
+          font-size: 18px;
+          font-weight: 400;
+          display: flex;
+          justify-content: end;
+        }
+
+        .list_heading {
+
+          font-family: $font-casbar;
+          font-weight: 500 !important;
+          font-size: 18px;
+          color: white;
+
+          @include respond(sm) {
+            font-size: 14px;
+          }
+        }
+
+        .list_line {
+          font-family: $font-casbar;
+          display: block;
+          color: #FFFFFFCC;
+          font-size: 18px;
+          margin-top: 0.2rem;
+          font-weight: 400 !important;
+
+          @include respond(sm) {
+            font-size: 14px;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+.our-menu-section-casbar {
+  background-color: var(--casbar-bg);
+  color: #FFFFFFCC;
+
+  .menu-content {
+    // width: 520px;
+
+    padding-right: 80px;
+    padding-left: 3rem;
+
+    @include respond(md) {
+      padding-right: 2px;
+      padding-left: 2px;
+    }
+
+    p {
+      font-family: $font-casbar;
+    }
+  }
+
+  .menu-title {
+    font-size: 2rem;
+    font-family: $font-casbar;
+    color: #FFFFFFCC !important;
+    margin-bottom: 18px;
+  }
+
+  .nav-tabs {
+
+    padding: 0;
+    // gap: 9px;
+
+    // max-width: 468px;
+    // min-width: max-content;
+    border: none;
+    margin: 32px 0;
+    justify-content: flex-start;
+    // border-bottom:1px solid #FFFFFF;
+    font-family: $font-casbar;
+    position: relative;
+    overflow-x: auto; // allow horizontal scrolling
+    overflow-y: hidden; // hide vertical scrollbar
+    white-space: nowrap; // prevent wrapping
+    scrollbar-width: none; // Firefox hide scrollbar
+    -ms-overflow-style: none; // IE/Edge hide scrollbar
+
+
+
+    &::-webkit-scrollbar {
+      display: none; // Chrome/Safari hide scrollbar
+    }
+
+    .nav-item {
+      flex: 0 0 auto; // keep each tab from shrinking
+    }
+
+
+
+
+
+
+    .nav-link {
+      background: transparent !important;
+      color: #ccc;
+      border: none;
+      border-radius: 0;
+      // margin-right: 1.5rem;
+      padding: 4.5px 20px;
+      font-family: $font-casbar;
+      font-size: 19px;
+      transition: all 0.3s ease;
+      position: relative;
+
+      @include respond(sm) {
+        font-size: 14px;
+      }
+
+      &.active {
+        background: #2A5A67 !important;
+        color: #ffffff;
+        border-bottom: 1.5px solid white;
+      }
+
+
+    }
+  }
+
+  .nav-tabs::after {
+    content: "";
+    display: block;
+    width: calc(100% + 100px);
+    border-bottom: 1px solid #FFFFFF;
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+  }
+
+  /* scroll wrapper */
+  .tabs-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* smooth touch scrolling on iOS */
+    margin-bottom: 8px;
+    /* space for underline */
+  }
+
+  /* hide native scrollbar if you want (optional) */
+  // .tabs-scroll-wrapper::-webkit-scrollbar { height: 6px; } /* visible if you want, remove to hide */
+
+  /* make the UL a single non-wrapping flex row */
+  .nav-tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    /* prevent wrapping */
+    justify-content: flex-start !important;
+    /* keep items left so they can scroll */
+    // gap: 9px;
+    padding: 0;
+    margin: 32px 0;
+    position: relative;
+    white-space: nowrap;
+    /* extra safety */
+  }
+
+  /* ensure each item doesn't shrink */
+  .nav-item {
+    flex: 0 0 auto !important;
+  }
+
+  /* prevent the links/buttons from wrapping */
+  .nav-link {
+    display: inline-block;
+    white-space: nowrap !important;
+    // padding: 0.3rem 0.5rem;
+    // margin-right: 1.5rem;
+  }
+
+
+
+  .tab-content {
+    .dish-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 18px;
+
+        .dish-price {
+          width: 200px;
+          font-family: $font-casbar;
+          color: #F0EBE3;
+          font-size: 18px;
+          font-weight: 400;
+          display: flex;
+          justify-content: end;
+        }
+
+        .list_heading {
+
+          font-family: $font-casbar;
+          font-weight: 500 !important;
+          font-size: 18px;
+          color: white;
+
+          @include respond(sm) {
+            font-size: 14px;
+          }
+        }
+
+        .list_line {
+          font-family: $font-casbar;
+          display: block;
+          color: #FFFFFFCC;
+          font-size: 18px;
+          margin-top: 0.2rem;
+          font-weight: 400 !important;
+
+          @include respond(sm) {
+            font-size: 14px;
+          }
+        }
+
+      }
+    }
+  }
+
+  .menu-image {
+    padding: 0;
+
+    img {
+      border-radius: 0px;
+      width: 100%;
+      height: 640px;
+      max-height: 640px;
+      object-fit: cover;
+
+      @include respond(sm) {
+        height: 280px;
+        max-height: 280px;
+      }
+
+      @include respond(md) {
+        height: 380px;
+        max-height: 380px;
+      }
+    }
+  }
+}
+
+
+.container-portrait-casbar {
+  background-color: var(--casbarstory-bg);
+
+
+  .portrait-gallery-casbar {
+    max-height: 861px;
+    height: 100vh; // ✅ full viewport height
+    // padding: 2rem;
+    @include flex-column; // ✅ vertically center
+    //   background-size: cover;
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   position: relative;
+    z-index: 1;
+    background-color: var(--casbarstory-bg);
+
+
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 69.15%, #000000 99.44%),
+      //   linear-gradient(180deg, #000000 12.05%, rgba(0, 0, 0, 0) 46.06%),
+      //   linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+
+      background-color: var(--casbarstory-bg);
+
+
+
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .container-fluid {
+      padding-left: 50px;
+      padding-right: 0;
+
+      @include respond(sm) {
+        padding: 9px !important;
+      }
+    }
+
+    .portrait-title {
+      color: $white;
+      font-size: 2.5rem;
+      font-family: $font-casbar;
+      margin-bottom: 47px;
+    }
+
+    .portrait-desc {
+      color: var(--para-text);
+      font-family: $font-casbar;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      margin-top: 40px;
+
+      @include respond(md) {
+        max-width: 600px;
+      }
+    }
+
+    .portrait-carousel {
+      overflow: hidden;
+      position: relative;
+      height: 420px; // Increased height to fit big images
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 60px;
+
+      .carousel-inner {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .carousel-track {
+        display: flex;
+        width: fit-content;
+        animation: scroll-loop 25s linear infinite;
+        align-items: center;
+      }
+
+      .portrait-card {
+        flex: 0 0 auto;
+        margin-right: 80px;
+        text-align: center;
+
+        .portrait-image-wrapper {
+          img {
+            display: block;
+            object-fit: cover;
+            border-radius: 0;
+            width: 272px;
+            height: 330px;
+          }
+        }
+
+        // Make every odd card bigger
+        &:nth-child(odd) {
+          .portrait-image-wrapper img {
+            width: 328px;
+            height: 382px;
+          }
+        }
+      }
+
+    }
+
+    @keyframes scroll-loop {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+.opening-hours-section {
+  background: var(--casbar-bg);
+  color: #F0EBE3;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  font-family: $font-casbar;
+
+  @include respond(md) {
+    padding: 80px 9px;
+  }
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  .row {
+    // gap: 40px; 
+    align-items: center;
+
+
+    .opening-text {
+      padding-left: 140px;
+      padding-right: 100px;
+
+      @include respond(md) {
+        padding: 0 20px; // smaller padding on mobile
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: 400;
+        font-family: $font-casbar;
+      }
+
+      p {
+        font-family: $font-casbar;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 400;
+
+        @include respond(sm) {
+          font-size: 14px;
+        }
+      }
+
+      .opening-timings {
+        @include respond(xl) {
+          width: 402px;
+        }
+
+        margin-top: 124px;
+
+        @include respond(md) {
+          margin-bottom: 24px;
+        }
+
+        h6 {
+          font-family: $font-casbar;
+          font-size: 19px;
+          font-weight: 400;
+          margin-bottom: 18px;
+          color: #FFFFFF;
+        }
+
+        ul {
+          font-family: $font-casbar;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            font-family: $font-casbar;
+            color: #F0EBE3;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            margin-bottom: 8px;
+
+            @include respond(sm) {
+              font-size: 14px;
+            }
+
+            span:first-child {
+              color: #F0EBE3;
+              font-weight: 400;
+            }
+
+            span:last-child {
+              color: #F0EBE3;
+            }
+          }
+        }
+      }
+    }
+
+    .opening-image {
+      img {
+        width: 100%;
+        max-height: 664px;
+        border-radius: 0;
+        object-fit: cover;
+
+        @include respond(md) {
+          max-height: 364px;
+        }
+
+        @include respond(sm) {
+          max-height: 364px;
+        }
+      }
+    }
+  }
+}
+
+
+
+.ptt {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+.clist_line {
+  font-family: Instrument Sans;
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  margin-top: 0.2rem;
+  font-weight: 400 !important;
+}

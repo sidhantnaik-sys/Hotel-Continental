@@ -1,0 +1,578 @@
+@import 'footer';
+@import 'header';
+@import 'mixins';
+@import 'hero';
+
+.bg-color {
+  background-color: var(--hc-events-bg-color) !important;
+}
+
+.padding {
+  padding-top: 140px !important;
+}
+
+.aboutus-hc {
+  background-color: var(--about-us-hc) !important;
+}
+
+.about-section {
+  display: flex;
+  height: 664px;
+  overflow: hidden;
+
+  .about-cont {
+    height: 100% !important;
+  }
+
+  .row {
+    display: flex;
+    height: 100%;
+  }
+
+
+  .about-content,
+  .about-carousel {
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 100%;
+  }
+
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    background-color: var(--about-us-hc);
+
+    .about-inner {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      max-width: 441px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    .link-row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      .about-link-primary,
+      .about-link-secondary {
+        text-decoration: none;
+        color: #967436;
+        font-weight: 400;
+        transition: color 0.3s ease;
+        font-size: 14px;
+
+        &:hover {
+          color: #b88b4a;
+        }
+      }
+    }
+
+    .about-btn {
+      @include brown-button;
+    }
+  }
+
+
+  .about-carousel {
+    .carousel-inner {
+      height: 100%;
+
+      .carousel-item {
+        height: 100%;
+
+        img {
+          height: 101%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+
+  @include respond(sm) {
+    height: auto;
+
+    .row {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .about-content,
+    .about-carousel {
+      flex: 0 0 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .about-content {
+      order: 1;
+      padding: 30px 20px;
+      text-align: center;
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .link-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    .about-carousel {
+      order: 2;
+      height: auto;
+
+      .carousel-inner {
+        height: 320px;
+
+        .carousel-item img {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+
+}
+
+
+
+.hc-text-color {
+
+  h1,
+  h2,
+  h3 {
+    color: #3A2A17;
+  }
+
+  p {
+    color: #0B0704;
+  }
+}
+
+
+.wedding-gallery {
+  height: 100vh;
+  padding: 2rem 0;
+  @include flex-column;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 101%;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(33, 22, 4, 0) 69.15%, #26160B 99.44%),
+      linear-gradient(180deg, #26160B 12.05%, rgba(33, 22, 4, 0) 60.06%),
+      linear-gradient(0deg, rgba(33, 22, 4, 0.7), rgba(33, 22, 4, 0.7));
+
+
+    z-index: -1;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    //     background: linear-gradient(180deg, rgba(33, 22, 4, 0) 83.33%, #211604 100%),
+    // linear-gradient(180deg, #211604 0%, rgba(33, 22, 4, 0) 17.87%);
+
+  }
+
+  .portrait-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 48px;
+    margin-bottom: 20px;
+
+    a {
+      padding: 6.5px 24px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid #816636;
+      border-radius: 0;
+      transition: 0.3s ease;
+      font-size: 14px;
+      border-radius: 2px;
+
+      &.btn-primary {
+        background-color: #fff;
+        color: #816636;
+
+        &:hover {
+          background-color: #A48243;
+          color: #fff;
+        }
+      }
+
+      &.btn-secondary {
+        background-color: #00000033;
+        color: #FFFFFF;
+        border: 2px solid #A48243;
+
+        &:hover {
+          background-color: #FFFFFF;
+          color: #816636;
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: center;
+
+      a {
+        // width: 100%;
+        // max-width: 250px;
+        text-align: center;
+      }
+    }
+  }
+
+
+  .portrait-title {
+    color: $white;
+    font-size: 2.5rem;
+    font-family: $font-base;
+    margin-bottom: 47px;
+  }
+
+  .portrait-desc {
+    color: var(--para-text);
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    padding: 0 20px;
+    @include respond(sm){
+      padding: 0 40px;
+    }
+  }
+
+  .portrait-carousel {
+    overflow: hidden;
+    position: relative;
+    height: 420px; // Increased height to fit big images
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+
+    .carousel-inner {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: fit-content;
+      animation: scroll-loop 29s linear infinite;
+      align-items: center;
+    }
+
+    .portrait-card {
+      flex: 0 0 auto;
+      margin-right: 80px;
+      text-align: center;
+
+      .portrait-image-wrapper {
+        img {
+          display: block;
+          object-fit: cover;
+          border-radius: 0;
+          width: 328px;
+          height: 382px;
+        }
+      }
+
+      // Make every odd card bigger
+      &:nth-child(odd) {
+        .portrait-image-wrapper img {
+          width: 328px;
+          height: 382px;
+        }
+      }
+    }
+
+  }
+
+  @keyframes scroll-loop {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+
+
+
+
+.seating-video1 {
+  width: 100vw;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0;
+  object-fit: cover;
+
+  .img-fluid {
+    width: 100vw;
+  }
+
+  @media (max-width: 768px) {
+    border-radius: 6px;
+  }
+}
+
+.seating-plan-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+
+  li {
+    display: flex;
+    align-items: start;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+
+    .list-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .list-text {
+      flex: 1;
+    }
+  }
+}
+
+
+.wedding-info {
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #5c3927;
+  }
+
+  .section-description {
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .checklist {
+    list-style: circle !important;
+
+
+
+
+    li {
+      display: flex;
+    }
+  }
+
+  .dress-list,
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+
+      h6 {
+        color: #A48243;
+      }
+
+
+      i.icon-check {
+        display: inline-block;
+
+        height: 20px;
+        background: url('/wp-content/themes/your-theme/assets/icons/check.svg') no-repeat center;
+        background-size: contain;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .checklist-heading {
+    color: #A48243;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .checklist-title {
+    font-size: 18px !important;
+    color: #A48243;
+    font-family: $font_second;
+    font-weight: 600;
+  }
+}
+
+.order-speeches {
+  .list-unstyled {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: start;
+      gap: 10px;
+      margin-bottom: 12px;
+
+      .list-icon {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+
+      // p.list-text {
+      //   margin: 0;           
+      // //   color: #000;        
+      //   font-size: 16px;
+      //   font-weight: 500;
+      //   line-height: 1.5;
+      // }
+    }
+  }
+
+}
+
+.bg-hc-events {
+  background-color: #26160B !important;
+
+  h2 {
+    color: #CAB18B !important;
+  }
+
+  p {
+    color: #FFFFFFCC !important;
+  }
+}
+
+.bg-hc-event {
+  background-color: #26160B !important;
+}
+
+.bg-host {
+  background-color: #CAB18B !important;
+
+  h2,
+  h3 {
+    color: #3A2A17 !important;
+  }
+
+  p {
+    color: #0B0704 !important;
+  }
+}
+
+.chambre-p {
+  color: #3A2A17 !important;
+}
+
+.host {
+  color: #47330F !important;
+  font-family: $font_second;
+  font-size: 14px;
+}
+
+.host-btn {
+  @include brown-button();
+}
+
+
+.padding80 {
+
+  @include respond(xl){
+  padding: 80px !important;
+  }
+  
+}
+
+.padding120 {
+  @include respond(xl) {
+    padding: 0 120px !important;
+  }
+}
+
+
+.paddingresp {
+  @include respond(sm) {
+    padding-top: 10px;
+    padding-bottom: 10px !important;
+  }
+}
+
+.meeting-room-container {
+  .section-title {
+    font-weight: 400;
+    color: var(--h1-color); // gold tone like your screenshot
+  }
+
+  .floor-plan img {
+    max-width: 700px;
+    width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  table {
+    font-size: 0.95rem;
+    th {
+      white-space: nowrap;
+    }
+  }
+}

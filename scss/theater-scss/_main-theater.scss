@@ -1,0 +1,677 @@
+@import 'mixins';
+@import 'variables';
+@import 'hero';
+@import 'header';
+@import 'footer';
+@import 'chambre';
+
+// html,
+// body {
+//   overflow-x: hidden;
+//   padding: 0;
+//   margin: 0;
+//   background: black;
+// }
+
+
+.black-bg {
+  background-color: #000;
+  // color: #fff;
+}
+
+
+.menu-section {
+  background-color: var(--theater-bg);
+  padding: 4rem 2rem;
+
+  .section-heading {
+    color: $white;
+    font-size: 48px;
+    margin-bottom: 65px;
+    font-weight: 400;
+    font-family: $font-base;
+
+    @include respond (sm) {
+      font-size: 30px;
+    }
+  }
+
+  .menu-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 26px;
+  }
+
+  .menu-card {
+    width: 270px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+
+    .image-wrapper {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 0;
+        transition: transform 0.9s ease;
+        display: block;
+      }
+
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(51.87% 51.87% at 61.04% 65.83%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.24) 100%);
+
+
+
+        // pointer-events: none; 
+      }
+
+      &:hover img {
+        transform: scale(1.1);
+      }
+    }
+
+
+    .overlay-title {
+      position: absolute;
+      top: -11%;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 250px;
+      width: 100%;
+      font-size: clamp(28px, 4vw, 40px);
+      font-family: $font-base;
+      font-weight: 400;
+      color: var(--menu-title1);
+      text-shadow: 0 0 3px rgb(25, 25, 25);
+      z-index: 2;
+
+
+      white-space: normal;
+      word-break: break-word;
+      text-align: center;
+
+
+      @include respond(md) {
+        top: -37px;
+      }
+
+      @include respond(sm) {
+        top: -27px;
+      }
+    }
+
+
+
+
+    .view-button {
+      display: inline-block;
+      margin-top: 1rem;
+      color: $white;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-family: $font-second;
+      text-decoration: none;
+      font-weight: 400;
+
+      padding-bottom: 2px;
+      transition: text-decoration 0.3s;
+
+      &:hover {
+
+        text-decoration: underline;
+        text-underline-offset: 8px;
+      }
+    }
+  }
+}
+
+.container-portrait {
+  background-color: var(--theater-bg);
+}
+
+.portrait-gallery {
+  height: 100vh; // ✅ full viewport height
+  // padding: 2rem;
+  @include flex-column; // ✅ vertically center
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  @include respond(sm)
+  {
+    max-height: 600px;
+  }
+
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 69.15%, #000000 99.44%),
+    //   linear-gradient(180deg, #000000 12.05%, rgba(0, 0, 0, 0) 46.06%),
+    //   linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 69.15%, #000000 99.44%),
+      linear-gradient(180deg, #000000 12.05%, rgba(0, 0, 0, 0) 46.06%),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+
+
+
+    z-index: -1;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .container-fluid {
+    padding-left: 50px;
+    padding-right: 0;
+
+    @include respond(md){
+      padding: 12px !important;
+    }
+  }
+
+  .portrait-title {
+    color: $white;
+    font-size: 2.5rem;
+    font-family: $font-base;
+    margin-bottom: 47px;
+  }
+
+  .portrait-desc {
+    color: var(--para-text);
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+
+  .portrait-carousel {
+    overflow: hidden;
+    position: relative;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .carousel-inner {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: fit-content;
+      animation: scroll-loop 28s linear infinite;
+    }
+
+    .portrait-card {
+      flex: 0 0 auto;
+      width: 239px;
+      margin-right: 109px; // same as your gap
+      text-align: center;
+
+      .portrait-image-wrapper {
+
+
+        img {
+          width: 100%;
+          height: 292px;
+          display: block;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  @keyframes scroll-loop {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+
+.Chambre {
+  display: flex;
+  flex-wrap: wrap;
+
+  .Chambre-left,
+  .Chambre-right {
+    flex: 1 1 50%;
+  }
+
+  .Chambre-left {
+    background-color: var(--chmbr-bg);
+    color: black;
+    @include flex-center;
+    padding: 3rem;
+
+    .Chambre-content {
+      max-width: 441px;
+      @include flex-column;
+      text-align: center;
+
+      h2 {
+        font-family: $font-base;
+        font-size: 40px;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+        color: var(--chmbr-title);
+      }
+
+      p {
+        font-family: $font-second;
+        // font-size: 14px;
+        line-height: 1.6;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        color: var(--para-text);
+
+        a {
+          color: var(--para-text);
+          text-decoration: none;
+
+          &:hover {
+            color: white;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+          }
+        }
+
+        &.subtext {
+          color: var(--button-color-stay);
+          font-size: 1rem;
+        }
+      }
+
+      .link-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+
+
+        .Chambre-link1,
+        .Chambre-link2 {
+          display: inline-block;
+          margin-top: 1rem;
+          color: $white;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-family: $font-second;
+          text-decoration: none;
+          font-weight: 400;
+          padding-bottom: 48px;
+          transition: text-decoration 0.3s;
+
+          &:hover {
+            text-decoration: underline;
+            text-underline-offset: 8px;
+          }
+        }
+
+      }
+
+      .Chambre-btn {
+        padding: 8.5px 24px;
+        border: 1px solid #A48243;
+        background: transparent;
+        height: 40px;
+        align-items: center;
+        color: $white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        transition: 0.3s ease;
+        border-radius: 2px;
+
+        &:hover {
+          background-color: $white;
+          color: #A48243;
+        }
+      }
+    }
+  }
+
+
+  .Chambre-right {
+    display: flex;
+    align-items: stretch;
+
+    img {
+      width: 100%;
+      height: 100%;
+      height: 662px;
+      object-fit: cover;
+      display: block;
+
+    }
+  }
+
+  @include respond(sm) {
+    flex-direction: column;
+
+    .Chambre-left,
+    .Chambre-right {
+      flex: 1 1 100%;
+    }
+
+    .Chambre-left {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .Chambre-content {
+      max-width: 100%;
+    }
+
+    .Chambre-right {
+      img {
+        height: 350px;
+      }
+    }
+  }
+}
+
+
+
+.story-section {
+  background-color: var(--theater-bg);
+  padding: 60px 0;
+  color: $white;
+
+  .story-inner {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+    align-items: center;
+    padding: 0 20px;
+
+    .story-image {
+      flex: 1.5;
+      // padding-left: 35px;
+
+      @include respond (sm) {
+        padding: 0;
+      }
+    }
+
+    .story-content {
+      flex: 1;
+    }
+
+    .story-image {
+      img {
+        width: 100%;
+        height: 542px;
+        display: block;
+        object-fit: cover;
+
+        @include respond (sm) {
+          height: 342px;
+        }
+      }
+
+      .carousel-inner {
+        border: none;
+      }
+
+      .carousel-item {
+        transition: opacity 0.8s ease-in-out;
+      }
+    }
+
+    .story-content {
+      @include respond (sm) {
+        padding-top: 0;
+      }
+
+      h2 {
+        font-size: 48px;
+        font-family: $font-base;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--para-text);
+        margin-bottom: 30px;
+        max-width: 500px;
+        font-family: $font-second;
+      }
+
+      .btn-book {
+        padding: 8.5px 25px;
+        border: 1px solid #A48243;
+        background: transparent;
+        color: $white;
+        height: 40px;
+        align-items: center;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        transition: 0.3s ease;
+        border-radius: 2px;
+
+        &:hover {
+          background-color: $white;
+          color: #A48243;
+
+        }
+      }
+    }
+  }
+}
+
+@include respond(sm) {
+  .story-inner {
+    flex-direction: column;
+
+    .story-content {
+      text-align: center;
+      padding-top: 30px;
+    }
+  }
+}
+
+
+.offers-section-4 {
+
+  background-color: $black;
+  padding: 170px 40px !important;
+
+  @include respond (xl) {
+    padding: 170px 140px !important;
+  }
+
+  @include respond (sm) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+
+  .offer-card {
+
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+
+
+
+
+    img {
+      border-radius: 0;
+      width: 100%;
+      height: 432px;
+      min-height: 300px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+
+      @include respond(sm) {
+        height: 397px;
+      }
+    }
+
+    // &:hover img {
+    //   transform: scale(1.05);
+    // }
+
+
+
+    // Transparent overlay
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--Black-20, #00000033);
+
+      z-index: 1;
+      pointer-events: none; // allows clicks to go through
+    }
+
+    .offer-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      // background: rgba(0, 0, 0, 0.6);
+      color: $white;
+      padding: 1rem;
+      z-index: 2;
+
+
+    }
+
+    .static-content {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      font-family: $font-base;
+    }
+
+    .hover-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background: var(--overly-background-color);
+      color: $white;
+      transform: translateY(100%);
+      opacity: 0;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+      z-index: 1;
+
+      h4 {
+        font-family: $font-base;
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 16px;
+        font-family: $font-second;
+        font-weight: 400;
+      }
+
+      .explore-btn {
+        font-family: $font-second;
+        padding-top: 10px;
+        font-size: 14px;
+        background-color: transparent;
+        color: $white;
+        text-decoration: underline;
+        font-weight: 400;
+        border: none;
+        transition: background-color 0.3s ease;
+        text-underline-offset: 6px;
+
+        .arrow {
+          display: none;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover .arrow {
+          height: 1px;
+          display: inline-block;
+          transform: translateX(4px);
+
+        }
+
+        &:hover {
+          color: $white;
+          text-decoration: none;
+
+        }
+      }
+    }
+
+    &:hover {
+      .static-content {
+        visibility: hidden;
+      }
+
+      .hover-content {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+    }
+  }
+
+}
+
+
+.underline {
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+}
+
+
+.menycolor{
+  li{
+  
+  a{
+    color:#FFFFFFCC !important ;
+    text-decoration: none !important;
+
+    &:hover{
+      text-decoration: underline !important;
+      color: white !important;
+    }
+  }
+}
+}
+
+.color-white{
+  color: #000 !important;
+  text-decoration: none !important;
+}
