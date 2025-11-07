@@ -306,11 +306,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // This array holds all your container configs
   const switcherConfigs = [
-    { selector: '.header-container', top: '0px', right: '-12px' },
+    { selector: '.header-container', top: '0px', right: '-4px' },
     { selector: '.header-container-annen', top: '0px', right: '0px' },
     { selector: '.header-container-barboman', top: '24px', right: '0px' },
     { selector: '.header-container-casbar', top: '24px', right: '0px' },
-    { selector: '.language-nav1', top: '-14px', right: '-1px' },
+    { selector: '.language-nav1', top: '-14px', right: '8px' },
     { selector: '.suites', top: '0', left: '0' }
   ];
 
@@ -614,3 +614,72 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+// 
+// document.addEventListener("DOMContentLoaded", function() {
+//   const langItems = document.querySelectorAll(".trp-language-item-name");
+
+//   langItems.forEach(item => {
+//     item.style.setProperty("font-size", "16px", "important");
+//     item.style.setProperty("font-family", "Instrument Sans", "important");
+//     item.style.setProperty("font-weight", "600", "important"); // optional
+//   });
+// });
+
+
+// 
+document.addEventListener("DOMContentLoaded", function() {
+  const switcher = document.querySelector(".trp-language-switcher-inner");
+  if (!switcher) return;
+
+  const items = switcher.querySelectorAll(".trp-language-item");
+
+  // Only add separator if there are at least two items
+  if (items.length > 1) {
+    // Loop through all except the last item
+    items.forEach((item, index) => {
+      if (index < items.length - 1) {
+        const separator = document.createElement("span");
+        separator.textContent = " / ";
+        separator.classList.add("trp-lang-separator");
+        separator.style.cssText = "margin: 0 4px; font-weight: 400; color: #fff; ";
+        item.after(separator);
+      }
+    });
+  }
+});
+
+//
+document.addEventListener("DOMContentLoaded", function() {
+  const langItems = document.querySelectorAll(".trp-language-item");
+
+  langItems.forEach(item => {
+    item.style.setProperty("padding", "7px 3px", "important"); 
+    item.style.setProperty("align-items", "flex-start", "important");
+  });
+});
+
+// 
+document.addEventListener("DOMContentLoaded", function() {
+  const items = document.querySelectorAll(".trp-language-item");
+
+  items.forEach(item => {
+    const name = item.querySelector(".trp-language-item-name");
+    if (!name) return;
+
+    if (item.classList.contains("trp-language-item__current")) {
+      // Active language
+      name.style.setProperty("color", "#fff", "important");
+      name.style.setProperty("font-weight", "600", "important");
+    } else {
+      // Non-active languages
+      name.style.setProperty("color", "#FFFFFFCC", "important");
+    }
+
+    // Optional shared styles
+    name.style.setProperty("font-size", "13px", "important");
+    name.style.setProperty("font-family", '"Instrument Sans", sans-serif', "important");
+    // name.style.setProperty("font-weight", "600", "important");
+  });
+});
