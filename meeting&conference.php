@@ -66,7 +66,7 @@ get_header('hc_events'); ?>
                     // Fetch Meetings & Conferences posts
                     $meetings_conferences = new WP_Query(array(
                         'post_type' => 'meetings_conferences', // ✅ Custom post type slug
-                        'posts_per_page' => 4,
+                        'posts_per_page' => -1,
                         'orderby' => 'menu_order',
                         'order' => 'ASC',
                     ));
@@ -85,7 +85,14 @@ get_header('hc_events'); ?>
                             $price = get_field('price');
                             $amenities = get_field('amenities');
                             $description = get_field('description');
-                            $link = get_permalink();
+                            $offer_link = get_field('offer_button_url'); // ACF link field
+                            $link = '';
+
+                            if ($offer_link) {
+                                $link = is_array($offer_link) && isset($offer_link['url']) ? $offer_link['url'] : $offer_link;
+                            } else {
+                                $link = get_permalink();
+                            }
                             ?>
                             <div class="swiper-slide suite-card" data-category="<?php echo esc_attr(strtolower($category)); ?>">
                                 <a href="<?php echo esc_url($link); ?>">

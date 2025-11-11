@@ -35,6 +35,14 @@
             <?php endwhile; ?>
           <?php endif; ?>
         </div>
+
+        <div class=" p1 send-app pt-3">
+          <h6 class="footer-label footerlabelcolor">Jobb med oss</h6>
+
+          <?php the_field('footer_career_text', 'option'); ?>
+
+
+        </div>
       </div>
       <div class="col-md-8">
         <div class="row">

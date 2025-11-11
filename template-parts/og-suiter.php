@@ -35,16 +35,23 @@ $button_txt = get_field('button_txt');
         <div class="section-description">
 
           <div class="short-text">
-            <?php echo wp_kses_post($first_para); ?>
+            <?php echo wp_kses_post($section_description); ?>
+            <?php
+            $link = get_field('button_link1');
+            if ($link):
+              $link_url = $link['url'];
+              $link_title = $link['title'] ? $link['title'] : 'LES MER';
+              $link_target = $link['target'] ? $link['target'] : '_self';
+              ?>
+              <a class="view-all toggle-btn" href="<?php echo esc_url($link_url); ?>"
+                target="<?php echo esc_attr($link_target); ?>">
+                <?php echo esc_html($link_title); ?>
+              </a>
+            <?php endif; ?>
+
           </div>
 
-          <?php if (!empty($remaining_para)): ?>
-            <div class="full-text" style="display: none;">
-              <?php echo wp_kses_post($remaining_para); ?>
-            </div>
-
-            <button class="view-all toggle-btn">LES MER</button>
-          <?php endif; ?>
+          <!--  -->
 
         </div>
       </div>
@@ -54,9 +61,9 @@ $button_txt = get_field('button_txt');
         <div class="custom-select-wrapper">
           <select class="form-select suite-filter" aria-label="Filter suites">
             <option value="all category" selected>Alle kategorier</option>
-            <option value="continental">Continental</option>
-            <option value="junior">Junior</option>
-            <option value="royal">Royal</option>
+            <option value="suites">Suites</option>
+            <option value="jrsuites">JRsuites</option>
+            <option value="rooms">Rooms</option>
           </select>
           <!-- ✅ Add a simple line below -->
 
@@ -120,7 +127,7 @@ $button_txt = get_field('button_txt');
                           <p class="card-text"><?php echo esc_html($description); ?></p>
                         </div>
                         <span class="explore-btn">
-                           <?php echo strtoupper(esc_html($button_txt)); ?>
+                          <?php echo strtoupper(esc_html($button_txt)); ?>
                           <span class="arrow">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg"
                               alt="Arrow Icon" />

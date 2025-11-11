@@ -39,6 +39,20 @@ get_header(); ?>
         </div>
     </section>
 
+    <div class="wedding-details">
+        <?php
+        $seating_video = get_field('lead_video');
+        if ($seating_video): ?>
+            <div class="seating-video1 my-3 w-100">
+                <video controls class="img-fluid" autoplay muted loop playsinline>
+                    <source src="<?php echo esc_url($seating_video['url']); ?>"
+                        type="<?php echo esc_attr($seating_video['mime_type']); ?>">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        <?php endif; ?>
+    </div>
+
     <section class="about-us">
         <?php if (get_field('eco_title') || get_field('eco_content')): ?>
             <div class="sustainability container pb-5">
