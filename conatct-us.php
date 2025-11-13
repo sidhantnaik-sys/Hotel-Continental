@@ -61,97 +61,6 @@ get_header(); ?>
       </div>
   </section>
 
-
-  <div class="container-fluid cards py-5">
-    <div class="container carousel-wrapper position-relative">
-      <div class="carousel-header p-2">
-        <h1><?php the_field('room_cards_heading'); ?></h1>
-        <!-- <div class="carousel-buttons">
-
-        </div> -->
-      </div>
-      <div class="carousel-buttons">
-                <button class="carousel-prev arrow-btn">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-left.svg"
-                        alt="Previous Arrow">
-                </button>
-                <button class="carousel-next arrow-btn">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg"
-                        alt="Next Arrow">
-                </button>
-      </div>
-
-      <div class="row suite-cards">
-        <?php
-        $contact_cards = new WP_Query(array(
-          'post_type' => 'contact_cards',
-          'posts_per_page' => 3,
-          'orderby' => 'menu_order',
-          'order' => 'ASC',
-        ));
-
-        if ($contact_cards->have_posts()):
-          while ($contact_cards->have_posts()):
-            $contact_cards->the_post();
-
-            $title = get_the_title();
-            $image_summer = get_field('image_summer');
-            $image_winter = get_field('image_winter');
-            $image = ($season === 'summer') ? $image_summer : $image_winter;
-            $link = get_permalink();
-            $description_card = get_field('desc');
-            ?>
-
-            <div class="col-md-4 mb-4">
-              <a href="<?php echo esc_url($link); ?>">
-                <div class="card custom-card">
-                  <?php if ($image): ?>
-                    <img src="<?php echo esc_url($image['url']); ?>" class="card-img-top"
-                      alt="<?php echo esc_attr($image['alt']); ?>">
-                  <?php endif; ?>
-
-                  <div class="card-body">
-                    <div class="static-content">
-                      <h5 class="card-title"><?php echo esc_html($title); ?></h5>
-                    </div>
-
-                    <div class="hover-content">
-                      <h5 class="card-title"><?php echo esc_html($title); ?></h5>
-                      <?php if ($description_card): ?>
-                        <div class="card-row">
-                          <span class="card-text"><?php echo esc_html($description_card); ?></span>
-                        </div>
-                      <?php endif; ?>
-                      <span class="explore-btn">
-                        UTFORSK
-                        <span class="arrow">
-                          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="Arrow Icon" />
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-          <?php endwhile;
-          wp_reset_postdata();
-        else: ?>
-          <p>No rooms found.</p>
-        <?php endif; ?>
-      </div>
-
-
-    </div>
-  </div>
-
-
-
-
-
-
-
-
   <div class="garage-parking container pb-5">
     <h2><?php the_field('location_title'); // Garage Parking ?></h2>
 
@@ -165,6 +74,94 @@ get_header(); ?>
       <?php echo ($map_embed); ?>
     </div>
   </div>
+
+
+  <div class="container-fluid cards py-5">
+    <div class="container carousel-wrapper position-relative">
+      <div class="carousel-header p-2">
+        <h1><?php the_field('room_cards_heading'); ?></h1>
+      </div>
+
+      <!-- Carousel Buttons -->
+      <div class="carousel-buttons">
+        <button class="carousel-prev arrow-btn">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-left.svg" alt="Previous Arrow">
+        </button>
+        <button class="carousel-next arrow-btn">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" alt="Next Arrow">
+        </button>
+      </div>
+
+      <!-- Swiper Container -->
+      <div class="swiper suite-swiper">
+        <div class="swiper-wrapper">
+          <?php
+          $contact_cards = new WP_Query(array(
+            'post_type' => 'contact_cards',
+            'posts_per_page' => -1,
+            'orderby' => 'menu_order',
+            'order' => 'ASC',
+          ));
+
+          if ($contact_cards->have_posts()):
+            while ($contact_cards->have_posts()):
+              $contact_cards->the_post();
+
+              $title = get_the_title();
+              $image_summer = get_field('image_summer');
+              $image_winter = get_field('image_winter');
+              $image = ($season === 'summer') ? $image_summer : $image_winter;
+              $link = get_permalink();
+              $description_card = get_field('desc');
+              ?>
+
+              <!-- Swiper Slide -->
+              <div class="swiper-slide suite-card">
+                <a href="<?php echo esc_url($link); ?>">
+                  <div class="card custom-card">
+                    <?php if ($image): ?>
+                      <img src="<?php echo esc_url($image['url']); ?>" class="card-img-top"
+                        alt="<?php echo esc_attr($image['alt']); ?>">
+                    <?php endif; ?>
+
+                    <div class="card-body">
+                      <div class="static-content">
+                        <h5 class="card-title"><?php echo esc_html($title); ?></h5>
+                      </div>
+
+                      <div class="hover-content">
+                        <h5 class="card-title"><?php echo esc_html($title); ?></h5>
+                        <?php if ($description_card): ?>
+                          <div class="card-row">
+                            <span class="card-text"><?php echo esc_html($description_card); ?></span>
+                          </div>
+                        <?php endif; ?>
+                        <span class="explore-btn">
+                          UTFORSK
+                          <span class="arrow">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg"
+                              alt="Arrow Icon" />
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            <?php endwhile;
+            wp_reset_postdata();
+          else: ?>
+            <p>No contact cards found.</p>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
 
 </section>
 

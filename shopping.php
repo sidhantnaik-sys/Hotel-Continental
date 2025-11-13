@@ -1,14 +1,15 @@
 <?php
 /**
- * Template Name: about us green page
+ * Template Name: Shoping page
  */
 get_header(); ?>
 
 <?php get_template_part('template-parts/room-hero-img'); ?>
+
 <div class="room-padding">
     <?php
     // Fields
-    $hero_image = get_field('image_green'); // or a dedicated field like 'room_hero_image'
+    $hero_image = get_field('image_green');
     $book_url = get_field('book_now_button');
     $description = get_field('full_description');
     $title = get_field('book_title');
@@ -16,8 +17,8 @@ get_header(); ?>
     <section class="room-detail">
         <div class="container">
             <!-- Title & Hero Section -->
-            <div class="container room-header h1p truffle-h1">
-                <div class="container room-text py-5">
+            <div class="container room-header">
+                <div class="container room-text py-5 h1p truffle-h1">
                     <h2><?php echo esc_html($title);
                     ?></h2>
                     <div class="book-description py-3">
@@ -30,7 +31,7 @@ get_header(); ?>
                 </div>
                 <div class="room-image">
                     <?php if ($hero_image): ?>
-                        <img src="<?php echo esc_url($hero_image['url']); ?>"
+                        <img class="height640" src="<?php echo esc_url($hero_image['url']); ?>"
                             alt="<?php echo esc_attr($hero_image['alt']); ?>">
                     <?php endif; ?>
                 </div>
@@ -38,76 +39,66 @@ get_header(); ?>
         </div>
     </section>
 
+    
+
     <section class="about-us">
-        <div class="sustainability container py-5">
+        <?php if (get_field('eco_title') || get_field('eco_content')): ?>
+            <div class="sustainability container pb-5">
 
-            <!-- Eco Certification -->
-            <section class="section-block h1p truffle-h1 p1">
-                <h3><?php the_field('eco_title'); ?></h3>
-                <div class="section-content ">
-                    <?php the_field('eco_content'); ?>
-                </div>
-            </section>
+                <!-- Eco Certification -->
+                <section class="section-block h1p p1 truffle-h1">
+                    <h3><?php the_field('eco_title'); ?></h3>
+                    <div class="section-content">
+                        <?php the_field('eco_content'); ?>
+                    </div>
+                </section>
+            </div>
+        <?php endif; ?>
 
-            <!-- Reduce Food Waste -->
-            <section class="section-block h1p truffle-h1 p1">
-                <h3><?php the_field('food_waste_title'); ?></h3>
-                <div class="section-content">
-                    <?php the_field('food_waste_content'); ?>
-                </div>
-            </section>
 
-            <!-- Green Initiatives -->
-            <section class="section-block h1p truffle-h1 p1">
-                <h3><?php the_field('green_title'); ?></h3>
-                <div class="section-content">
-                    <?php the_field('green_intro'); ?>
 
-                    <?php if (have_rows('green_list')): ?>
-                        <div class="green-list">
-                            <?php while (have_rows('green_list')):
-                                the_row();
-                                $icon = get_sub_field('icon');
-                                $main = get_sub_field('point_text'); ?>
+        <?php if (have_rows('sections')): ?>
+            <section class="privacy-policy-page container py-5 p1 ">
+                <div class="privacy  content px-5">
+                    <?php while (have_rows('sections')):
+                        the_row(); ?>
+                        <div class="policy-section py-3">
+                            <h3><?php the_sub_field('heading'); ?></h3>
 
-                                <div class="green-item">
-                                    <?php if ($icon): ?>
-                                        <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>">
-                                    <?php endif; ?>
+                            <?php if (get_sub_field('content')): ?>
+    <div class="section-content">
+        <?php echo wp_kses_post(get_sub_field('content')); ?>
+    </div>
+<?php endif; ?>
 
-                                    <div class="green-content">
-                                        <p class="main-text"><?php echo esc_html($main); ?></p>
-
-                                        <?php if (have_rows('subpoints')): ?>
-                                            <ul class="subpoint-list">
-                                                <?php while (have_rows('subpoints')):
-                                                    the_row();
-                                                    $sub = get_sub_field('subpoint_text'); ?>
-                                                    <li><?php echo esc_html($sub); ?></li>
-                                                <?php endwhile; ?>
-                                            </ul>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-
-                            <?php endwhile; ?>
+                            <?php if (have_rows('section_list_items')): ?>
+                                <ul class="section-list mx-3">
+                                    <?php while (have_rows('section_list_items')):
+                                        the_row(); ?>
+                                        <li><?php the_sub_field('list_item'); ?></li>
+                                    <?php endwhile; ?>
+                                </ul>
+                            <?php endif; ?>
                         </div>
-                    <?php endif; ?>
-
+                    <?php endwhile; ?>
                 </div>
             </section>
-
-            <!-- Guest Encouragement -->
-            <section class="section-block h1p truffle-h1 p1">
-                <h3><?php the_field('guest_title'); ?></h3>
-                <div class="section-content">
-                    <?php the_field('guest_content'); ?>
-                </div>
-            </section>
-
-        </div>
-
+        <?php endif; ?>
     </section>
+
+    <div class="wedding-details">
+        <?php
+        $seating_video = get_field('lead_video');
+        if ($seating_video): ?>
+            <div class="seating-video1 my-3 w-100">
+                <video controls class="img-fluid" autoplay muted loop playsinline>
+                    <source src="<?php echo esc_url($seating_video['url']); ?>"
+                        type="<?php echo esc_attr($seating_video['mime_type']); ?>">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        <?php endif; ?>
+    </div>
 
     <?php
     $room_cards_heading = get_field('room_cards_heading');
@@ -190,6 +181,8 @@ get_header(); ?>
         </div>
       </div>
     <?php endif; ?>
+
+
 </div>
 
 <?php get_footer(); ?>

@@ -61,10 +61,20 @@ $button_txt = get_field('button_txt');
         <div class="custom-select-wrapper">
           <select class="form-select suite-filter" aria-label="Filter suites">
             <option value="all category" selected>Alle kategorier</option>
-            <option value="suites">Suites</option>
-            <option value="jrsuites">JRsuites</option>
-            <option value="rooms">Rooms</option>
+
+            <?php if (have_rows('suite_filter_options')): ?>
+              <?php while (have_rows('suite_filter_options')):
+                the_row();
+                $label = get_sub_field('option_label');
+                $value = get_sub_field('option_value');
+                ?>
+                <option value="<?php echo esc_attr($value); ?>">
+                  <?php echo esc_html($label); ?>
+                </option>
+              <?php endwhile; ?>
+            <?php endif; ?>
           </select>
+
           <!-- ✅ Add a simple line below -->
 
           <span class="custom-arrow">

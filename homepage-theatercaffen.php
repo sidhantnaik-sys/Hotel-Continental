@@ -45,15 +45,15 @@ get_header('theatercaffen');
 
                                 <?php if ($menu_link): ?>
                             </a>
-                        <?php else: ?>
-                        </div>
-                    <?php endif; ?>
+                            <?php else: ?>
+                         </div>
+                        <?php endif; ?>
 
-                <?php endwhile; ?>
-            </div>
-        <?php endif; ?>
-</div>
-</section>
+                    <?php endwhile; ?>
+             </div>
+            <?php endif; ?>
+        </div>
+    </section>
 
 <div class="story-section">
     <div class="story-inner">

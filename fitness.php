@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: single room Page
+ * Template Name: Fitness Page
  */
 get_header(); ?>
 <?php $season = get_current_season(); ?>
@@ -120,6 +120,93 @@ get_header(); ?>
           </div>
         </div>
       <?php endif; ?>
+
+
+      <?php
+    $room_cards_heading = get_field('room_cards_heading');
+    $selected_pages = get_field('select_pages', 'option');
+
+
+    if ($room_cards_heading || $selected_pages): ?>
+      <div class="container-fluid cards py-5">
+        <div class="container carousel-wrapper position-relative">
+
+          <?php if ($room_cards_heading): ?>
+            <div class="carousel-header p-3">
+              <h1><?php echo esc_html($room_cards_heading); ?></h1>
+            </div>
+          <?php endif; ?>
+
+          <?php if ($selected_pages): ?>
+            <div class="carousel-buttons">
+              <button class="carousel-prev arrow-btn">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-left.svg" alt="Previous Arrow">
+              </button>
+              <button class="carousel-next arrow-btn">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" alt="Next Arrow">
+              </button>
+            </div>
+
+            <div class="swiper suite-swiper">
+              <div class="swiper-wrapper">
+                <?php
+                foreach ($selected_pages as $page):
+                  // Skip the current page
+                  if ($page->ID == get_the_ID()) {
+                    continue;
+                  }
+
+                  $title = get_the_title($page->ID);
+                  $link = get_permalink($page->ID);
+                  $desc = get_field('desc', $page->ID);
+                  $image_summer = get_field('image_summer', $page->ID);
+                  $image_winter = get_field('image_winter', $page->ID);
+                  $image = ($season === 'summer') ? $image_summer : $image_winter;
+                  ?>
+                  <div class="swiper-slide suite-card" data-category="<?php echo esc_attr(strtolower($category)); ?>">
+                    <a href="<?php echo esc_url($link); ?>">
+                      <div class="card custom-card">
+                        <?php if ($image): ?>
+                          <img src="<?php echo esc_url($image['url']); ?>" class="card-img-top"
+                            alt="<?php echo esc_attr($image['alt']); ?>">
+                        <?php endif; ?>
+
+                        <div class="card-body">
+                          <div class="static-content">
+                            <h5 class="card-title" style="color: #fff;"><?php echo esc_html($title); ?></h5>
+                          </div>
+
+                          <div class="hover-content">
+                            <h5 class="card-title" style="color: #fff;"><?php echo esc_html($title); ?></h5>
+                            <!-- <div class="card-row">
+                              <p class="card-text"><?php echo ($description); ?></p>
+                            </div> -->
+                            <span class="explore-btn">
+                              UTFORSK
+                              <span class="arrow">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg"
+                                  alt="Arrow Icon" />
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+            </div>
+          <?php else: ?>
+            <p>No pages selected for this carousel.</p>
+          <?php endif; ?>
+
+        </div>
+      </div>
+    <?php endif; ?>
+
+
+
+    
       <script>
         jQuery(document).ready(function ($) {
           $('.gallery-grid').magnificPopup({

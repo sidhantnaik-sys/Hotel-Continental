@@ -132,7 +132,7 @@ $bg_image = get_field('background_image');
                     <?php
                     $art_items = new WP_Query(array(
                         'post_type' => 'art_and_culture',
-                        'posts_per_page' => 3,
+                        'posts_per_page' => -1,
                         'orderby' => 'menu_order',
                         'order' => 'ASC',
                     ));
@@ -197,6 +197,8 @@ $bg_image = get_field('background_image');
 
         </div>
     </div>
+
+    
 
 </div>
 <?php get_footer(); ?>

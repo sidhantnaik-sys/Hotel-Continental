@@ -38,14 +38,21 @@
           <?php if ($full_desc): ?>
             <div class="section-description">
               <p class="short-text">
-                <?php echo esc_html($trimmed_desc); ?>
+                <?php echo ($full_desc); ?>
               </p>
 
-              <div class="full-text1" style="display: none;">
-                <?php echo esc_html($remaining_text); ?>
-              </div>
-
-              <button class="view-all1 toggle-btn">SE ALLE</button>
+              <?php
+              $link = get_field('button_link2');
+              if ($link):
+                $link_url = $link['url'];
+                $link_title = $link['title'] ? $link['title'] : 'LES MER';
+                $link_target = $link['target'] ? $link['target'] : '_self';
+                ?>
+                <a class="view-all1 toggle-btn" href="<?php echo esc_url($link_url); ?>"
+                  target="<?php echo esc_attr($link_target); ?>">
+                  <?php echo esc_html($link_title); ?>
+                </a>
+              <?php endif; ?>
             </div>
           <?php endif; ?>
 

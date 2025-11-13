@@ -22,6 +22,11 @@ get_header(); ?>
   $description3 = get_field('description3');
   $hero_image3 = get_field('hero_image3');
   $title3 = get_field('title3');
+
+   $detail_image4 = get_field('detail_img4');
+  $detail_title4 = get_field('detail_title4');
+  $detail_desc4 = get_field('detail_desc4');
+
   ?>
   <section class="room-detail h1p pt-5 truffle-h1 p1">
     <div class="container">
@@ -137,6 +142,30 @@ get_header(); ?>
                 <img src="<?php echo esc_url($hero_image3['url']); ?>" alt="<?php echo esc_attr($hero_image3['alt']); ?>">
               <?php endif; ?>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="restaurant-detail py-3">
+        <div class="container restaurant-detail-wrapper d-flex pt-2 pb-4">
+
+          <!-- Left: Image -->
+          <div class="detail-image-left">
+            <?php if ($detail_image4): ?>
+              <img src="<?php echo esc_url($detail_image4['url']); ?>" alt="<?php echo esc_attr($detail_image4['alt']); ?>">
+            <?php endif; ?>
+          </div>
+
+          <!-- Right: Content -->
+          <div class="restaurant-content-right p-5 truffle-h1">
+            <h3><?php echo ($detail_title4); ?></h3>
+
+            <div class="restaurant-description">
+              <?php echo wpautop(esc_html($detail_desc4)); ?>
+            </div>
+
+
+
           </div>
         </div>
       </section>
