@@ -34,7 +34,7 @@ get_header(); ?>
 
 
           <?php if ($book_url): ?>
-            <a href="<?php echo esc_url($book_url); ?>" class="btn btn-book">BOK NÅ</a>
+            <a href="<?php echo esc_url($book_url); ?>" class="btn btn-book">BOOK NÅ</a>
           <?php endif; ?>
         </div>
         <div class="room-image">
@@ -101,6 +101,34 @@ get_header(); ?>
             Your browser does not support the video tag.
           </video>
         </div>
+      <?php endif; ?>
+
+      <?php if (have_rows('sections')): ?>
+        <section class="privacy-policy-page container py-5 p1 ">
+          <div class="privacy  content px-5">
+            <?php while (have_rows('sections')):
+              the_row(); ?>
+              <div class="policy-section py-3">
+                <h3><?php the_sub_field('heading'); ?></h3>
+
+                <?php if (get_sub_field('content')): ?>
+                  <div class="section-content">
+                    <p><?php the_sub_field('content'); ?></p>
+                  </div>
+                <?php endif; ?>
+
+                <?php if (have_rows('section_list_items')): ?>
+                  <ul class="section-list mx-3">
+                    <?php while (have_rows('section_list_items')):
+                      the_row(); ?>
+                      <li><?php the_sub_field('list_item'); ?></li>
+                    <?php endwhile; ?>
+                  </ul>
+                <?php endif; ?>
+              </div>
+            <?php endwhile; ?>
+          </div>
+        </section>
       <?php endif; ?>
 
 

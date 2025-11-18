@@ -168,14 +168,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
           // image hover effect
           item.addEventListener("mouseenter", function () {
+            
+
             const summerImg = this.dataset.summer;
             const winterImg = this.dataset.winter;
             const greenImg = this.dataset.green;
             const roomImg = this.dataset.room;
             const sectionImg = this.dataset.section;
-
             
-            const imgSrc = sectionImg || summerImg || winterImg || greenImg || roomImg;
+
+            // Hero images pulled from Site 6 (added by PHP)
+            const heroSummerImg = this.dataset.herosummer;
+            const heroWinterImg = this.dataset.herowinter;
+            console.log(heroSummerImg);
+
+            // Priority order
+            const imgSrc =
+              sectionImg ||
+              summerImg ||
+              winterImg ||
+              greenImg ||
+              heroSummerImg ||
+              heroWinterImg ||
+              roomImg;
 
             if (imgSrc) {
               submenuImage.src = imgSrc;
@@ -187,6 +202,8 @@ document.addEventListener("DOMContentLoaded", function () {
               submenuImageWrapper.style.visibility = "hidden";
             }
           });
+
+
 
           item.addEventListener("mouseleave", function () {
             submenuImage.src = "";
@@ -629,7 +646,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const switcher = document.querySelector(".trp-language-switcher-inner");
   if (!switcher) return;
 
@@ -651,17 +668,17 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const langItems = document.querySelectorAll(".trp-language-item");
 
   langItems.forEach(item => {
-    item.style.setProperty("padding", "7px 3px", "important"); 
+    item.style.setProperty("padding", "7px 3px", "important");
     item.style.setProperty("align-items", "flex-start", "important");
   });
 });
 
 // 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(".trp-language-item");
 
   items.forEach(item => {

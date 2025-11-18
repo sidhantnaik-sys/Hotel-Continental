@@ -1,4 +1,15 @@
 <footer class="site-footer-casbar" id="footer-casbar">
+  <?php
+  $enable = get_field('enable_sticky_button', 'option');
+  $link = get_field('sticky_button_link', 'option');
+
+  if ($enable && $link): ?>
+    <a class="btn-dark1  sticky-btn" href="<?php echo esc_url($link['url']); ?>"
+      target="<?php echo esc_attr($link['target'] ?: '_self'); ?>">
+      <?php echo esc_html($link['title']); ?>
+    </a>
+  <?php endif; ?>
+
   <div class="container pb-3 ">
     <div class="row gy-4 p-2 align-items-start">
 
@@ -50,7 +61,7 @@
           <div class="col-md-5">
             <h6 class="footer-label footerlabelcolor">Address</h6>
             <p>
-              <a href="https://www.google.com/maps/search/<?php echo urlencode(get_field('footer_address_line', 'option') . ' ' . get_field('footer_city', 'option')); ?>"
+              <a href="https://www.google.com/maps/search/<?php echo urlencode(get_field('footer_address_line_casbar', 'option') . ' ' . get_field('footer_city_casbar', 'option')); ?>"
                 target="_blank">
                 <?php the_field('footer_address_line_casbar', 'option'); ?><br>
                 <?php the_field('footer_city_casbar', 'option'); ?>
@@ -93,7 +104,28 @@
       </div>
 
 
+      <div class="row mt-2 partner-logos justify-content-between">
 
+        <?php if (have_rows('partner_logos', 'option')): ?>
+          <?php while (have_rows('partner_logos', 'option')):
+            the_row();
+            $logo = get_sub_field('logo_image');
+            $link = get_sub_field('logo_link');
+            ?>
+            <?php if ($logo): ?>
+              <div class="col-auto">
+                <?php if ($link): ?>
+                  <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener">
+                    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>">
+                  </a>
+                <?php else: ?>
+                  <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>">
+                <?php endif; ?>
+              </div>
+            <?php endif; ?>
+          <?php endwhile; ?>
+        <?php endif; ?>
+      </div>
 
     </div>
 

@@ -1,5 +1,16 @@
 <footer class="site-footer-annen">
-  <div class="container pb-3 ">
+  <?php
+  $enable = get_field('enable_sticky_button', 'option');
+  $link = get_field('sticky_button_link', 'option');
+
+  if ($enable && $link): ?>
+    <a class="btn-dark1  sticky-btn" href="<?php echo esc_url($link['url']); ?>"
+      target="<?php echo esc_attr($link['target'] ?: '_self'); ?>">
+      <?php echo esc_html($link['title']); ?>
+    </a>
+  <?php endif; ?>
+
+  <div class="container pb-3 pding-btm-footer">
     <div class="row gy-4 p-2 align-items-start">
 
       <!-- Left Section -->

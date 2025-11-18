@@ -29,8 +29,11 @@ get_header('hc_events'); ?>
 
                         <div class="room-content px-3 p1">
                             <h2><?php echo ($title); ?></h2>
-                            <p><?php echo ($description); ?></p>
+                            <div class="desc">
+                                <?php echo ($description); ?>
+                            </div>
                         </div>
+
 
                     </div>
 
@@ -122,53 +125,53 @@ get_header('hc_events'); ?>
     </section>
 </div>
 <?php if (get_field('section_title') || have_rows('menus')): ?>
-            <section class="menu-section-offer" id="meny">
-                <div class="container text-center">
+    <section class="menu-section-offer" id="meny">
+        <div class="container text-center">
 
-                    <?php if ($section_title = get_field('section_title')): ?>
-                        <h2 class="section-heading"><?php echo esc_html($section_title); ?></h2>
-                    <?php endif; ?>
+            <?php if ($section_title = get_field('section_title')): ?>
+                <h2 class="section-heading"><?php echo esc_html($section_title); ?></h2>
+            <?php endif; ?>
 
-                    <?php if (have_rows('menus')): ?>
-                        <div class="menu-cards">
-                            <?php while (have_rows('menus')):
-                                the_row();
-                                $menu_title = get_sub_field('menu_title');
-                                $menu_image = get_sub_field('menu_image');
-                                $menu_link = get_sub_field('menu_link');
-                                ?>
+            <?php if (have_rows('menus')): ?>
+                <div class="menu-cards">
+                    <?php while (have_rows('menus')):
+                        the_row();
+                        $menu_title = get_sub_field('menu_title');
+                        $menu_image = get_sub_field('menu_image');
+                        $menu_link = get_sub_field('menu_link');
+                        ?>
+
+                        <?php if ($menu_link): ?>
+                            <a href="<?php echo esc_url($menu_link); ?>" class="menu-card">
+                            <?php else: ?>
+                                <div class="menu-card">
+                                <?php endif; ?>
+
+                                <?php if ($menu_image): ?>
+                                    <div class="image-wrapper">
+                                        <img src="<?php echo esc_url($menu_image['url']); ?>"
+                                            alt="<?php echo esc_attr($menu_title); ?>">
+                                    </div>
+                                <?php endif; ?>
+
+                                <?php if ($menu_title): ?>
+                                    <div class="overlay-title h1p"><?php echo esc_html($menu_title); ?></div>
+                                <?php endif; ?>
+
+                                <div class="view-button">SE MENY</div>
 
                                 <?php if ($menu_link): ?>
-                                    <a href="<?php echo esc_url($menu_link); ?>" class="menu-card">
-                                    <?php else: ?>
-                                        <div class="menu-card">
-                                        <?php endif; ?>
+                            </a>
+                        <?php else: ?>
+                        </div>
+                    <?php endif; ?>
 
-                                        <?php if ($menu_image): ?>
-                                            <div class="image-wrapper">
-                                                <img src="<?php echo esc_url($menu_image['url']); ?>"
-                                                    alt="<?php echo esc_attr($menu_title); ?>">
-                                            </div>
-                                        <?php endif; ?>
-
-                                        <?php if ($menu_title): ?>
-                                            <div class="overlay-title h1p"><?php echo esc_html($menu_title); ?></div>
-                                        <?php endif; ?>
-
-                                        <div class="view-button">SE MENY</div>
-
-                                        <?php if ($menu_link): ?>
-                                    </a>
-                                <?php else: ?>
-                                </div>
-                            <?php endif; ?>
-
-                        <?php endwhile; ?>
-                    </div>
-                  <?php endif; ?>
-
-                 </div>
-            </section>
+                <?php endwhile; ?>
+            </div>
         <?php endif; ?>
+
+        </div>
+    </section>
+<?php endif; ?>
 
 <?php get_footer('hc_events'); ?>

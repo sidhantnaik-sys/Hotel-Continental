@@ -105,7 +105,7 @@ get_header(); ?>
                           <p class="card-text"><?php echo esc_html($description); ?></p>
                         </div>
                         <span class="explore-btn">
-                          EXPLORE
+                          UTFORSK
                           <span class="arrow">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg"
                               alt="Arrow Icon" />

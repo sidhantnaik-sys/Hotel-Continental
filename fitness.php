@@ -19,6 +19,7 @@ get_header(); ?>
   $gallery = get_field('gallery');
   $link_text = get_field('link_text');
   $website_link = get_field('website_link');
+  $title = get_field('title');
 
   ?>
 
@@ -27,7 +28,7 @@ get_header(); ?>
       <!-- Title & Hero Section -->
       <div class="container room-header">
         <div class="container room-text py-5">
-          <h2><?php the_title(); ?></h2>
+          <h2><?php echo($title) ?></h2>
           <div class="room-description">
             <?php echo wpautop($description); ?>
           </div>

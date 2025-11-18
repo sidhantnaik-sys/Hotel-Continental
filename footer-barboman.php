@@ -1,4 +1,15 @@
 <footer class="site-footer-barboman" id="footer-barboman">
+  <?php
+  $enable = get_field('enable_sticky_button', 'option');
+  $link = get_field('sticky_button_link', 'option');
+
+  if ($enable && $link): ?>
+    <a class="btn-dark1 sticky-btn" href="<?php echo esc_url($link['url']); ?>"
+      target="<?php echo esc_attr($link['target'] ?: '_self'); ?>">
+      <?php echo esc_html($link['title']); ?>
+    </a>
+  <?php endif; ?>
+
   <div class="container pb-3 ">
     <div class="row gy-4 p-2 align-items-start">
 
@@ -42,7 +53,7 @@
           <div class="col-md-5">
             <h6 class="footer-label footerlabelcolor">Address</h6>
             <p>
-              <a href="https://www.google.com/maps/search/<?php echo urlencode(get_field('footer_address_line', 'option') . ' ' . get_field('footer_city', 'option')); ?>"
+              <a href="https://www.google.com/maps/search/<?php echo urlencode(get_field('footer_address_line_casbar', 'option') . ' ' . get_field('footer_city_casbar', 'option')); ?>"
                 target="_blank">
                 <?php the_field('footer_address_line_casbar', 'option'); ?><br>
                 <?php the_field('footer_city_casbar', 'option'); ?>

@@ -695,3 +695,49 @@
     }
   }
 }
+
+.room-content {
+    .desc {
+
+        // Remove default list styles
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        // Each list item with custom icon
+        ul li {
+            position: relative;
+            padding-left: 30px; // space for icon
+            margin-bottom: 10px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 5px;
+                width: 18px;
+                height: 18px;
+                background-image: url('../assets/images/icon2.svg'); 
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        // Optional styling for nested lists
+        ul ul {
+            margin-left: 20px;
+
+            li {
+                padding-left: 25px;
+
+                &::before {
+                    width: 14px;
+                    height: 14px;
+                    background-image: url('../assets/images/icon2.svg');
+                }
+            }
+        }
+    }
+}

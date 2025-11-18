@@ -5,6 +5,9 @@
   background-color: var(--footer-background) !important;
   color: #fff;
   font-size: 0.95rem;
+  @include respond(md){
+  padding-bottom: 40px;
+  }
   // min-height: 434px;
 
   @include respond(xl) {

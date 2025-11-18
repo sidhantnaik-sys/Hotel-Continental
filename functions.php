@@ -830,38 +830,96 @@ function register_my_menus() {
 }
 add_action('after_setup_theme', 'register_my_menus');
 
+//
+
+add_filter('nav_menu_link_attributes', function ($atts, $item) {
+
+    // DEBUG: Test if Site 1 can read ACF fields from Site 6
+switch_to_blog(6);
 
 
+$test_summer = get_field('hero_summer_image', $atts['title']); // ← replace with real Site 6 page ID
+$test_winter = get_field('hero_winter_image', $atts['title']); // ← replace with real Site 6 page ID
+// var_dump($atts['title']);
+
+// var_dump($atts);
+restore_current_blog();
 
 
-add_filter('nav_menu_link_attributes', function($atts, $item) {
-    // Get ACF fields from the linked page/post
-    $image_summer   = get_field('image_summer', $item->object_id);
-    $image_winter   = get_field('image_winter', $item->object_id);
-    $image_green    = get_field('image_green',  $item->object_id);
-    $image_room     = get_field('image_room',   $item->object_id);
-    $section_image = get_field('room_sections')['section_image'];
+    // LOCAL ACF fields (Site 1)
+    $image_summer = get_field('image_summer', $item->object_id);
+    $image_winter = get_field('image_winter', $item->object_id);
+    $image_green  = get_field('image_green',  $item->object_id);
+    $image_room   = get_field('image_room',   $item->object_id);
 
+    $room_sections = get_field('room_sections');
+    $section_image = $room_sections['section_image'] ?? null;
 
-    // Add data attributes if images exist
-    if ($image_summer) {
-        $atts['data-summer'] = esc_url($image_summer['url']);
-    }
-    if ($image_winter) {
-        $atts['data-winter'] = esc_url($image_winter['url']);
-    }
-    if ($image_green) {
-        $atts['data-green'] = esc_url($image_green['url']);
-    }
-    if ($image_room) { 
-        $atts['data-room'] = esc_url($image_room['url']);
-    }
-    if ($section_image) { 
-        $atts['data-section'] = esc_url($section_image['url']); // ✅ added
-    }
+    // Assign local fields
+    if ($image_summer) $atts['data-summer']  = esc_url($image_summer['url']);
+    if ($image_winter) $atts['data-winter']  = esc_url($image_winter['url']);
+    if ($image_green)  $atts['data-green']   = esc_url($image_green['url']);
+    if ($image_room)   $atts['data-room']    = esc_url($image_room['url']);
+    if ($section_image) $atts['data-section'] = esc_url($section_image['url']);
+    if($test_summer) $atts['data-herosummer']    = esc_url($test_summer['url']);
+    if($test_winter ) $atts['data-herowinter']    = esc_url($test_winter['url']);
+   
+    // var_dump($atts['data-herosummer']);
+    //  var_dump($test_winter['url']);
+
+    /*
+    -----------------------------------------------------
+    ADD MULTISITE HERO IMAGES (Site 6)
+    -----------------------------------------------------
+    */
+
+    // // Get hero images from Site 6 based on menu title
+    // $hero_summer = get_site6_hero_by_menu_title($item->title, 'hero_summer_image');
+    // $hero_winter = get_site6_hero_by_menu_title($item->title, 'hero_winter_image');
+
+    // // Add hero attributes
+    // if ($hero_summer && isset($hero_summer['url'])) {
+    //     $atts['data-hero-summer'] = esc_url($hero_summer['url']);
+    // }
+
+    // if ($hero_winter && isset($hero_winter['url'])) {
+    //     $atts['data-hero-winter'] = esc_url($hero_winter['url']);
+    // }
 
     return $atts;
 }, 10, 2);
+
+
+
+
+// add_filter('nav_menu_link_attributes', function($atts, $item) {
+//     // Get ACF fields from the linked page/post
+//     $image_summer   = get_field('image_summer', $item->object_id);
+//     $image_winter   = get_field('image_winter', $item->object_id);
+//     $image_green    = get_field('image_green',  $item->object_id);
+//     $image_room     = get_field('image_room',   $item->object_id);
+//     $section_image = get_field('room_sections')['section_image'];
+
+
+//     // Add data attributes if images exist
+//     if ($image_summer) {
+//         $atts['data-summer'] = esc_url($image_summer['url']);
+//     }
+//     if ($image_winter) {
+//         $atts['data-winter'] = esc_url($image_winter['url']);
+//     }
+//     if ($image_green) {
+//         $atts['data-green'] = esc_url($image_green['url']);
+//     }
+//     if ($image_room) { 
+//         $atts['data-room'] = esc_url($image_room['url']);
+//     }
+//     if ($section_image) { 
+//         $atts['data-section'] = esc_url($section_image['url']); // ✅ added
+//     }
+
+//     return $atts;
+// }, 10, 2);
 
 
 

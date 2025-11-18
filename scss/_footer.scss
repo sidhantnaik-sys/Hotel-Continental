@@ -67,7 +67,8 @@
       width: 100% !important;
       max-width: 100%;
       padding: 0 !important;
-      @include respond(sm){
+
+      @include respond(sm) {
         padding: 1rem;
       }
     }
@@ -94,17 +95,17 @@
       }
     }
 
-    .send-app{
+    .send-app {
       a {
-      color: #fff;
-      text-decoration: underline;
-
-      &:hover {
-        color: #FFFFFFB2;
+        color: #fff;
         text-decoration: underline;
-        text-underline-offset: 3px;
+
+        &:hover {
+          color: #FFFFFFB2;
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
       }
-    }
 
     }
 
@@ -253,22 +254,27 @@
 .darkbrown--color {
   a {
     color: #0B0704CC !important;
-    &:hover{
+
+    &:hover {
       text-decoration: underline;
       text-underline-offset: 4px;
     }
   }
 }
-.phone-nu{
+
+.phone-nu {
   text-decoration: none;
-  &:hover{
-      text-decoration: none !important;
-      text-underline-offset: 4px;
-    }
-   a {
+
+  &:hover {
+    text-decoration: none !important;
+    text-underline-offset: 4px;
+  }
+
+  a {
     // color: #0B0704CC !important;
     text-decoration: none;
-    &:hover{
+
+    &:hover {
       text-decoration: none;
       text-underline-offset: 4px;
     }
@@ -277,16 +283,39 @@
 
 
 
-.send-app{
-      a {
-      color: #fff !important;
-      text-decoration: underline !important;
-      text-underline-offset: 3px !important;
+.send-app {
+  a {
+    color: #fff !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
 
-      &:hover {
-        color: #FFFFFFB2 !important;
-        text-decoration: underline !important;
-        text-underline-offset: 4px !important;
-      }
+    &:hover {
+      color: #FFFFFFB2 !important;
+      text-decoration: underline !important;
+      text-underline-offset: 4px !important;
     }
   }
+}
+
+
+
+.sticky-btn {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  z-index: 9999;
+
+  @include respond(md) {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    top: auto;
+    transform: none;
+  }
+}
+
+.pding-btm-footer{
+  @include respond(md){
+    padding-bottom: 20px;
+  }
+}

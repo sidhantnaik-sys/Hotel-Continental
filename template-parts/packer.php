@@ -77,6 +77,10 @@
       // $season = ($month >= 4 && $month <= 5) ? 'summer' : 'winter'; // Apr–Sep = summer
       ?>
       <!-- Right Slider -->
+      <?php
+      $button_text = get_field('button_txt_offer');
+      ?>
+
       <div class="col-md-8">
         <div class="swiper offers-swiper">
           <div class="swiper-wrapper">
@@ -100,6 +104,7 @@
                 $image = ($season === 'summer') ? $image_summer : $image_winter;
                 $offer_link = get_field('offer_button_url'); // ACF link field
                 $link = '';
+                $button_txt = get_field('button_txt_offer');
 
                 if ($offer_link) {
                   $link = is_array($offer_link) && isset($offer_link['url']) ? $offer_link['url'] : $offer_link;
@@ -120,7 +125,7 @@
                     <div class="static-content">
                       <h4><?php echo esc_html($title); ?></h4>
                       <span class="btn">
-                        VIS TILBUD
+                        <?php echo esc_html($button_text); ?>
                         <span class="arrow pt-0">
                           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="Arrow Icon" />
                         </span>
@@ -135,7 +140,7 @@
                       <p><?php echo esc_html($description); ?></p>
 
                       <span class="btn">
-                        VIS TILBUD
+                        <?php echo esc_html($button_text); ?>
                         <span class="arrow">
                           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="Arrow Icon" />
                         </span>

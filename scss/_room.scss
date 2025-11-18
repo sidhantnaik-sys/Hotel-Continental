@@ -374,6 +374,23 @@
   }
 }
 
+.no-underline {
+  all: unset;
+  display: inline-block;
+  text-decoration: none !important;
+
+  a {
+    all: unset;
+  display: inline-block;
+    text-decoration: none !important;
+  }
+}
+body .a1 a.no-underline {
+    text-decoration: none !important;
+     cursor: pointer;
+}
+
+
 
 
 .privacy-link {

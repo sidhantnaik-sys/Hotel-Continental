@@ -126,12 +126,7 @@ get_header(); ?>
           </div>
         <?php endif; ?>
 
-        <?php $map_embed = get_field('google_map_embed_code'); ?>
-        <?php if ($map_embed): ?>
-          <div class="map-wrapper">
-            <?php echo $map_embed; ?>
-          </div>
-        <?php endif; ?>
+        
       </div>
     <?php endif; ?>
 
@@ -164,8 +159,14 @@ get_header(); ?>
       </div>
     <?php endif; ?>
 
-
-    
+    <div class="garage-parking container  h1p">
+    <?php $map_embed = get_field('google_map_embed_code'); ?>
+        <?php if ($map_embed): ?>
+          <div class="map-wrapper">
+            <?php echo $map_embed; ?>
+          </div>
+        <?php endif; ?>
+     </div>   
 
     <?php
     $room_cards_heading = get_field('room_cards_heading');
