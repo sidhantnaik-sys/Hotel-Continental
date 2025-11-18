@@ -40,7 +40,7 @@
   padding: 3rem 0;
   padding-top: 6.25rem;
   padding-bottom: 9.375rem;
-  background-color: var(--luxury-comfort-onhover-content);
+  background-color: var(--room-bg);
 
   @include respond(sm) {
     padding: 0px 10px 50px !important;
@@ -434,4 +434,8 @@ body .a1 a.no-underline {
   @include respond(xl) {
     padding: 0 125px;
   }
+}
+
+#room-detail2 {
+  background-color: var(--luxury-comfort-onhover-content);
 }
