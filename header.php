@@ -12,8 +12,8 @@
     integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Instrument+Sans&display=swap"
     rel="stylesheet">
-
-
+  
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="f2444c9d-23e9-4624-9ac0-05e32ac419cf" data-blockingmode="auto" type="text/javascript"></script>
 
 </head>
 
