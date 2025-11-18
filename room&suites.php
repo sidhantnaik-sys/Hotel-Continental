@@ -16,12 +16,12 @@ get_header(); ?>
 <div class="room-padding">
 
 
-    <?php get_template_part('template-parts/room-cards'); ?>
+    <?php get_template_part('template-parts/room-cards2'); ?>
 
 </div>
 
 <div class="room-padding-two">
-    <?php get_template_part('template-parts/room-book-section'); ?>
+    <?php get_template_part('template-parts/room-book-section2'); ?>
 
 </div>
 <?php get_footer(); ?>
