@@ -1,21 +1,39 @@
  .cards {
-     padding-top: 60px;
+     padding-top: 118px;
      padding-left: 0 !important;
      padding-right: 0 !important;
      background-color: var(--room-bg);
 
+     @include respond(lg) {
+         padding-top: 108px;
+     }
+
+     @include respond(md) {
+         padding-top: 80px;
+     }
+
      @include respond(sm) {
-         padding-top: 0px !important;
+         padding-top: 40px !important;
          padding-right: calc(var(--bs-gutter-x) * .5) !important;
          padding-left: calc(var(--bs-gutter-x) * .5) !important;
      }
 
      .carousel-wrapper {
-         padding-bottom: 80px;
+         padding-bottom: 150px;
 
          @include respond(xl) {
              // padding: 0 80px;
              // padding-bottom: 80px;
+         }
+
+         @include respond(lg) {
+
+             padding-bottom: 108px;
+
+         }
+
+         @include respond(sm) {
+             padding-bottom: 60px;
          }
 
          .carousel-header {
@@ -92,7 +110,7 @@
                  }
 
                  /* Custom media query for 991px to 1222px */
-                 
+
 
 
 
@@ -102,73 +120,74 @@
 
 
          }
+
          @media (min-width: 992px) and (max-width: 1244px) {
-                     .carousel-buttons {
-                         top: -70px !important;
-                     }
+             .carousel-buttons {
+                 top: -70px !important;
+             }
 
-                     .arrow-btn {
+             .arrow-btn {
 
-                         // @include arrow-btn;
-                         position: absolute;
-                         top: -17%;
-                         z-index: 10;
-                         background: none;
-                         border: none;
+                 // @include arrow-btn;
+                 position: absolute;
+                 top: -17%;
+                 z-index: 10;
+                 background: none;
+                 border: none;
 
-                         cursor: pointer;
-                         @include flex-center;
-                         transition: transform 0.3s ease;
-                         width: 48px;
-                         height: 48px;
-                         border-radius: 50%;
+                 cursor: pointer;
+                 @include flex-center;
+                 transition: transform 0.3s ease;
+                 width: 48px;
+                 height: 48px;
+                 border-radius: 50%;
 
-                         &:hover {
-                             background-color: var(--arrow-bg-color);
-                         }
+                 &:hover {
+                     background-color: var(--arrow-bg-color);
+                 }
 
-                         svg {
-                             width: 48px !important;
+                 svg {
+                     width: 48px !important;
 
-                             height: 48px !important;
-                             min-width: 48px;
-                             min-height: 48px;
-                             max-width: 48px;
-                             max-height: 48px;
+                     height: 48px !important;
+                     min-width: 48px;
+                     min-height: 48px;
+                     max-width: 48px;
+                     max-height: 48px;
 
-                             path {
-                                 // stroke: #000;
-                                 // transition: stroke 0.3s ease;
-                             }
-                         }
-
-                         &:hover {
-                             transform: scale(1.1);
-
-                             svg path {
-                                 stroke: var(--arrow-color);
-                             }
-
-                         }
-
-
-
-                         &.carousel-prev {
-                             left: calc(100% - 140px) !important;
-
-
-                             @include respond (custom) {}
-                         }
-
-                         &.carousel-next {
-                             right: 19px !important;
-
-                             // @include respond (custom) {
-                             //   right: -40px;
-                             // }
-                         }
+                     path {
+                         // stroke: #000;
+                         // transition: stroke 0.3s ease;
                      }
                  }
+
+                 &:hover {
+                     transform: scale(1.1);
+
+                     svg path {
+                         stroke: var(--arrow-color);
+                     }
+
+                 }
+
+
+
+                 &.carousel-prev {
+                     left: calc(100% - 140px) !important;
+
+
+                     @include respond (custom) {}
+                 }
+
+                 &.carousel-next {
+                     right: 19px !important;
+
+                     // @include respond (custom) {
+                     //   right: -40px;
+                     // }
+                 }
+             }
+         }
 
      }
 

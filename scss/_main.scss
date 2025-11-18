@@ -20,6 +20,8 @@
 @import 'hc-events/main-events';
 @import 'casbar/main-casbar.scss';
 @import 'barboman/main-barboman';
+@import 'rooms-and-suites-hero-section';
+@import 'rooms-and-suites-intro-and-slider';
 
 html,
 body {
@@ -33,10 +35,11 @@ body {
 }
 
 .trp-switcher-position-top.trp-floating-switcher {
- 
-    right: 0;
- 
+
+  right: 0;
+
 }
+
 .error-404 {
   padding: 100px 0;
   text-align: center;
@@ -77,5 +80,5 @@ body {
 
 
 #trp_ald_modal_container {
-    display: none !important;
+  display: none !important;
 }
