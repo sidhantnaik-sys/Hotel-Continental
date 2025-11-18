@@ -1307,9 +1307,3 @@ add_action('init', 'create_meeting_room_cpt');
 
 
 //title att
-add_filter('nav_menu_link_attributes', function ($atts) {
-    if (isset($atts['title'])) {
-        unset($atts['title']);
-    }
-    return $atts;
-}, 999);

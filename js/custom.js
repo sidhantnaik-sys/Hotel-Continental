@@ -700,3 +700,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // name.style.setProperty("font-weight", "600", "important");
   });
 });
+
+
+
+// document.querySelectorAll('a').forEach(a => {
+//     a.addEventListener('mouseenter', () => {
+//         a.dataset.originalTitle = a.getAttribute('title'); // save original
+//         a.setAttribute('title', ''); // remove tooltip
+//     });
+
+//     a.addEventListener('mouseleave', () => {
+//         // optional: restore title if you ever need it back
+//         // a.setAttribute('title', a.dataset.originalTitle || '');
+//     });
+// });
+
