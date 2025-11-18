@@ -87,6 +87,8 @@ function enqueue_swiper_assets()
 
     // Your custom JS to initialize Swiper
     wp_enqueue_script('custom-swiper-init', get_template_directory_uri() . '/js/swiper-init.js', ['swiper-js'], null, true);
+
+    wp_enqueue_script('slides', get_template_directory_uri() . '/js/slides.js', [], null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_swiper_assets');
 
@@ -864,16 +866,16 @@ add_action('after_setup_theme', 'register_my_menus');
 
 add_filter('nav_menu_link_attributes', function ($atts, $item) {
 
-    // DEBUG: Test if Site 1 can read ACF fields from Site 6
-    switch_to_blog(6);
 
+    if (function_exists('switch_to_blog')) {
+        switch_to_blog(6);
 
-    $test_summer = get_field('hero_summer_image', $atts['title']); // ← replace with real Site 6 page ID
-    $test_winter = get_field('hero_winter_image', $atts['title']); // ← replace with real Site 6 page ID
-// var_dump($atts['title']);
+        $test_summer = get_field('hero_summer_image', $atts['title']);
+        $test_winter = get_field('hero_winter_image', $atts['title']);
 
-    // var_dump($atts);
-    restore_current_blog();
+        restore_current_blog();
+    }
+
 
 
     // LOCAL ACF fields (Site 1)

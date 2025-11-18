@@ -38,14 +38,26 @@
 
 .room-detail {
   padding: 3rem 0;
-  background-color: var(--room-bg);
+  padding-top: 6.25rem;
+  padding-bottom: 9.375rem;
+  background-color: var(--luxury-comfort-onhover-content);
 
   @include respond(sm) {
-    padding: 0px 10px !important;
+    padding: 0px 10px 50px !important;
   }
 
   @include respond(xl) {
     //  padding: 3rem 8rem;
+  }
+
+  @include respond(lg) {
+    padding-top: 4.25rem;
+    padding-bottom: 7.375rem;
+  }
+
+  @include respond(md) {
+    padding-top: 0;
+    padding-bottom: 5.375rem;
   }
 
 
@@ -64,7 +76,8 @@
     // align-items: center;
     flex-wrap: wrap;
     padding: 0;
-    @include respond(sm){
+
+    @include respond(sm) {
       padding: 8px;
     }
 
@@ -298,11 +311,15 @@
     padding: 24px 40px;
     background-color: var(--amenities-bg);
   }
+
   .amenity-item i {
-    font-size: 20px;   /* controls height/width */
-    line-height: 1;    /* optional for vertical alignment */
-    color: #816636;   /* optional color */
-}
+    font-size: 20px;
+    /* controls height/width */
+    line-height: 1;
+    /* optional for vertical alignment */
+    color: #816636;
+    /* optional color */
+  }
 
   .amenity-item {
     flex: 0 0 calc(33.333% - 16px);
@@ -381,13 +398,14 @@
 
   a {
     all: unset;
-  display: inline-block;
+    display: inline-block;
     text-decoration: none !important;
   }
 }
+
 body .a1 a.no-underline {
-    text-decoration: none !important;
-     cursor: pointer;
+  text-decoration: none !important;
+  cursor: pointer;
 }
 
 
@@ -404,6 +422,14 @@ body .a1 a.no-underline {
 
 .room-padding {
   background-color: var(--room-bg);
+
+  @include respond(xl) {
+    padding: 0 125px;
+  }
+}
+
+.room-padding-two {
+  background-color: var(--luxury-comfort-onhover-content);
 
   @include respond(xl) {
     padding: 0 125px;
