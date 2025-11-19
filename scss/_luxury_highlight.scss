@@ -40,6 +40,11 @@
         left: 50%;
         transform: translateX(-50%);
         @include button-transparent;
+
+        @include respond(sm){
+          width: 342px;
+          text-align: center;
+        }
       }
 
 
@@ -186,4 +191,35 @@
   50%  { transform: translate(-50%, -50%) rotate(180deg); }
   75%  { transform: translate(-50%, -50%) rotate(270deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+@media (max-width: 768px) {
+  .luxury-highlight .luxury-container .row {
+    flex-direction: column;
+  }
+
+  .luxury-left,
+  .luxury-right {
+    width: 100%;
+    padding: 20px 0; 
+  }
+
+  /* Add gap / separator color */
+  .luxury-left {
+    margin-bottom: 20px; // creates space
+  }
+
+  .luxury-highlight .luxury-container {
+    background: var(--og-suite-background); // separator gap color
+  }
+
+  /* Optional: Give each section its own background */
+  .luxury-left {
+    background: var(--og-suite-background);
+  }
+
+  .luxury-right {
+    background: var(--og-suite-background);
+  }
 }

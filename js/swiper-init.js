@@ -11,54 +11,58 @@ document.addEventListener('DOMContentLoaded', function () {
   const nextBtn = document.querySelector('.carousel-next');
 
   function initSwiper() {
-  if (!swiperContainer) return; // prevent error
+    if (!swiperContainer) return; // prevent error
 
-  if (suiteSwiper) suiteSwiper.destroy(true, true);
+    if (suiteSwiper) suiteSwiper.destroy(true, true);
 
-  const totalSlides = swiperContainer.querySelectorAll('.swiper-slide').length;
+    const totalSlides = swiperContainer.querySelectorAll('.swiper-slide').length;
 
-  if (prevBtn && nextBtn) {
-    if (totalSlides <= 2) {
-      prevBtn.style.display = 'none';
-      nextBtn.style.display = 'none';
-    } else {
-      prevBtn.style.display = '';
-      nextBtn.style.display = '';
+    if (prevBtn && nextBtn) {
+      if (totalSlides <= 2) {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+      } else {
+        prevBtn.style.display = '';
+        nextBtn.style.display = '';
+      }
+    }
+
+    // ✅ Enable loop only if we have enough slides
+    const enableLoop = totalSlides > 3;
+
+    suiteSwiper = new Swiper('.suite-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: enableLoop,
+      navigation: {
+        nextEl: '.carousel-next',
+        prevEl: '.carousel-prev',
+      },
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.2,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      }
+
+    });
+
+    // ✅ Pause autoplay on hover, resume on leave
+    const swiperEl = document.querySelector('.suite-swiper');
+    if (swiperEl && suiteSwiper.autoplay) {
+      swiperEl.addEventListener('mouseenter', () => suiteSwiper.autoplay.stop());
+      swiperEl.addEventListener('mouseleave', () => suiteSwiper.autoplay.start());
     }
   }
-
-  // ✅ Enable loop only if we have enough slides
-  const enableLoop = totalSlides > 3;
-
-  suiteSwiper = new Swiper('.suite-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: enableLoop,
-    navigation: {
-      nextEl: '.carousel-next',
-      prevEl: '.carousel-prev',
-    },
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 1.5,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
-  });
-
-  // ✅ Pause autoplay on hover, resume on leave
-  const swiperEl = document.querySelector('.suite-swiper');
-  if (swiperEl && suiteSwiper.autoplay) {
-    swiperEl.addEventListener('mouseenter', () => suiteSwiper.autoplay.stop());
-    swiperEl.addEventListener('mouseleave', () => suiteSwiper.autoplay.start());
-  }
-}
 
 
   function filterSlides(category) {
@@ -113,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       breakpoints: {
         0: {
-          slidesPerView: 1
+          slidesPerView: 1.2
         },
         768: {
           slidesPerView: 1.5
@@ -127,12 +131,12 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    
+
     offersSwiperEl.addEventListener('mouseenter', () => {
       offersSwiper.autoplay.stop();
     });
 
-    
+
     offersSwiperEl.addEventListener('mouseleave', () => {
       offersSwiper.autoplay.start();
     });
@@ -140,6 +144,90 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// mobile-only swiper: creates proper .swiper > .swiper-wrapper > .swiper-slide structure
+(function () {
+  let offerSwiper = null;
+  let wrapper = null;
+
+  function isMobile() {
+    return window.innerWidth < 768;
+  }
+
+  function initOfferSwiper() {
+    const container = document.querySelector('.mobile-offers-swiper');
+    if (!container) return;
+
+    // ensure Swiper library available
+    if (typeof Swiper === 'undefined') {
+      console.warn('Swiper is not loaded. Include Swiper JS before this script.');
+      return;
+    }
+
+    if (isMobile()) {
+      if (offerSwiper) return; // already init
+
+      // create wrapper and move direct child columns into it
+      wrapper = document.createElement('div');
+      wrapper.classList.add('swiper-wrapper');
+
+      // select only direct element children that are the columns (matches current HTML)
+      const directCols = Array.from(container.querySelectorAll(':scope > div'));
+
+      directCols.forEach(col => {
+        // convert bootstrap columns to slides
+        col.classList.add('swiper-slide');
+        col.classList.remove('col-12', 'col-md-6', 'col-lg-3');
+        wrapper.appendChild(col);
+      });
+
+      // mark container as swiper and append wrapper
+      container.classList.add('swiper');
+      container.appendChild(wrapper);
+
+      // init swiper instance
+      offerSwiper = new Swiper('.mobile-offers-swiper', {
+        slidesPerView: 1.2,
+        spaceBetween: 16,
+        loop: true,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+      });
+      return;
+    }
+
+    // if not mobile and swiper exists, destroy & restore
+    if (offerSwiper) {
+      offerSwiper.destroy(true, true);
+      offerSwiper = null;
+
+      // move slides back to container (unwrap)
+      if (wrapper) {
+        const slides = Array.from(wrapper.children);
+        slides.forEach(slide => {
+          slide.classList.remove('swiper-slide');
+          slide.classList.add('col-12', 'col-md-6', 'col-lg-3');
+          container.appendChild(slide);
+        });
+
+        // remove wrapper from DOM
+        wrapper.remove();
+        wrapper = null;
+      }
+
+      container.classList.remove('swiper');
+    }
+  }
+
+  // init on load + resize
+  window.addEventListener('load', initOfferSwiper);
+  window.addEventListener('resize', function () {
+    // debounce small resize flurries
+    clearTimeout(window.__offerSwiperResizeTimer);
+    window.__offerSwiperResizeTimer = setTimeout(initOfferSwiper, 120);
+  });
+})();
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -204,9 +292,9 @@ if (document.querySelector(".premiumSwiper")) {
       prevEl: ".premium-prev",
     },
     autoplay: {
-        delay: 2000,      
-        disableOnInteraction: false,
-      },
+      delay: 2000,
+      disableOnInteraction: false,
+    },
     watchOverflow: false,
     breakpoints: {
       768: {
@@ -262,48 +350,107 @@ const wrapper = document.querySelector('.card-wrapper');
 if (wrapper) {
   const cards = wrapper.querySelectorAll('.card-item');
 
-  if (window.innerWidth >= 768) {
-    wrapper.classList.add('hover-center');
-  } else {
+  // hover handler for desktop
+  function handleHover(card) {
     wrapper.classList.remove('hover-left', 'hover-center', 'hover-right');
+    if (card.classList.contains('left')) wrapper.classList.add('hover-left');
+    else if (card.classList.contains('center')) wrapper.classList.add('hover-center');
+    else if (card.classList.contains('right')) wrapper.classList.add('hover-right');
+  }
 
-    // 👉 make the first card active on mobile
-    const firstCard = cards[0];
-    if (firstCard) {
-      wrapper.classList.add('hover-left'); // or 'hover-center' if you want centered
+  function applyCardBehavior() {
+    if (window.innerWidth >= 768) {
+      // DESKTOP → enable hover logic
+      cards.forEach(card => {
+        card.classList.remove('active'); // remove mobile active
+        card.onmouseenter = () => handleHover(card);
+        card.onmouseleave = () => {
+          wrapper.classList.remove('hover-left', 'hover-right');
+          wrapper.classList.add('hover-center');
+        };
+      });
+
+      // Set default desktop state
+      wrapper.classList.add('hover-center');
+
+    } else {
+      // MOBILE → disable hover logic
+      cards.forEach(card => {
+        card.onmouseenter = null;
+        card.onmouseleave = null;
+        card.classList.add('active'); // show all card contents
+      });
+
+      wrapper.classList.remove('hover-left', 'hover-center', 'hover-right');
     }
   }
 
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      wrapper.classList.remove('hover-left', 'hover-center', 'hover-right');
+  // Initial setup
+  applyCardBehavior();
 
-      if (card.classList.contains('left')) {
-        wrapper.classList.add('hover-left');
-      } else if (card.classList.contains('center')) {
-        wrapper.classList.add('hover-center');
-      } else if (card.classList.contains('right')) {
-        wrapper.classList.add('hover-right');
-      }
-    });
-
-    card.addEventListener('mouseleave', () => {
-      if (window.innerWidth >= 768) {
-        wrapper.classList.remove('hover-left', 'hover-right');
-        wrapper.classList.add('hover-center');
-      } else {
-        wrapper.classList.remove('hover-left', 'hover-center', 'hover-right');
-        // 👉 keep first card active again when leaving
-        const firstCard = cards[0];
-        if (firstCard) {
-          wrapper.classList.add('hover-left');
-        }
-      }
-    });
-  });
+  // Re-apply on resize
+  window.addEventListener('resize', applyCardBehavior);
 }
 
 
+// const wrapper = document.querySelector('.card-wrapper');
+
+// if (wrapper) {
+//   const cards = wrapper.querySelectorAll('.card-item');
+
+ 
+
+//   cards.forEach(card => {
+//     card.addEventListener('mouseenter', () => {
+//       wrapper.classList.remove('hover-left', 'hover-center', 'hover-right');
+
+//       if (card.classList.contains('left')) {
+//         wrapper.classList.add('hover-left');
+//       } else if (card.classList.contains('center')) {
+//         wrapper.classList.add('hover-center');
+//       } else if (card.classList.contains('right')) {
+//         wrapper.classList.add('hover-right');
+//       }
+//     });
+
+//     card.addEventListener('mouseleave', () => {
+//       if (window.innerWidth >= 768) {
+//         wrapper.classList.remove('hover-left', 'hover-right');
+//         wrapper.classList.add('hover-center');
+//       } else {
+//         wrapper.classList.remove('hover-left', 'hover-center', 'hover-right');
+//         // 👉 keep first card active again when leaving
+//         const firstCard = cards[0];
+//         if (firstCard) {
+//           wrapper.classList.add('hover-left');
+//         }
+//       }
+//     });
+//   });
+
+//    if (window.innerWidth >= 768) {
+//     wrapper.classList.add('hover-center');
+//   } else {
+//     wrapper.classList.remove('hover-left', 'hover-center', 'hover-right');
+
+//     // 👉 make the first card active on mobile
+//     const firstCard = cards[0];
+//     if (firstCard) {
+//       wrapper.classList.add('hover-left' ,'hover-center', 'hover-right'); // or 'hover-center' if you want centered
+//     }
+//   }
+//   if (window.innerWidth >= 768) {
+
+//     // desktop → remove active (use hover logic)
+//     cards.forEach(card => card.classList.remove('active'));
+
+// } else {
+
+//     // mobile → show all cards
+//     cards.forEach(card => card.classList.add('active'));
+// }
+
+// }
 
 
 

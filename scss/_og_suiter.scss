@@ -262,18 +262,18 @@
     }
 
     @include respond(sm) {
-      display: none;
+      display: block;
     }
 
     @include respond(md) {
-      display: none;
+      display: block;
     }
 
 
 
   }
 
-  @media (min-width: 992px) and (max-width: 1262px) {
+  @media (min-width: 332px) and (max-width: 1262px) {
     .arrow-btn {
 
       // @include arrow-btn;

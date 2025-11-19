@@ -3,6 +3,10 @@
 .hotel-staycation {
   display: flex;
   flex-wrap: wrap;
+
+  @include respond(sm){
+    padding-bottom: 40px;
+  }
   
 
   .staycation-left,
@@ -20,6 +24,9 @@
       max-width: 441px;
       @include flex-column;
       text-align: center;
+      @include respond(sm){
+        text-align: left ;
+      }
 
       h2 {
         font-family: $font-base;
@@ -50,6 +57,9 @@
 
       .staycation-btn {
        @include brown-button();
+       @include respond(sm){
+        width: 342px;
+       }
     }
   }
   }

@@ -223,19 +223,24 @@
 
       .card-content {
         padding: 1rem;
+        
         display: none;
-        background-color: var(--luxury-comfort-background);
+        background: var(--luxury-comfort-background) !important;
 
         h5 {
           font-size: 16px;
           opacity: 0;
           transform: translateY(20px);
+          margin-top: 0 !important;
         }
 
         p {
           font-size: 13px;
-          opacity: 0;
-          transform: translateY(20px);
+          opacity: 1 !important;
+          transform: translateY(30px);
+          visibility: visible !important;
+          color: white;
+          padding-bottom: 10px;
         }
       }
 
@@ -261,6 +266,16 @@
       }
     }
   }
+
+//   .card-item.active .card-content {
+//   display: block !important;
+// }
+
+// .card-item.active .card-content * {
+//   opacity: 1 !important;
+//   transform: translateY(0) !important;
+// }
+
 }
 
 
