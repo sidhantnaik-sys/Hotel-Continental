@@ -3,13 +3,14 @@
 
 .luxury-comfort {
   background-color: var(--primary-color);
+  z-index: 1 !important;
 
   .luxury-comfort-container {
     padding-top: 70px;
     padding-bottom: 90px;
 
     @include respond(sm){
-      padding-top: 10px;
+      padding-top: 90px;
     padding-bottom: 60px;
     }
 
@@ -18,6 +19,11 @@
       font-size: 40px;
       font-family: $font-base;
       font-weight: 400;
+
+      @include respond(sm){
+        text-align: left !important;
+        font-size: 26px !important;
+      }
     }
 
     .card-wrapper {
@@ -36,7 +42,7 @@
         padding: 2rem;
 
         @include respond(sm) {
-          min-height: 220px;
+          min-height: 363.2px;
         }
 
         .card-img {

@@ -6,12 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
   <!-- In header.php or enqueue -->
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="ed159e52-13c7-4968-abb5-c89629fdad3a" data-blockingmode="auto" type="text/javascript"></script>
+
+
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Instrument+Sans&display=swap"
     rel="stylesheet">
+
 
 
 

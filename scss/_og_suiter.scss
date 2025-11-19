@@ -34,7 +34,8 @@
       opacity: 90%;
 
       @include respond(sm) {
-        font-size: 24px;
+        font-size: 26px !important;
+        text-align: left;
       }
 
       @include respond(md) {
@@ -57,6 +58,7 @@
 
       @include respond(sm) {
         font-size: 14px;
+        text-align: left;
       }
 
     }

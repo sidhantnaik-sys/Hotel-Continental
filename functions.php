@@ -864,19 +864,93 @@ add_action('after_setup_theme', 'register_my_menus');
 
 //
 
+// add_filter('nav_menu_link_attributes', function ($atts, $item) {
+
+
+//     if (function_exists('switch_to_blog')) {
+//         switch_to_blog(6);
+
+//         $test_summer = get_field('hero_summer_image', $atts['title']);
+//         $test_winter = get_field('hero_winter_image', $atts['title']);
+
+//         restore_current_blog();
+//     }
+
+
+
+//     // LOCAL ACF fields (Site 1)
+//     $image_summer = get_field('image_summer', $item->object_id);
+//     $image_winter = get_field('image_winter', $item->object_id);
+//     $image_green = get_field('image_green', $item->object_id);
+//     $image_room = get_field('image_room', $item->object_id);
+
+//     $room_sections = get_field('room_sections');
+//     $section_image = $room_sections['section_image'] ?? null;
+
+//     // Assign local fields
+//     if ($image_summer)
+//         $atts['data-summer'] = esc_url($image_summer['url']);
+//     if ($image_winter)
+//         $atts['data-winter'] = esc_url($image_winter['url']);
+//     if ($image_green)
+//         $atts['data-green'] = esc_url($image_green['url']);
+//     if ($image_room)
+//         $atts['data-room'] = esc_url($image_room['url']);
+//     if ($section_image)
+//         $atts['data-section'] = esc_url($section_image['url']);
+//     if ($test_summer)
+//         $atts['data-herosummer'] = esc_url($test_summer['url']);
+//     if ($test_winter)
+//         $atts['data-herowinter'] = esc_url($test_winter['url']);
+
+   
+
+//     return $atts;
+// }, 10, 2);
+
+add_action( 'wp_nav_menu_item_custom_fields', function( $item_id, $item ) {
+    // Get existing value
+    $value = get_post_meta( $item_id, '_menu_page_id', true );
+    ?>
+    <p class="description description-wide">
+        <label for="edit-menu-item-pageid-<?php echo $item_id; ?>">
+            Page ID<br>
+            <input type="text"
+                id="edit-menu-item-pageid-<?php echo $item_id; ?>"
+                name="menu-item-pageid[<?php echo $item_id; ?>]"
+                value="<?php echo esc_attr( $value ); ?>" />
+        </label>
+    </p>
+    <?php
+}, 10, 2 );
+add_action( 'wp_update_nav_menu_item', function( $menu_id, $menu_item_db_id ) {
+    if ( isset($_POST['menu-item-pageid'][$menu_item_db_id]) ) {
+        update_post_meta(
+            $menu_item_db_id,
+            '_menu_page_id',
+            sanitize_text_field($_POST['menu-item-pageid'][$menu_item_db_id])
+        );
+    }
+}, 10, 2 );
+
 add_filter('nav_menu_link_attributes', function ($atts, $item) {
 
+    // Prevent undefined variable warnings
+    $test_summer = null;
+    $test_winter = null;
+    $page_id = get_post_meta( $item->ID, '_menu_page_id', true );
+    if ( $page_id ) {
+        $atts['data-page-id'] = $page_id;
+    }
 
     if (function_exists('switch_to_blog')) {
         switch_to_blog(6);
 
-        $test_summer = get_field('hero_summer_image', $atts['title']);
-        $test_winter = get_field('hero_winter_image', $atts['title']);
+        $test_summer = get_field('hero_summer_image', $atts['data-page-id']);
+        $test_winter = get_field('hero_winter_image', $atts['data-page-id']);
 
         restore_current_blog();
     }
-
-
 
     // LOCAL ACF fields (Site 1)
     $image_summer = get_field('image_summer', $item->object_id);
@@ -903,32 +977,8 @@ add_filter('nav_menu_link_attributes', function ($atts, $item) {
     if ($test_winter)
         $atts['data-herowinter'] = esc_url($test_winter['url']);
 
-    // var_dump($atts['data-herosummer']);
-    //  var_dump($test_winter['url']);
-
-    /*
-    -----------------------------------------------------
-    ADD MULTISITE HERO IMAGES (Site 6)
-    -----------------------------------------------------
-    */
-
-    // // Get hero images from Site 6 based on menu title
-    // $hero_summer = get_site6_hero_by_menu_title($item->title, 'hero_summer_image');
-    // $hero_winter = get_site6_hero_by_menu_title($item->title, 'hero_winter_image');
-
-    // // Add hero attributes
-    // if ($hero_summer && isset($hero_summer['url'])) {
-    //     $atts['data-hero-summer'] = esc_url($hero_summer['url']);
-    // }
-
-    // if ($hero_winter && isset($hero_winter['url'])) {
-    //     $atts['data-hero-winter'] = esc_url($hero_winter['url']);
-    // }
-
     return $atts;
 }, 10, 2);
-
-
 
 
 // add_filter('nav_menu_link_attributes', function($atts, $item) {

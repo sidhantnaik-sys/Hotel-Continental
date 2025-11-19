@@ -288,6 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const pdfLinks = document.querySelectorAll('a[href$=".pdf"]');
   const modal = document.getElementById('pdfModal');
+  if (!modal) return; // <-- Prevents errors if modal does not exist
   const modalIframe = modal.querySelector('iframe');
   const closeBtn = modal.querySelector('.pdf-close');
 
@@ -413,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function () {
     switcher.style.setProperty('top', '24px', 'important');
     switcher.style.setProperty('right', '0px', 'important');
 
-    console.log("✅ Switcher moved into .header-container-casbar");
+    // console.log("✅ Switcher moved into .header-container-casbar");
     return true;
   }
 
@@ -468,21 +469,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector('.header-container-barboman');
 
     if (!switcher) {
-      console.warn("Switcher NOT found on Barboman page");
+      // console.warn("Switcher NOT found on Barboman page");
       return false;
     } else {
-      console.log("Switcher found:", switcher);
+      // console.log("Switcher found:", switcher);
     }
 
     if (!container) {
-      console.warn("Container .header-container-barboman NOT found!");
+      // console.warn("Container .header-container-barboman NOT found!");
       return false;
     } else {
-      console.log("Container found:", container);
+      // console.log("Container found:", container);
     }
 
     if (window.innerWidth < 1024) {
-      console.log("Window width < 1024px, skipping move");
+      // console.log("Window width < 1024px, skipping move");
       return false;
     }
 
@@ -497,7 +498,7 @@ document.addEventListener("DOMContentLoaded", function () {
     switcher.style.setProperty('top', '24px', 'important');
     switcher.style.setProperty('right', '0px', 'important');
 
-    console.log("✅ Switcher moved into .header-container-barboman with CSS variables");
+    // console.log("✅ Switcher moved into .header-container-barboman with CSS variables");
     return true;
   }
 
@@ -524,19 +525,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM loaded — starting observer for Barboman switcher");
+    
 
     const observer = new MutationObserver(() => {
       const switcher = document.querySelector('.trp-language-switcher.trp-floating-switcher.trp-ls-inline.trp-switcher-position-top');
       const container = document.querySelector('.header-container-barboman');
 
       if (switcher && container) {
-        console.log("Switcher and container detected by observer");
+        
         moveSwitcher();
         observer.disconnect();
       } else {
-        if (!switcher) console.log("Observer: Switcher not yet in DOM");
-        if (!container) console.log("Observer: Container not yet in DOM");
+        if (!switcher);
+        if (!container);
       }
     });
 
@@ -702,16 +703,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-// document.querySelectorAll('a').forEach(a => {
-//     a.addEventListener('mouseenter', () => {
-//         a.dataset.originalTitle = a.getAttribute('title'); // save original
-//         a.setAttribute('title', ''); // remove tooltip
-//     });
-
-//     a.addEventListener('mouseleave', () => {
-//         // optional: restore title if you ever need it back
-//         // a.setAttribute('title', a.dataset.originalTitle || '');
-//     });
-// });
 

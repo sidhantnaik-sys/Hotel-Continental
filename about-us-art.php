@@ -104,6 +104,34 @@ $bg_image = get_field('background_image');
 </div>
 
 <div class="room-padding">
+    <?php if (have_rows('sections')): ?>
+      <section class="privacy-policy-page container py-5 p1 ">
+        <div class="privacy  content px-5">
+          <?php while (have_rows('sections')):
+            the_row(); ?>
+            <div class="policy-section py-3">
+              <h3><?php the_sub_field('heading'); ?></h3>
+
+              <?php if (get_sub_field('content')): ?>
+                <div class="section-content">
+                  <p><?php the_sub_field('content'); ?></p>
+                </div>
+              <?php endif; ?>
+
+              <?php if (have_rows('section_list_items')): ?>
+                <ul class="section-list mx-3">
+                  <?php while (have_rows('section_list_items')):
+                    the_row(); ?>
+                    <li><?php the_sub_field('list_item'); ?></li>
+                  <?php endwhile; ?>
+                </ul>
+              <?php endif; ?>
+            </div>
+          <?php endwhile; ?>
+        </div>
+      </section>
+    <?php endif; ?>
+
     <div class="container-fluid cards py-5 ">
         <div class="container carousel-wrapper position-relative h1p">
             <div class="carousel-header p-2 h1p truffle-h1">
