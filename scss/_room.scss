@@ -429,7 +429,7 @@ body .a1 a.no-underline {
 }
 
 .room-padding-two {
-  background-color: var(--luxury-comfort-onhover-content);
+  background-color: white;
 
   @include respond(xl) {
     padding: 0 125px;
@@ -437,5 +437,5 @@ body .a1 a.no-underline {
 }
 
 #room-detail2 {
-  background-color: var(--luxury-comfort-onhover-content);
+  background-color: white;
 }

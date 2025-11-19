@@ -1,4 +1,5 @@
 @import 'responsive';
+@import 'variables';
 
 
 /* SECTION WRAPPER */
@@ -72,7 +73,7 @@
 
 .suite-text-block h2 {
     font-size: 44px;
-    color: var(luxury-comfort-onhover-content);
+    color: #26160B;
     text-transform: capitalize;
     line-height: 1.35;
     letter-spacing: -1px;
@@ -111,8 +112,14 @@
     flex-direction: column;
     gap: 34px;
     justify-content: space-between;
-    color: var(luxury-comfort-onhover-content);
 
+
+    a {
+        text-decoration: none;
+        color: #26160B;
+    }
+
+    padding-top: 2px !important;
 
 }
 
@@ -125,6 +132,7 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: break-word;
+    color: #26160B;
 
     @include respond(tablet) {
 
@@ -152,7 +160,7 @@
     display: inline-block;
     height: auto;
     font-family: $font_second;
-    padding: 6.5px 24px;
+    padding: 7.3px 24px;
     background-color: var(--button-color-stay) !important;
     color: #ffffff !important;
     border-radius: 2px;
@@ -162,7 +170,7 @@
     transition: background-color 0.3s ease !important;
     text-align: center;
     margin-top: 0 !important;
-    border: 1px solid #BBA568 !important;
+
     max-width: 250px;
     line-height: 1.815;
     word-wrap: break-word;
