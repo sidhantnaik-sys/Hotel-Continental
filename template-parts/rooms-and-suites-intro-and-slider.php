@@ -10,7 +10,9 @@
         <!-- RIGHT DESCRIPTION + BUTTON + ARROWS -->
         <div class="suite-info-block container">
             <div class="hrs-description">
-                <p><?php the_field('detailed_description'); ?></p>
+                <?php
+                the_field('detailed_description');
+                ?>
             </div>
 
             <div class="suite-actions">

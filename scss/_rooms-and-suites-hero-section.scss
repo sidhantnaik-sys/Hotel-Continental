@@ -103,6 +103,8 @@
 
     }
 
+
+
 }
 
 .hero-text-container {
@@ -122,6 +124,10 @@
 
     @media (min-width:1600px) {
         padding-left: 0;
+    }
+
+    @media (min-width:576px) and (max-width:767.98px) {
+        max-width: 540px;
     }
 
 }
