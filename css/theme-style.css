@@ -74,7 +74,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -474,7 +474,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -1439,7 +1439,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -2111,7 +2111,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -2511,7 +2511,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -2911,7 +2911,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -3311,7 +3311,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -4093,7 +4093,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -4493,7 +4493,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -4890,6 +4890,12 @@ body.winter {
   color: #ffffff;
   font-weight: 600;
 }
+@media (max-width: 767.98px) {
+  .hero .overlay-content a.btn {
+    width: 314px;
+    justify-content: center;
+  }
+}
 
 .rotating-badge1 {
   position: absolute;
@@ -4901,9 +4907,10 @@ body.winter {
 }
 @media (max-width: 767.98px) {
   .rotating-badge1 {
-    right: 30%;
-    width: 150px;
-    height: 150px;
+    right: 17.2px;
+    bottom: -7%;
+    width: 140.8px;
+    height: 140.5px;
   }
 }
 .rotating-badge1 .center-logo,
@@ -4911,12 +4918,19 @@ body.winter {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* keep this for initial centering */
+  transform: translate(-50%, -50%);
+  /* keep this for initial centering */
 }
 .rotating-badge1 .center-logo img {
   width: 60px;
   height: auto;
   z-index: 2;
+}
+@media (max-width: 767.98px) {
+  .rotating-badge1 .center-logo img {
+    width: 42px;
+    height: 65px;
+  }
 }
 .rotating-badge1 .circle-text {
   z-index: 1;
@@ -4925,7 +4939,7 @@ body.winter {
   animation: rotateText1 13s cubic-bezier(0.6, 0.05, 0.36, 0.6) infinite;
 }
 .rotating-badge1 .circle-text img {
-  width: 150px;
+  width: 140px;
   height: auto;
   display: block;
 }
@@ -5022,7 +5036,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -5422,7 +5436,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -5749,6 +5763,7 @@ body.winter {
 
 .luxury-comfort {
   background-color: var(--primary-color);
+  z-index: 1 !important;
 }
 .luxury-comfort .luxury-comfort-container {
   padding-top: 70px;
@@ -5756,7 +5771,7 @@ body.winter {
 }
 @media (max-width: 767.98px) {
   .luxury-comfort .luxury-comfort-container {
-    padding-top: 10px;
+    padding-top: 90px;
     padding-bottom: 60px;
   }
 }
@@ -5765,6 +5780,12 @@ body.winter {
   font-size: 40px;
   font-family: Gilda Display;
   font-weight: 400;
+}
+@media (max-width: 767.98px) {
+  .luxury-comfort .luxury-comfort-container h2 {
+    text-align: left !important;
+    font-size: 26px !important;
+  }
 }
 .luxury-comfort .luxury-comfort-container .card-wrapper {
   display: flex;
@@ -5783,7 +5804,7 @@ body.winter {
 }
 @media (max-width: 767.98px) {
   .luxury-comfort .luxury-comfort-container .card-wrapper .card-item {
-    min-height: 220px;
+    min-height: 363.2px;
   }
 }
 .luxury-comfort .luxury-comfort-container .card-wrapper .card-item .card-img {
@@ -5929,17 +5950,21 @@ body.winter {
   .card-wrapper .card-item .card-content {
     padding: 1rem;
     display: none;
-    background-color: var(--luxury-comfort-background);
+    background: var(--luxury-comfort-background) !important;
   }
   .card-wrapper .card-item .card-content h5 {
     font-size: 16px;
     opacity: 0;
     transform: translateY(20px);
+    margin-top: 0 !important;
   }
   .card-wrapper .card-item .card-content p {
     font-size: 13px;
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 1 !important;
+    transform: translateY(30px);
+    visibility: visible !important;
+    color: white;
+    padding-bottom: 10px;
   }
   .card-wrapper .card-item.active .card-content {
     display: block;
@@ -6069,7 +6094,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -6469,7 +6494,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -6829,7 +6854,8 @@ body.winter {
 }
 @media (max-width: 767.98px) {
   .suite-carousel .head .section-heading {
-    font-size: 24px;
+    font-size: 26px !important;
+    text-align: left;
   }
 }
 @media (max-width: 991.98px) {
@@ -6852,6 +6878,7 @@ body.winter {
 @media (max-width: 767.98px) {
   .suite-carousel .head .section-description {
     font-size: 14px;
+    text-align: left;
   }
 }
 .suite-carousel .head .view-all {
@@ -7010,15 +7037,15 @@ body.winter {
 }
 @media (max-width: 767.98px) {
   .suite-carousel .arrow-btn {
-    display: none;
+    display: block;
   }
 }
 @media (max-width: 991.98px) {
   .suite-carousel .arrow-btn {
-    display: none;
+    display: block;
   }
 }
-@media (min-width: 992px) and (max-width: 1262px) {
+@media (min-width: 332px) and (max-width: 1262px) {
   .suite-carousel .arrow-btn {
     position: absolute;
     top: -17%;
@@ -7279,7 +7306,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -7679,7 +7706,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -8062,6 +8089,12 @@ body.winter {
   background: #ffffff;
   color: #816636;
 }
+@media (max-width: 767.98px) {
+  .luxury-highlight .luxury-container .luxury-left .luxury-btn {
+    width: 342px;
+    text-align: center;
+  }
+}
 .luxury-highlight .luxury-container .luxury-right {
   background-color: var(--luxury-right);
   color: var(--primary-color);
@@ -8197,6 +8230,30 @@ body.winter {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+@media (max-width: 768px) {
+  .luxury-highlight .luxury-container .row {
+    flex-direction: column;
+  }
+  .luxury-left,
+  .luxury-right {
+    width: 100%;
+    padding: 20px 0;
+  }
+  /* Add gap / separator color */
+  .luxury-left {
+    margin-bottom: 20px;
+  }
+  .luxury-highlight .luxury-container {
+    background: var(--og-suite-background);
+  }
+  /* Optional: Give each section its own background */
+  .luxury-left {
+    background: var(--og-suite-background);
+  }
+  .luxury-right {
+    background: var(--og-suite-background);
+  }
+}
 /* style.scss or _theme.scss */
 body.summer {
   --primary-color: #EEE4D6;
@@ -8272,7 +8329,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -8672,7 +8729,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -9001,6 +9058,11 @@ body.winter {
   display: flex;
   flex-wrap: wrap;
 }
+@media (max-width: 767.98px) {
+  .hotel-staycation {
+    padding-bottom: 40px;
+  }
+}
 .hotel-staycation .staycation-left,
 .hotel-staycation .staycation-right {
   flex: 1 1 50%;
@@ -9020,6 +9082,11 @@ body.winter {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+@media (max-width: 767.98px) {
+  .hotel-staycation .staycation-left .staycation-content {
+    text-align: left;
+  }
 }
 .hotel-staycation .staycation-left .staycation-content h2 {
   font-family: Gilda Display;
@@ -9067,6 +9134,11 @@ body.winter {
 }
 .hotel-staycation .staycation-left .staycation-content .staycation-btn:hover {
   background-color: #A48243 !important;
+}
+@media (max-width: 767.98px) {
+  .hotel-staycation .staycation-left .staycation-content .staycation-btn {
+    width: 342px;
+  }
 }
 .hotel-staycation .staycation-right {
   display: flex;
@@ -9175,7 +9247,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -9575,7 +9647,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -10043,7 +10115,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -10443,7 +10515,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -10803,6 +10875,7 @@ body.winter {
 @media (max-width: 767.98px) {
   .utk-offers-section .utk-container .section-title {
     font-size: 24px;
+    text-align: left !important;
   }
 }
 @media (max-width: 991.98px) {
@@ -10985,7 +11058,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -11385,7 +11458,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;
@@ -11735,14 +11808,16 @@ body.winter {
 }
 @media (max-width: 767.98px) {
   .offers-section2 .offers-section-container {
-    padding: 0 50px;
-    padding-left: 50px !important;
+    padding-left: 20px !important;
   }
 }
 @media (max-width: 991.98px) {
   .offers-section2 .offers-section-container {
     padding-left: 80px;
   }
+}
+.offers-section2 .offers-section-container .offers-text {
+  padding-right: 20px;
 }
 .offers-section2 .offers-section-container .section-heading {
   font-family: Gilda Display;
@@ -11941,7 +12016,7 @@ body.summer {
   --luxury-comfort-background: #FAF7F3;
   --luxury-comfort-onhover-content:#26160B;
   --og-suite-background:#ffffff;
-  --overly-background-color:#A48243F0;
+  --overly-background-color:#816636;
   --luxury-right:#E4D7C3;
   --staycation-background:#ffffff;
   --button-color-stay:#816636;
@@ -12012,7 +12087,7 @@ body.summer {
   --luxury-comfort-background: #FAF7F3;
   --luxury-comfort-onhover-content:#26160B;
   --og-suite-background:#ffffff;
-  --overly-background-color:#A48243F0;
+  --overly-background-color:#816636;
   --luxury-right:#E4D7C3;
   --staycation-background:#ffffff;
   --button-color-stay:#816636;
@@ -12083,7 +12158,7 @@ body.summer {
   --luxury-comfort-background: #FAF7F3;
   --luxury-comfort-onhover-content:#26160B;
   --og-suite-background:#ffffff;
-  --overly-background-color:#A48243F0;
+  --overly-background-color:#816636;
   --luxury-right:#E4D7C3;
   --staycation-background:#ffffff;
   --button-color-stay:#816636;
@@ -12154,7 +12229,7 @@ body.summer {
   --luxury-comfort-background: #FAF7F3;
   --luxury-comfort-onhover-content:#26160B;
   --og-suite-background:#ffffff;
-  --overly-background-color:#A48243F0;
+  --overly-background-color:#816636;
   --luxury-right:#E4D7C3;
   --staycation-background:#ffffff;
   --button-color-stay:#816636;
@@ -12547,7 +12622,7 @@ body.summer {
   --luxury-comfort-background: #FAF7F3;
   --luxury-comfort-onhover-content:#26160B;
   --og-suite-background:#ffffff;
-  --overly-background-color:#A48243F0;
+  --overly-background-color:#816636;
   --luxury-right:#E4D7C3;
   --staycation-background:#ffffff;
   --button-color-stay:#816636;
@@ -16588,7 +16663,7 @@ body.winter {
   --luxury-comfort-background: #816636;
   --luxury-comfort-onhover-content: #ffffff;
   --og-suite-background: #EEE4D6;
-  --overly-background-color: #A48243;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --staycation-background: #F3EBE0;
   --button-color-stay: #816636;
@@ -17333,7 +17408,7 @@ body.winter {
   --luxury-comfort-background: #816636;
   --luxury-comfort-onhover-content: #ffffff;
   --og-suite-background: #EEE4D6;
-  --overly-background-color: #A48243;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --staycation-background: #F3EBE0;
   --button-color-stay: #816636;
@@ -17687,7 +17762,7 @@ body.winter {
   --luxury-comfort-background: #816636;
   --luxury-comfort-onhover-content: #ffffff;
   --og-suite-background: #EEE4D6;
-  --overly-background-color: #A48243;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --staycation-background: #F3EBE0;
   --button-color-stay: #816636;
@@ -18041,7 +18116,7 @@ body.winter {
   --luxury-comfort-background: #816636;
   --luxury-comfort-onhover-content: #ffffff;
   --og-suite-background: #EEE4D6;
-  --overly-background-color: #A48243;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --staycation-background: #F3EBE0;
   --button-color-stay: #816636;
@@ -19063,7 +19138,7 @@ body.winter {
   --luxury-comfort-background: #816636;
   --luxury-comfort-onhover-content: #ffffff;
   --og-suite-background: #EEE4D6;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --staycation-background: #F3EBE0;
   --button-color-stay: #816636;
@@ -19649,7 +19724,7 @@ body.winter {
   --luxury-comfort-background: #816636;
   --luxury-comfort-onhover-content: #ffffff;
   --og-suite-background: #EEE4D6;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --staycation-background: #F3EBE0;
   --button-color-stay: #816636;
@@ -20017,7 +20092,7 @@ body.winter {
   --luxury-comfort-background: #816636;
   --luxury-comfort-onhover-content: #ffffff;
   --og-suite-background: #EEE4D6;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --staycation-background: #F3EBE0;
   --button-color-stay: #816636;
@@ -20385,7 +20460,7 @@ body.winter {
   --luxury-comfort-background: #816636;
   --luxury-comfort-onhover-content: #ffffff;
   --og-suite-background: #EEE4D6;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --staycation-background: #F3EBE0;
   --button-color-stay: #816636;
@@ -21089,6 +21164,11 @@ body.winter {
   padding: 0;
   margin-top: 18px;
   margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #C2A679 transparent;
+  scroll-behavior: smooth;
 }
 .bottled-selections-casbar .bottle-content .wine-list li {
   margin-bottom: 18px;
@@ -21101,6 +21181,7 @@ body.winter {
   font-weight: 400;
   display: flex;
   justify-content: end;
+  margin-right: 11px;
 }
 .bottled-selections-casbar .bottle-content .wine-list li .list_heading {
   font-family: Tox Typewriter;
@@ -21125,6 +21206,24 @@ body.winter {
   .bottled-selections-casbar .bottle-content .wine-list li .list_line {
     font-size: 14px;
   }
+}
+.bottled-selections-casbar .bottle-content .wine-list::-webkit-scrollbar {
+  width: 6px;
+}
+.bottled-selections-casbar .bottle-content .wine-list::-webkit-scrollbar-track {
+  background: rgba(129, 102, 54, 0.2392156863);
+}
+.bottled-selections-casbar .bottle-content .wine-list::-webkit-scrollbar-thumb {
+  background: #C2A679;
+  border-radius: 3px;
+}
+.bottled-selections-casbar .bottle-content .wine-list::-webkit-scrollbar-thumb:hover {
+  background: #d4b580;
+}
+.bottled-selections-casbar .bottle-content .wine-list::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
 }
 
 .our-menu-section-casbar {
@@ -21235,6 +21334,11 @@ body.winter {
   list-style: none;
   padding: 0;
   margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #C2A679 transparent;
+  scroll-behavior: smooth;
 }
 .our-menu-section-casbar .tab-content .dish-list li {
   margin-bottom: 18px;
@@ -21247,6 +21351,7 @@ body.winter {
   font-weight: 400;
   display: flex;
   justify-content: end;
+  margin-right: 10px;
 }
 .our-menu-section-casbar .tab-content .dish-list li .list_heading {
   font-family: Tox Typewriter;
@@ -21271,6 +21376,24 @@ body.winter {
   .our-menu-section-casbar .tab-content .dish-list li .list_line {
     font-size: 14px;
   }
+}
+.our-menu-section-casbar .tab-content .dish-list::-webkit-scrollbar {
+  width: 6px;
+}
+.our-menu-section-casbar .tab-content .dish-list::-webkit-scrollbar-track {
+  background: rgba(129, 102, 54, 0.2392156863);
+}
+.our-menu-section-casbar .tab-content .dish-list::-webkit-scrollbar-thumb {
+  background: #C2A679;
+  border-radius: 3px;
+}
+.our-menu-section-casbar .tab-content .dish-list::-webkit-scrollbar-thumb:hover {
+  background: #d4b580;
+}
+.our-menu-section-casbar .tab-content .dish-list::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
 }
 .our-menu-section-casbar .menu-image {
   padding: 0;
@@ -21578,7 +21701,7 @@ body.winter {
   --luxury-comfort-background: #816636;
   --luxury-comfort-onhover-content: #ffffff;
   --og-suite-background: #EEE4D6;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --staycation-background: #F3EBE0;
   --button-color-stay: #816636;
@@ -22161,7 +22284,7 @@ body.winter {
   --luxury-comfort-background: #816636;
   --luxury-comfort-onhover-content: #ffffff;
   --og-suite-background: #EEE4D6;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --staycation-background: #F3EBE0;
   --button-color-stay: #816636;
@@ -22529,7 +22652,7 @@ body.winter {
   --luxury-comfort-background: #816636;
   --luxury-comfort-onhover-content: #ffffff;
   --og-suite-background: #EEE4D6;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --staycation-background: #F3EBE0;
   --button-color-stay: #816636;
@@ -22897,7 +23020,7 @@ body.winter {
   --luxury-comfort-background: #816636;
   --luxury-comfort-onhover-content: #ffffff;
   --og-suite-background: #EEE4D6;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --staycation-background: #F3EBE0;
   --button-color-stay: #816636;
@@ -23786,7 +23909,7 @@ body.winter {
   --og-suite-background: #F3EBE0;
   --og-suite-desc:#0B0704;
   --og-button-color:#816636;
-  --overly-background-color: #A48243F0;
+  --overly-background-color: #816636;
   --luxury-right: #3A2A17;
   --les-mer-border:#C2A878;
   --staycation-background: #F3EBE0;

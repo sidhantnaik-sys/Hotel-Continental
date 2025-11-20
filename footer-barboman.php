@@ -106,6 +106,13 @@
       <a href="#">Terms & Conditions</a>
     </div> -->
   </div>
+
+  <div id="pdfModal" class="pdf-modal">
+  <div class="pdf-modal-content">
+    <span class="pdf-close">&times;</span>
+    <iframe src="" frameborder="0" style="width:100%; height:80vh;"></iframe>
+  </div>
+</div>
 </footer>
 
 <?php wp_footer(); ?>

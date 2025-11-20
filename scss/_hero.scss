@@ -1,7 +1,9 @@
 @import 'mixins';
 @import 'variables';
+
 .hero {
   position: relative;
+  
   height: 100vh;
   width: 100%;
   background-size: cover;
@@ -44,6 +46,7 @@
       @include respond(sm) {
         font-size: 32px;
       }
+
       @include respond(md) {
         font-size: 32px;
       }
@@ -73,6 +76,11 @@
         font-weight: 600;
       }
 
+      @include respond(sm) {
+        width: 314px;
+        justify-content: center;
+      }
+
 
     }
 
@@ -90,9 +98,10 @@
   z-index: 2;
 
   @include respond(sm) {
-    right: 30%;
-    width: 150px;
-    height: 150px;
+    right: 17.2px;
+    bottom: -7%;
+    width: 140.8px;
+    height: 140.5px;
   }
 
   .center-logo,
@@ -100,28 +109,56 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* keep this for initial centering */
+    transform: translate(-50%, -50%);
+    /* keep this for initial centering */
   }
 
-  .center-logo img { width: 60px; height: auto; z-index: 2; }
+  .center-logo img {
+    width: 60px;
+    height: auto;
+    z-index: 2;
+
+    @include respond(sm) {
+      width: 42px;
+      height: 65px;
+    }
+  }
 
   .circle-text {
     z-index: 1;
-    transform-origin: center center;         
+    transform-origin: center center;
     will-change: transform;
     animation: rotateText1 13s cubic-bezier(0.6, 0.05, 0.36, 0.6) infinite;
     // animation: rotateText1 8s linear infinite;
-    
-    
-    img { width: 150px; height: auto; display: block; }
+
+
+    img {
+      width: 140px;
+      height: auto;
+      display: block;
+    }
   }
 }
 
 
 @keyframes rotateText1 {
-  0%   { transform: translate(-50%, -50%) rotate(0deg); }
-  25%  { transform: translate(-50%, -50%) rotate(90deg); }
-  50%  { transform: translate(-50%, -50%) rotate(180deg); }
-  75%  { transform: translate(-50%, -50%) rotate(270deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  75% {
+    transform: translate(-50%, -50%) rotate(270deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }

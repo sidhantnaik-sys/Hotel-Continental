@@ -18,7 +18,7 @@ $hero_bg = ($season === 'summer') ? $summer_url : $winter_url;
 $badge_link = get_field('badge_link_url');
 ?>
 
-<section class="container-fluid hero text-white d-flex align-items-center position-relative" style="height: 100vh; overflow: hidden;">
+<section class="container-fluid hero text-white d-flex align-items-center position-relative" style="height: 100vh; overflow: visible;">
 
   <?php if ($hero_video): ?>
     <!-- Video Background -->

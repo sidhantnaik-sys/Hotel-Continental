@@ -36,6 +36,7 @@
 
       @include respond(sm) {
         font-size: 24px;
+        text-align: left !important;
       }
 
       @include respond(md) {

@@ -17,21 +17,7 @@
       <div class="col-md-3 p1">
         <h2 class="footer-title">Kontakt Oss</h2>
         <p><?php the_field('footer_contact_text', 'option'); ?></p>
-        <div class="social-icons d-flex gap-2">
-          <?php if (have_rows('footer_social_media', 'option')): ?>
-            <?php while (have_rows('footer_social_media', 'option')):
-              the_row();
-              $link = get_sub_field('social_link');
-              $icon = get_sub_field('social_icon');
-              ?>
-              <?php if ($link && $icon): ?>
-                <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener">
-                  <img src="<?php echo esc_url($icon['url']); ?>" alt="Social Icon" style="width:24px; height:24px;">
-                </a>
-              <?php endif; ?>
-            <?php endwhile; ?>
-          <?php endif; ?>
-        </div>
+        
 
       </div>
 
@@ -73,7 +59,22 @@
 
       </div>
     </div>
-
+    <!-- social links -->
+     <div class="social-icons d-flex gap-2">
+          <?php if (have_rows('footer_social_media', 'option')): ?>
+            <?php while (have_rows('footer_social_media', 'option')):
+              the_row();
+              $link = get_sub_field('social_link');
+              $icon = get_sub_field('social_icon');
+              ?>
+              <?php if ($link && $icon): ?>
+                <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener">
+                  <img src="<?php echo esc_url($icon['url']); ?>" alt="Social Icon" style="width:24px; height:24px;">
+                </a>
+              <?php endif; ?>
+            <?php endwhile; ?>
+          <?php endif; ?>
+        </div>
     <!-- Partner logos -->
     <div class="row mt-2 partner-logos">
       <?php if (have_rows('partner_logos', 'option')): ?>

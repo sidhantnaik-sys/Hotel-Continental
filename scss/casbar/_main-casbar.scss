@@ -301,7 +301,8 @@
       margin-bottom: 18px;
       font-family: $font-casbar;
     }
-    .menu-title{
+
+    .menu-title {
       font-size: 18px;
     }
 
@@ -430,6 +431,11 @@
       padding: 0;
       margin-top: 18px;
       margin: 0;
+      max-height: 400px; // match cocktail-list height
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #C2A679 transparent;
+      scroll-behavior: smooth;
 
       li {
         margin-bottom: 18px;
@@ -442,10 +448,10 @@
           font-weight: 400;
           display: flex;
           justify-content: end;
+          margin-right: 11px;
         }
 
         .list_heading {
-
           font-family: $font-casbar;
           font-weight: 500 !important;
           font-size: 18px;
@@ -468,9 +474,34 @@
             font-size: 14px;
           }
         }
+      }
 
+      // WebKit browsers (Chrome, Edge, Safari)
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #8166363D;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #C2A679;
+        border-radius: 3px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #d4b580;
+      }
+
+      // hide scrollbar buttons (arrows)
+      &::-webkit-scrollbar-button {
+        display: none;
+        height: 0;
+        width: 0;
       }
     }
+
   }
 }
 
@@ -620,6 +651,11 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      max-height: 400px; 
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #C2A679 transparent;
+      scroll-behavior: smooth;
 
       li {
         margin-bottom: 18px;
@@ -632,10 +668,10 @@
           font-weight: 400;
           display: flex;
           justify-content: end;
+          margin-right: 10px;
         }
 
         .list_heading {
-
           font-family: $font-casbar;
           font-weight: 500 !important;
           font-size: 18px;
@@ -658,9 +694,34 @@
             font-size: 14px;
           }
         }
+      }
 
+      // WebKit browsers (Chrome, Edge, Safari)
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #8166363D;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #C2A679;
+        border-radius: 3px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #d4b580;
+      }
+
+      // hide scrollbar buttons (arrows)
+      &::-webkit-scrollbar-button {
+        display: none;
+        height: 0;
+        width: 0;
       }
     }
+
   }
 
   .menu-image {
