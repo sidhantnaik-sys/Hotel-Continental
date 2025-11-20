@@ -19,14 +19,14 @@ get_header('theatercaffen'); ?>
 
   <?php if ($opening_image && $detail_title && $detail_desc): ?>
     <section class="restaurant-detail">
-      <div class="container restaurant-detail-wrapper d-flex pt-0">
+      <div class="container restaurant-detail-wrapper d-flex pt-0 <?php echo !$opening_image ? 'no-image' : ''; ?>">
 
-        <!-- Left: Image -->
-        <div class="restaurant-image-left">
-          <?php if ($opening_image): ?>
+        <!-- Left: Image (only if exists) -->
+        <?php if ($opening_image): ?>
+          <div class="restaurant-image-left">
             <img src="<?php echo esc_url($opening_image['url']); ?>" alt="<?php echo esc_attr($opening_image['alt']); ?>">
-          <?php endif; ?>
-        </div>
+          </div>
+        <?php endif; ?>
 
         <!-- Right: Content -->
         <div class="restaurant-content-right p-5">
@@ -57,44 +57,50 @@ get_header('theatercaffen'); ?>
         </div>
       </div>
     </section>
+
   <?php endif; ?>
 
 
 
 
   <section class="room-sections">
-    <?php if (have_rows('room_sections_2')): ?>
-      <div class="room-sections-wrapper container content h1p">
-        <?php
-        $count = 0;
-        while (have_rows('room_sections_2')):
-          the_row();
-          $title = get_sub_field('section_title_2');
-          $description = get_sub_field('section_description_2');
-          $image = get_sub_field('section_image_2');
+  <?php if (have_rows('room_sections_2')): ?>
+    <div class="room-sections-wrapper container content h1p">
+      <?php
+      $count = 0;
+      while (have_rows('room_sections_2')):
+        the_row();
+        $title = get_sub_field('section_title_2');
+        $description = get_sub_field('section_description_2');
+        $image = get_sub_field('section_image_2');
 
-          // Alternate layout (even = left image, odd = right image)
-          $layout_class = ($count % 2 === 0) ? 'image-right' : 'image-left';
-          ?>
+        // Alternate layout
+        $layout_class = ($count % 2 === 0) ? 'image-right' : 'image-left';
 
-          <div class="room-section <?php echo $layout_class; ?>">
+        // Add no-image class if image missing
+        $no_image_class = empty($image) ? 'no-image' : '';
+      ?>
 
+        <div class="room-section <?php echo $layout_class . ' ' . $no_image_class; ?>">
+
+          <?php if (!empty($image)): ?>
             <div class="room-image">
-              <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($title); ?>">
+              <img src="<?php echo esc_url($image['url']); ?>">
             </div>
+          <?php endif; ?>
 
-            <div class="room-content px-3 p1">
-              <h2><?php echo ($title); ?></h2>
-              <p><?php echo ($description); ?></p>
-            </div>
-
+          <div class="room-content px-3 p1">
+            <h2><?php echo ($title); ?></h2>
+            <p><?php echo ($description); ?></p>
           </div>
 
-          <?php $count++; endwhile; ?>
-      </div>
-    <?php endif; ?>
+        </div>
 
-  </section>
+      <?php $count++; endwhile; ?>
+    </div>
+  <?php endif; ?>
+</section>
+
 
 </div>
 

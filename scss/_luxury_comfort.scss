@@ -228,10 +228,12 @@
         background: var(--luxury-comfort-background) !important;
 
         h5 {
-          font-size: 16px;
+          font-size: 20px !important;
           opacity: 0;
           transform: translateY(20px);
           margin-top: 0 !important;
+          margin-bottom: 10px !important;
+          color: #FFFFFF !important;
         }
 
         p {
@@ -239,8 +241,8 @@
           opacity: 1 !important;
           transform: translateY(30px);
           visibility: visible !important;
-          color: white;
-          padding-bottom: 10px;
+          color: var(--luxury-comfort-onhover-content);
+          padding-bottom: 25px;
         }
       }
 

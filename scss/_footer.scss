@@ -114,6 +114,10 @@
       font-weight: 400;
       font-family: $font-base;
       margin-bottom: 8px;
+
+      @include respond(sm) {
+        font-size: 44px !important;
+      }
     }
 
     .footer-label {
@@ -314,8 +318,25 @@
   }
 }
 
-.pding-btm-footer{
-  @include respond(md){
+.pding-btm-footer {
+  @include respond(md) {
     padding-bottom: 20px;
+  }
+}
+
+
+.p16 {
+  p{
+    font-size: 16px;
+  }
+  @include respond(md) {
+    p {
+      font-size: 16px !important;
+    }
+  }
+  @include respond(sm) {
+    p {
+      font-size: 16px !important;
+    }
   }
 }

@@ -675,3 +675,22 @@
   color: #000 !important;
   text-decoration: none !important;
 }
+
+
+.room-section.no-image {
+  display: flex;
+}
+
+.room-section.no-image .room-image {
+  display: none !important;
+}
+
+.room-section.no-image .room-content {
+  width: 100%;
+  max-width: 100%;
+}
+/* When no image, make content full width */
+.room-section.no-image .room-content {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}

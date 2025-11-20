@@ -4,6 +4,9 @@
 .hero-banner {
   position: relative;
   height: 721px;
+  @include respond(sm){
+    height: 487px;
+  }
   @include respond(xxl){
     height: 1000px;
   }
@@ -48,6 +51,9 @@
 
   .hero-button {
     @include button-transparent;
+    @include respond(sm){
+      width: 314px;
+    }
   }
 
 }

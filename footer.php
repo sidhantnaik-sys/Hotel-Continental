@@ -14,7 +14,7 @@
     <div class="row mt-2 ">
 
       <!-- Column 1: Kontakt -->
-      <div class="col-md-3 p1">
+      <div class="col-md-3 p16">
         <h2 class="footer-title">Kontakt Oss</h2>
         <p><?php the_field('footer_contact_text', 'option'); ?></p>
         
@@ -22,7 +22,7 @@
       </div>
 
       <!-- Column 2: Adresse -->
-      <div class="col-md-3 Address p1">
+      <div class="col-md-3 Address p16">
         <h6 class="footer-label">Adresse</h6>
         <p class="font-w1">
           <a href="https://www.google.com/maps/search/<?php echo urlencode(get_field('footer_address_line', 'option') . ' ' . get_field('footer_city', 'option')); ?>"
@@ -35,7 +35,7 @@
       </div>
 
       <!-- Column 3: Generelle henvendelser -->
-      <div class="col-md-3 p1">
+      <div class="col-md-3 p16">
         <h6 class="footer-label">Generelle henvendelser</h6>
         <p class="font-w">
           Telefon:
@@ -51,7 +51,7 @@
       </div>
 
       <!-- Column 4: Jobb med oss -->
-      <div class="col-md-3 p1 send-app">
+      <div class="col-md-3 p16 send-app">
         <h6 class="footer-label">Jobb med oss</h6>
 
         <?php the_field('footer_career_text', 'option'); ?>

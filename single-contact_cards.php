@@ -121,6 +121,7 @@ if ($key_title || $key_para):
           $name = get_sub_field('name');
           $designation = get_sub_field('position');
           $contact_label = get_sub_field('contact_label');
+          $department = get_sub_field('department');
           $phone = get_sub_field('phone');
           $email = get_sub_field('email');
           ?>
@@ -139,7 +140,11 @@ if ($key_title || $key_para):
 
               <div class="hover-content ">
                 <p class="contact-label"><?php echo esc_html($contact_label); ?></p>
+                
                 <div class="contacts">
+                  <?php if ($department): ?>
+                  <?php echo ($department); ?>
+                <?php endif; ?>
                 <?php if ($phone): ?>
                   <?php echo ($phone); ?>
                 <?php endif; ?>

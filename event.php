@@ -95,7 +95,7 @@ $fallback_url = esc_url(is_array($hero_fallback) ? $hero_fallback['url'] : $hero
 
                     <?php if ($link): ?>
                       <span class="explore-btn">
-                        UTFORSKE
+                        UTFORSK
                         <span class="arrow">
                           <?php include get_template_directory() . '/assets/images/arrow.svg'; ?>
                         </span>

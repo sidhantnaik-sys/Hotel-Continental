@@ -3,6 +3,7 @@
 .hotel-staycation {
   display: flex;
   flex-wrap: wrap;
+  background-color: var(--staycation-background);
 
   @include respond(sm){
     padding-bottom: 40px;

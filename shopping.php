@@ -26,7 +26,7 @@ get_header(); ?>
                     </div>
 
                     <?php if ($book_url): ?>
-                        <a href="<?php echo esc_url($book_url); ?>" class="btn btn-book">BOK NÅ</a>
+                        <a href="<?php echo esc_url($book_url); ?>" class="btn btn-book">BOOK NÅ</a>
                     <?php endif; ?>
                 </div>
                 <div class="room-image">
