@@ -288,6 +288,13 @@
       transition: transform 0.3s ease;
       width: 48px;
       height: 48px;
+
+      @include respond(sm) {
+        width: 24px !important;
+        height: 24px !important;
+        top: -10%;
+      }
+
       border-radius: 50%;
 
       &:hover {
@@ -302,6 +309,14 @@
         min-height: 48px;
         max-width: 48px;
         max-height: 48px;
+
+        @include respond(sm) {
+          width: 24px !important;
+          height: 24px !important;
+          min-width: 24px;
+          min-height: 24px;
+
+        }
 
         path {
           // stroke: #000;
@@ -322,11 +337,13 @@
 
       &.carousel-prev {
         left: calc(100% - 140px);
-        
 
-        @include respond (custom) {
-          
+        @include respond(sm) {
+          left: calc(100% - 75px) !important;
         }
+
+
+        @include respond (custom) {}
       }
 
       &.carousel-next {
@@ -513,9 +530,9 @@
 
 .suite-swiper .swiper-slide {
   width: auto;
- 
+
   max-width: 412px;
-  
+
 
   @include respond(md) {
     max-width: 600px !important;

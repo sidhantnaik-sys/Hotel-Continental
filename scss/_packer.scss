@@ -71,6 +71,9 @@
     .offers-nav {
       display: flex;
       gap: 1rem;
+      @include respond(sm){
+        gap: 0rem;
+      }
 
       button {
         background: none;
@@ -264,4 +267,18 @@
   }
 
 
+}
+
+
+@include respond(sm) {
+  .offers-nav button {
+    height: 24px !important;  
+    width: 35px !important;  
+  }
+
+ 
+  .offers-nav button svg {
+    height: 24px !important;   
+    width: 24px !important;  
+  }
 }
