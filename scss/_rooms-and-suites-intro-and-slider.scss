@@ -113,11 +113,29 @@
     gap: 34px;
     justify-content: space-between;
 
+    #hrs-mob-a {
+        text-decoration: none;
+        color: var(--text-highlight);
 
-    a {
+        &:hover {
+            color: #A48243;
+        }
+    }
+
+    #hrs-email-a {
+        text-underline-offset: 4px;
+        color: var(--text-highlight);
+
+        &:hover {
+            color: #A48243;
+        }
+    }
+
+
+    /*a {
         text-decoration: none;
         color: #26160B;
-    }
+    }*/
 
     padding-top: 2px !important;
 
@@ -160,7 +178,7 @@
     display: inline-block;
     height: auto;
     font-family: $font_second;
-    padding: 7.3px 24px;
+    padding: 6.5px 24px;
     background-color: var(--button-color-stay) !important;
     color: #ffffff !important;
     border-radius: 2px;
@@ -170,7 +188,7 @@
     transition: background-color 0.3s ease !important;
     text-align: center;
     margin-top: 0 !important;
-
+    border: 1px solid #BBA568 !important;
     max-width: 250px;
     line-height: 1.815;
     word-wrap: break-word;
