@@ -23697,15 +23697,104 @@ body.winter {
     padding: 32px;
   }
 }
-@media (min-width: 1024px) and (max-width: 1279px) {
+@media (min-width: 769px) and (max-width: 820px) {
+  .hero-overlay {
+    padding-left: 62px;
+    padding-right: 62px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1179px) {
   .hero-overlay {
     padding: 66px 44px;
   }
 }
-@media (min-width: 820px) and (max-width: 1023px) {
+@media (min-width: 1180px) and (max-width: 1215px) {
   .hero-overlay {
-    padding-left: 62px;
-    padding-right: 62px;
+    padding: 66px 120px;
+  }
+}
+@media (min-width: 1216px) and (max-width: 1279px) {
+  .hero-overlay {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (min-width: 1366px) and (max-width: 1414px) {
+  .hero-overlay {
+    padding-left: 125.2px;
+    padding-right: 125.2px;
+  }
+}
+@media (min-width: 1414px) and (max-width: 1439px) {
+  .hero-overlay {
+    padding-left: 139.2px;
+    padding-right: 139.2px;
+  }
+}
+@media (min-width: 821px) and (max-width: 829px) {
+  .hero-overlay {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+@media (min-width: 829px) and (max-width: 844px) {
+  .hero-overlay {
+    padding-left: 66px;
+    padding-right: 66px;
+  }
+}
+@media (min-width: 844px) and (max-width: 869px) {
+  .hero-overlay {
+    padding-left: 74px;
+    padding-right: 74px;
+  }
+}
+@media (min-width: 869px) and (max-width: 882px) {
+  .hero-overlay {
+    padding-left: 86.2px;
+    padding-right: 86.2px;
+  }
+}
+@media (min-width: 882px) and (max-width: 896px) {
+  .hero-overlay {
+    padding-left: 93.2px;
+    padding-right: 93.2px;
+  }
+}
+@media (min-width: 896px) and (max-width: 912px) {
+  .hero-overlay {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+@media (min-width: 912px) and (max-width: 914px) {
+  .hero-overlay {
+    padding-left: 108px;
+    padding-right: 108px;
+  }
+}
+@media (min-width: 914px) and (max-width: 915px) {
+  .hero-overlay {
+    padding-left: 109.6px;
+    padding-right: 109.6px;
+  }
+}
+@media (min-width: 915px) and (max-width: 916px) {
+  .hero-overlay {
+    padding-left: 109.6px;
+    padding-right: 109.6px;
+  }
+}
+@media (min-width: 916px) and (max-width: 992px) {
+  .hero-overlay {
+    padding-left: 118px;
+    padding-right: 118px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1023px) {
+  .hero-overlay {
+    padding-left: 28px;
+    padding-right: 28px;
   }
 }
 @media (max-width: 819px) {
@@ -23720,28 +23809,27 @@ body.winter {
 }
 
 .hero-text-container {
-  max-width: 1160px;
   display: flex;
-}
-@media (min-width: 1441px) {
-  .hero-text-container {
-    margin: 0 auto;
-    max-width: 1296px;
+  /*@media (min-width:1441px) {
+      margin: 0 auto;
+      max-width: 1296px;
+
   }
+
+  */
+  /*
+
+  @media (min-width:1600px) {
+      padding-left: 0;
+  }
+
+  @media (min-width:576px) and (max-width:767.98px) {
+      max-width: 540px;
+  }*/
 }
 @media (max-width: 1440px) {
   .hero-text-container {
     padding-left: 0;
-  }
-}
-@media (min-width: 1600px) {
-  .hero-text-container {
-    padding-left: 0;
-  }
-}
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .hero-text-container {
-    max-width: 540px;
   }
 }
 
@@ -23785,7 +23873,7 @@ body.winter {
     font-size: 32px;
   }
 }
-@media (min-width: 820px) and (max-width: 1023px) {
+@media (min-width: 991px) and (max-width: 1023px) {
   .hero-text h2 {
     font-size: 36px;
   }
@@ -23804,6 +23892,11 @@ body.winter {
   word-wrap: break-word;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+@media (max-width: 992px) {
+  .hero-text p {
+    font-size: 14px;
+  }
 }
 @media (max-width: 767.98px) {
   .hero-text p {
@@ -24308,16 +24401,19 @@ body.winter {
     font-size: 36px;
   }
 }
+@media (max-width: 821px) {
+  .suite-text-block h2 {
+    text-align: center;
+  }
+}
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .suite-text-block h2 {
     font-size: 32px;
-    text-align: center;
   }
 }
 @media (max-width: 767.98px) {
   .suite-text-block h2 {
     font-size: 26px;
-    text-align: center;
   }
 }
 
@@ -24365,17 +24461,16 @@ body.winter {
   word-break: break-word;
   color: #26160B;
 }
-@media (min-width: 768px) and (max-width: 1023.98px) {
+@media (max-width: 821px) {
   .suite-info-block p {
     text-align: center;
   }
 }
-@media (max-width: 767.98px) {
+@media (min-width: 2441px) {
   .suite-info-block p {
-    text-align: center;
+    font-size: 16px;
   }
 }
-
 /* BUTTON + ARROWS WRAPPER */
 .suite-actions {
   display: flex;

@@ -89,14 +89,18 @@
         font-size: 36px;
     }
 
+    @media (max-width:821px) {
+        text-align: center;
+    }
+
     @include respond(tablet) {
         font-size: 32px;
-        text-align: center;
+
     }
 
     @include respond(mobile) {
         font-size: 26px;
-        text-align: center;
+
     }
 }
 
@@ -152,15 +156,17 @@
     word-break: break-word;
     color: #26160B;
 
-    @include respond(tablet) {
-
+    @media (max-width:821px) {
         text-align: center;
     }
 
-    @include respond(mobile) {
-
-        text-align: center;
+    @media (min-width:2441px) {
+        font-size: 16px;
     }
+
+    @include respond(tablet) {}
+
+    @include respond(mobile) {}
 
 
 }
