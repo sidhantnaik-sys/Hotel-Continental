@@ -71,7 +71,7 @@ $fallback_url = esc_url(is_array($hero_fallback) ? $hero_fallback['url'] : $hero
                 <?php endif; ?>
 
                 <?php if ($menu_link): ?>
-                  <span class="view-button">VIEW MENU</span>
+                  <!-- <span class="view-button">VIEW MENU</span> -->
                 <?php endif; ?>
               </div>
 

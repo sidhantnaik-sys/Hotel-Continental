@@ -3,6 +3,7 @@
 $hero_image = get_field('image_room'); // or a dedicated field like 'room_hero_image'
 $book_url = get_field('book_now_button');
 $description = get_field('full_description');
+$package_btn = get_field('package_btn');
 $title = get_field('room_title');
 ?>
 <section class="room-detail content" id="room-detail2">
@@ -17,7 +18,7 @@ $title = get_field('room_title');
                 </div>
 
                 <?php if ($book_url): ?>
-                    <a href="<?php echo esc_url($book_url); ?>" class="btn btn-book">BOOK NÅ</a>
+                    <a href="<?php echo esc_url($book_url); ?>" class="btn btn-book width"><?php echo($package_btn); ?></a>
                 <?php endif; ?>
             </div>
             <div class="room-image ">

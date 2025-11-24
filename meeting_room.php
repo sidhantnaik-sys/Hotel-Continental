@@ -6,7 +6,7 @@ get_header('hc_events'); ?>
 
 <?php get_template_part('template-parts/room-hero-img'); ?>
 <div class="room-padding">
-    <section class="room-sections room-detail ">
+    <section class="room-sections room-detail pb-0">
         <?php if (have_rows('room_sections')): ?>
             <div class="room-sections-wrapper container content h1p a1 p1 paddingresp">
                 <?php

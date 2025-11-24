@@ -105,7 +105,7 @@ $bg_image = get_field('background_image');
 
 <div class="room-padding">
     <?php if (have_rows('sections')): ?>
-      <section class="privacy-policy-page container py-5 p1 ">
+      <section class="privacy-policy-page container py-5 p1 d-flex justify-content-center">
         <div class="privacy  content px-5">
           <?php while (have_rows('sections')):
             the_row(); ?>

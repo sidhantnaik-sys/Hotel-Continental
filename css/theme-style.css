@@ -1288,7 +1288,8 @@ body.winter {
   content: "";
   -webkit-mask: url("assets/images/iconamoon_arrow-up-2-thin.svg") no-repeat center;
   -webkit-mask-size: contain;
-  mask: url("assets/images/iconamoon_arrow-up-2-thin.svg") no-repeat center;
+  -webkit-mask: url("assets/images/iconamoon_arrow-up-2-thin.svg") no-repeat center;
+          mask: url("assets/images/iconamoon_arrow-up-2-thin.svg") no-repeat center;
   mask-size: contain;
   background-color: var(--arrow-color-menu);
   width: 30px;
@@ -1352,7 +1353,8 @@ body.winter {
   border-radius: 0;
   opacity: 0;
   transition: width 0.4s ease, height 0.4s ease;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 1400px) and (max-width: 2000px) {
   .submenu-image img {
@@ -3777,7 +3779,8 @@ body.winter {
 .room-detail .room-header .room-image img {
   width: 100%;
   height: 576px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
 }
 @media (min-width: 1400px) and (max-width: 2000px) {
@@ -3831,7 +3834,8 @@ body.winter {
   .room-detail .room-header .room-image img {
     height: auto;
     max-height: 400px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     min-height: 350px;
   }
 }
@@ -3873,7 +3877,8 @@ body.winter {
 .room-detail .room-gallery .gallery-grid .image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.6s ease;
 }
 .room-detail .room-gallery .gallery-grid .image-wrapper img:hover {
@@ -3937,7 +3942,8 @@ body.winter {
 .room-amenities .amenity-item img {
   width: 20px;
   height: 20px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   display: block;
 }
 .room-amenities .amenity-text {
@@ -4029,6 +4035,11 @@ body .a1 a.no-underline {
 
 #room-detail2 {
   background-color: white;
+}
+
+.width {
+  max-width: 180px !important;
+  width: 180px !important;
 }
 
 /* style.scss or _theme.scss */
@@ -5823,7 +5834,8 @@ body.winter {
 .luxury-comfort .luxury-comfort-container .card-wrapper .card-item .card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -7139,7 +7151,8 @@ body.winter {
   width: 100%;
   min-height: 300px;
   height: 497px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
 }
@@ -8091,7 +8104,8 @@ body.winter {
   height: auto;
 }
 .luxury-highlight .luxury-container .luxury-left img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
   width: 100%;
   display: block;
@@ -9187,7 +9201,8 @@ body.winter {
   width: 100%;
   height: 100%;
   height: 662px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 @media (max-width: 767.98px) {
@@ -10026,7 +10041,8 @@ body.winter {
   }
 }
 .hero-banner .hero-bg {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 0;
 }
 .hero-banner .hero-overlay {
@@ -10940,7 +10956,8 @@ body.winter {
   width: 100%;
   height: 391px;
   min-height: 300px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
 }
@@ -11945,7 +11962,8 @@ body.winter {
   height: 100%;
   min-height: 300px;
   height: 425px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
 }
@@ -12955,6 +12973,7 @@ span {
 }
 .container-portrait-chambre .portrait-gallery-chambre .portrait-carousel .carousel-track {
   display: flex;
+  width: -moz-fit-content;
   width: fit-content;
   animation: scroll-loop 25s linear infinite;
   align-items: center;
@@ -12966,7 +12985,8 @@ span {
 }
 .container-portrait-chambre .portrait-gallery-chambre .portrait-carousel .portrait-card .portrait-image-wrapper img {
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
   width: 272px;
   height: 330px;
@@ -13023,7 +13043,8 @@ span {
 .menu-section .menu-card .image-wrapper img {
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
   transition: transform 0.9s ease;
   display: block;
@@ -13074,7 +13095,9 @@ span {
   text-decoration: none;
   font-weight: 400;
   padding-bottom: 2px;
+  transition: -webkit-text-decoration 0.3s;
   transition: text-decoration 0.3s;
+  transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
 }
 .menu-section .menu-card .view-button:hover {
   text-decoration: underline;
@@ -13149,6 +13172,7 @@ span {
 }
 .portrait-gallery .portrait-carousel .carousel-track {
   display: flex;
+  width: -moz-fit-content;
   width: fit-content;
   animation: scroll-loop 28s linear infinite;
 }
@@ -13162,7 +13186,8 @@ span {
   width: 100%;
   height: 292px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @keyframes scroll-loop {
   0% {
@@ -13240,7 +13265,9 @@ span {
   text-decoration: none;
   font-weight: 400;
   padding-bottom: 48px;
+  transition: -webkit-text-decoration 0.3s;
   transition: text-decoration 0.3s;
+  transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
 }
 .Chambre .Chambre-left .Chambre-content .link-row .Chambre-link1:hover,
 .Chambre .Chambre-left .Chambre-content .link-row .Chambre-link2:hover {
@@ -13274,7 +13301,8 @@ span {
   width: 100%;
   height: 100%;
   height: 662px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 @media (max-width: 767.98px) {
@@ -13325,7 +13353,8 @@ span {
   width: 100%;
   height: 542px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 767.98px) {
   .story-section .story-inner .story-image img {
@@ -13412,7 +13441,8 @@ span {
   width: 100%;
   height: 432px;
   min-height: 300px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
 }
@@ -13702,7 +13732,8 @@ span {
   width: 100%;
   min-height: 300px;
   height: 500px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
   transform: scale(1.05);
@@ -13847,7 +13878,8 @@ span {
 .restaurant-detail-wrapper .restaurant-image-right img {
   width: 100%;
   height: 640px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 767.98px) {
   .restaurant-detail-wrapper .restaurant-image-left img,
@@ -14315,6 +14347,7 @@ span {
 }
 .portrait-gallery1 .portrait-carousel .carousel-track {
   display: flex;
+  width: -moz-fit-content;
   width: fit-content;
   animation: scroll-loop 24s linear infinite;
 }
@@ -14328,7 +14361,8 @@ span {
   width: 100%;
   height: 292px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @keyframes scroll-loop {
   0% {
@@ -14452,11 +14486,14 @@ span {
   background-color: #A48243 !important;
 }
 .image-gallery-section .masonry-gallery {
-  column-count: 3;
-  column-gap: 1rem;
+  -moz-column-count: 3;
+       column-count: 3;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
 }
 .image-gallery-section .masonry-gallery .masonry-item {
-  break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
   margin-bottom: 1rem;
 }
 .image-gallery-section .masonry-gallery .masonry-item img {
@@ -14467,22 +14504,26 @@ span {
 }
 @media (max-width: 1024px) {
   .image-gallery-section .masonry-gallery {
-    column-count: 2;
+    -moz-column-count: 2;
+         column-count: 2;
   }
 }
 @media (max-width: 768px) {
   .image-gallery-section .masonry-gallery {
-    column-count: 1;
+    -moz-column-count: 1;
+         column-count: 1;
   }
 }
 @media (max-width: 1024px) {
   .image-gallery-section .masonry-gallery {
-    column-count: 2;
+    -moz-column-count: 2;
+         column-count: 2;
   }
 }
 @media (max-width: 768px) {
   .image-gallery-section .masonry-gallery {
-    column-count: 1;
+    -moz-column-count: 1;
+         column-count: 1;
   }
 }
 
@@ -14520,7 +14561,8 @@ span {
 .patterned-gallery .gallery-block .small-column .image-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 .patterned-gallery .gallery-block .big-column {
@@ -14530,7 +14572,8 @@ span {
 .patterned-gallery .gallery-block .big-column img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   min-height: 510px;
 }
@@ -14612,7 +14655,8 @@ span {
   height: auto;
   max-height: 640px;
   height: 640px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
 }
 @media (max-width: 767.98px) {
@@ -14644,7 +14688,8 @@ span {
 .learn-more-section .about-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.3s ease;
 }
 .learn-more-section .about-card .card-overlay {
@@ -14958,7 +15003,8 @@ span {
 }
 .continental-site-header1 .header-logo img {
   height: 80px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 10001;
 }
 .continental-site-header1 .header-right {
@@ -15055,7 +15101,8 @@ span {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero-continental::after {
   content: "";
@@ -15088,7 +15135,8 @@ span {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero-continental .overlay-content {
   position: relative;
@@ -15123,7 +15171,8 @@ span {
   padding-left: 91px !important;
 }
 .signature-section img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   max-height: 540px;
 }
@@ -15221,7 +15270,8 @@ span {
 .premium-rooms .room-card img {
   width: 100%;
   height: 700px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 @media (max-width: 767.98px) {
@@ -15296,7 +15346,8 @@ span {
   width: 100%;
   height: 576px;
   max-height: 576px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
 }
 @media (min-width: 1400px) {
@@ -15732,7 +15783,8 @@ span {
   width: 100%;
   height: 580px;
   max-height: 580px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 767.98px) {
   .luxury-section .luxury-image img {
@@ -15931,7 +15983,8 @@ span {
 .bottled-selections img {
   height: 576px;
   max-height: 576px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
 }
 @media (max-width: 767.98px) {
@@ -16142,7 +16195,8 @@ span {
   width: 100%;
   height: 100%;
   max-height: 576px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
 }
 @media (max-width: 991px) {
@@ -16206,7 +16260,8 @@ span {
 .contact-us-section .contact-image img {
   width: 100%;
   height: 576px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
 }
 @media (max-width: 767.98px) {
@@ -16426,7 +16481,9 @@ span {
   text-decoration: none;
   font-weight: 400;
   padding-bottom: 48px;
+  transition: -webkit-text-decoration 0.3s;
   transition: text-decoration 0.3s;
+  transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
 }
 .ourmenu .ourmenu-left .ourmenu-content .link-row .Chambre-link1:hover,
 .ourmenu .ourmenu-left .ourmenu-content .link-row .Chambre-link2:hover {
@@ -16457,7 +16514,8 @@ span {
   width: 100%;
   height: 100%;
   height: 502px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 @media (max-width: 767.98px) {
@@ -16549,7 +16607,9 @@ span {
   text-decoration: none;
   font-weight: 400;
   padding-bottom: 48px;
+  transition: -webkit-text-decoration 0.3s;
   transition: text-decoration 0.3s;
+  transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
 }
 .chambre-annen .chambre-annen-left .chambre-annen-content .link-row .chambre-annen-link1:hover,
 .chambre-annen .chambre-annen-left .chambre-annen-content .link-row .chambre-annen-link2:hover {
@@ -16585,7 +16645,8 @@ span {
   flex: 1;
   width: 100%;
   height: 101%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 @media (max-width: 767.98px) {
@@ -18463,7 +18524,8 @@ body.winter {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero-hc::after {
   content: "";
@@ -18583,7 +18645,8 @@ body.winter {
 .about-section .about-carousel .carousel-inner .carousel-item img {
   height: 101%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 767.98px) {
   .about-section {
@@ -18735,6 +18798,7 @@ body.winter {
 }
 .wedding-gallery .portrait-carousel .carousel-track {
   display: flex;
+  width: -moz-fit-content;
   width: fit-content;
   animation: scroll-loop 29s linear infinite;
   align-items: center;
@@ -18746,7 +18810,8 @@ body.winter {
 }
 .wedding-gallery .portrait-carousel .portrait-card .portrait-image-wrapper img {
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
   width: 328px;
   height: 382px;
@@ -18770,7 +18835,8 @@ body.winter {
   display: block;
   border-radius: 10px;
   box-shadow: 0;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .seating-video1 .img-fluid {
   width: 100vw;
@@ -18805,7 +18871,8 @@ body.winter {
 .seating-plan-list li .list-icon img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .seating-plan-list li .list-text {
   flex: 1;
@@ -19017,7 +19084,8 @@ body.winter {
 .menu-section-offer .menu-card .image-wrapper img {
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
   transition: transform 0.9s ease;
   display: block;
@@ -19067,7 +19135,9 @@ body.winter {
   text-decoration: none;
   font-weight: 400;
   padding-bottom: 2px;
+  transition: -webkit-text-decoration 0.3s;
   transition: text-decoration 0.3s;
+  transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
 }
 .menu-section-offer .menu-card .view-button:hover {
   text-decoration: underline;
@@ -20810,7 +20880,8 @@ body.winter {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero-casbar::after {
   content: "";
@@ -20877,7 +20948,8 @@ body.winter {
 .menu-section-casbar .menu-card .image-wrapper img {
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
   transition: transform 0.9s ease;
   display: block;
@@ -20928,7 +21000,9 @@ body.winter {
   text-decoration: none;
   font-weight: 400;
   padding-bottom: 2px;
+  transition: -webkit-text-decoration 0.3s;
   transition: text-decoration 0.3s;
+  transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
 }
 .menu-section-casbar .menu-card .view-button:hover {
   text-decoration: underline;
@@ -20983,7 +21057,8 @@ body.winter {
   width: 100%;
   height: 664px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 767.98px) {
   .story-section-casbar .story-inner .story-image img {
@@ -21067,7 +21142,8 @@ body.winter {
 .bottled-selections-casbar img {
   height: 576px;
   max-height: 576px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
 }
 @media (max-width: 767.98px) {
@@ -21426,7 +21502,8 @@ body.winter {
   width: 100%;
   height: 640px;
   max-height: 640px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 767.98px) {
   .our-menu-section-casbar .menu-image img {
@@ -21509,6 +21586,7 @@ body.winter {
 }
 .container-portrait-casbar .portrait-gallery-casbar .portrait-carousel .carousel-track {
   display: flex;
+  width: -moz-fit-content;
   width: fit-content;
   animation: scroll-loop 25s linear infinite;
   align-items: center;
@@ -21520,7 +21598,8 @@ body.winter {
 }
 .container-portrait-casbar .portrait-gallery-casbar .portrait-carousel .portrait-card .portrait-image-wrapper img {
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
   width: 272px;
   height: 330px;
@@ -21633,7 +21712,8 @@ body.winter {
   width: 100%;
   max-height: 664px;
   border-radius: 0;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 991.98px) {
   .opening-hours-section .row .opening-image img {
@@ -23360,7 +23440,8 @@ body.winter {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero-barboman::after {
   content: "";
@@ -23623,6 +23704,7 @@ body.winter {
 }
 .container-portrait-barboman .portrait-gallery-barboman .portrait-carousel .carousel-track {
   display: flex;
+  width: -moz-fit-content;
   width: fit-content;
   animation: scroll-loop 25s linear infinite;
   align-items: center;
@@ -23634,7 +23716,8 @@ body.winter {
 }
 .container-portrait-barboman .portrait-gallery-barboman .portrait-carousel .portrait-card .portrait-image-wrapper img {
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0;
   width: 272px;
   height: 330px;
@@ -23682,7 +23765,8 @@ body.winter {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .hero-overlay {
@@ -23875,7 +23959,6 @@ body.winter {
   font-size: 44px;
   margin-bottom: 10px;
   font-weight: 400;
-  text-transform: capitalize;
   letter-spacing: -0.44px;
   margin-bottom: 12px;
   color: rgba(255, 255, 255, 0.8);
@@ -24402,7 +24485,6 @@ body.winter {
 .suite-text-block h2 {
   font-size: 44px;
   color: #26160B;
-  text-transform: capitalize;
   line-height: 1.35;
   letter-spacing: -1px;
   font-weight: 400;
@@ -24552,7 +24634,8 @@ body.winter {
 .arrow-btn img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   display: block;
 }
 
@@ -24586,7 +24669,8 @@ body.winter {
 }
 @media (min-width: 1441px) {
   .swiper-slide img {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 
@@ -24658,6 +24742,4 @@ body {
 
 #trp_ald_modal_container {
   display: none !important;
-}
-
-/*# sourceMappingURL=theme-style.css.map */
+}/*# sourceMappingURL=theme-style.css.map */

@@ -162,7 +162,7 @@ get_header('hc_events'); ?>
     <div class="container-fluid bg-hc-event py-5">
         <section class="hero-banner container position-relative bg-hc-event">
             <?php if ($video = get_field('hero_background_video')): ?>
-                <video class="hero-bg position-absolute top-0 start-0 w-100 h-100 pb-5" autoplay muted loop playsinline>
+                <video class="hero-bg position-absolute top-0 start-0 w-100 h-100 " autoplay muted loop playsinline>
                     <source src="<?php echo esc_url($video['url']); ?>" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
